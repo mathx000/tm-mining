@@ -27,17 +27,17 @@ export const Header: React.FC = () => {
           <a href="/#home" className="hover:text-[#D35400]">
             Início
           </a>
+          <a href="/#sobre" className="hover:text-[#D35400]">
+            Sobre
+          </a>
           <a href="/#equipamentos" className="hover:text-[#D35400]">
             Equipamentos
-          </a>
-          <a href="/#revenda" className="hover:text-[#D35400]">
-            Revenda
           </a>
           <a href="/#servicos" className="hover:text-[#D35400]">
             Serviços
           </a>
-          <a href="/#sobre" className="hover:text-[#D35400]">
-            Sobre
+          <a href="/#revenda" className="hover:text-[#D35400]">
+            Revenda
           </a>
           <a href="/#contacto" className="hover:text-[#D35400]">
             Contacto
@@ -86,18 +86,18 @@ export const Header: React.FC = () => {
               Início
             </a>
             <a
+              href="/#sobre"
+              onClick={closeMenu}
+              className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
+            >
+              Sobre
+            </a>
+            <a
               href="/#equipamentos"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               Equipamentos
-            </a>
-            <a
-              href="/#revenda"
-              onClick={closeMenu}
-              className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
-            >
-              Revenda
             </a>
             <a
               href="/#servicos"
@@ -107,11 +107,11 @@ export const Header: React.FC = () => {
               Serviços
             </a>
             <a
-              href="/#sobre"
+              href="/#revenda"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Sobre
+              Revenda
             </a>
             <a
               href="/#contacto"
