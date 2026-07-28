@@ -1,0 +1,10 @@
+export { Header } from "./Header";
+export { Home } from "./Home";
+export { Equipamentos } from "./Equipamentos";
+export { Servicos } from "./Servicos";
+export { Revendas } from "./Revendas";
+export { RevendaDetalhe } from "./RevendaDetalhe";
+export { Sobre } from "./Sobre";
+export { Contato } from "./Contato";
+export { Footer } from "./Footer";
+export { ProdutoDetalhe } from "./ProdutoDetalhe";

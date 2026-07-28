@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TM Mining Internacional - Equipamentos para Construção e Mineração</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #D35400;
+      --secondary: #FFB81C;
+      --dark: #1a1a1a;
+      --light: #f5f5f5;
+      --accent: #1A1D1F;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(139,69,19);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(184,134,11);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad)"/></svg>');
+      background-size: cover;
+      background-position: center;
+      min-height: 600px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #c23d0e;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--dark);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #ffc42e;
+      transform: translateY(-2px);
+    }
+
+    .product-card {
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover:after {
+      width: 100%;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .equipment-item {
+      text-align: left;
+      padding: 16px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #ffffff, #f8f9fb);
+      border: 1px solid #e6e7ea;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .equipment-item:hover {
+      box-shadow: 0 16px 34px rgba(16, 24, 40, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .equipment-visual {
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    .equipment-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .equipment-category {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(26, 29, 31, 0.88);
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .equipment-spec-preview {
+      list-style: none;
+      margin: 0 0 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f2f4f7;
+      border: 1px solid #e4e7ec;
+    }
+
+    .equipment-spec-preview li {
+      font-size: 12px;
+      color: #344054;
+      padding: 3px 0;
+    }
+
+    .equipment-status {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      display: inline-flex;
+      align-self: flex-start;
+      border-radius: 999px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+
+    .stock-ready {
+      background: #ecfdf3;
+      color: #027a48;
+      border: 1px solid #abefc6;
+    }
+
+    .stock-order {
+      background: #fff4ed;
+      color: #b54708;
+      border: 1px solid #ffd1b3;
+    }
+
+    .equipment-actions {
+      margin-top: auto;
+    }
+
+    .price-tag {
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--primary);
+      margin: 8px 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .specs-list {
+      text-align: left;
+      margin: 16px 0;
+      padding: 12px;
+      background-color: #f9f9f9;
+      border-radius: 6px;
+    }
+
+    .specs-list li {
+      padding: 6px 0;
+      color: #555;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .specs-list li:last-child {
+      border-bottom: none;
+    }
+
+    .header {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .container-max {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .feature-box {
+      padding: 24px;
+      border-radius: 8px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 12px;
+      color: var(--dark);
+    }
+
+    .feature-box p {
+      color: #666;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .footer {
+      background-color: var(--accent);
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-section h4 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      color: var(--secondary);
+    }
+
+    .footer-section p, .footer-section a {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--secondary);
+    }
+
+    .contact-form {
+      background: white;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 30px;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .value-card .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .value-card h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-visual {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .modal-visual img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #999;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--dark);
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 28px;
+      }
+
+      .equipment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        min-height: 400px;
+      }
+
+      .hero-section h1 {
+        font-size: 32px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
