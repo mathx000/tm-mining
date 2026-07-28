@@ -5,19 +5,19 @@ export const RevendaDetalhe: React.FC = () => {
   const [showEquipmentList, setShowEquipmentList] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f7f5] px-6 py-20 lg:px-8">
+    <section className="relative overflow-hidden bg-[#f7f7f5] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(211,84,0,0.16),_transparent_55%),radial-gradient(circle_at_bottom_left,_rgba(255,184,28,0.2),_transparent_45%)]" />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr]">
-          <div className="rounded-3xl border border-[#d9d9d6] bg-white p-8 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] lg:p-10">
+          <div className="rounded-3xl border border-[#d9d9d6] bg-white p-6 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] sm:p-8 lg:p-10">
             <p className="inline-flex items-center rounded-full border border-[#D35400]/20 bg-[#fff3e1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#D35400]">
               Programa de parceria
             </p>
-            <h1 className="mt-5 text-3xl font-black leading-tight text-[#1a1a1a] sm:text-4xl">
+            <h1 className="mt-5 text-2xl font-black leading-tight text-[#1a1a1a] sm:text-3xl lg:text-4xl">
               Torne-se um Revendedor
             </h1>
-            <p className="mt-5 text-lg leading-8 text-gray-700">
+            <p className="mt-5 text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
               Faça parte da nossa rede de parceiros e aumente os seus
               rendimentos. Ao revender os nossos equipamentos, recebe{" "}
               <strong>5% de comissão por cada venda concluída</strong>, com
@@ -42,7 +42,7 @@ export const RevendaDetalhe: React.FC = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-[#1a1a1a]/10 bg-white p-8 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] lg:p-10">
+          <div className="rounded-3xl border border-[#1a1a1a]/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] sm:p-8 lg:p-10">
             <h2 className="text-2xl font-bold text-[#1a1a1a]">
               Candidatura de Revenda
             </h2>
