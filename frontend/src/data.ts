@@ -2,6 +2,26 @@ import type { Equipment } from './types/index.js';
 
 export const equipment: Equipment[] = [
   {
+    id: '9',
+    name: 'Britador de cone Metso Nordberg HP300',
+    category: 'Britagem',
+    price: 1100000,
+    currency: 'EUR',
+    image: 'src/img/hp300.jpg',
+    imageAlt: 'Britador de cone Metso Nordberg HP300 em area industrial',
+    description: 'Britador de cone para britagem secundaria e terciaria, com alta confiabilidade operacional e excelente desempenho em producao continua.',
+    specifications: [
+      { key: 'Marca', value: 'Metso' },
+      { key: 'Modelo', value: 'Nordberg HP300' },
+      { key: 'Tipo', value: 'Britador de cone' },
+      { key: 'Ano', value: '2018-01' },
+      { key: 'Localizacao', value: 'Portugal - Mangide' },
+      { key: 'Distancia', value: '143 km de Portugal/Porto' }
+    ],
+    inStock: true,
+    deliveryTime: 'Disponibilidade imediata'
+  },
+  {
     id: '1',
     name: 'Escavadeira Hidraulica ZX 350LC',
     category: 'Escavadeira',
@@ -163,11 +183,8 @@ export const equipment: Equipment[] = [
   }
 ];
 
-export function formatPrice(price: number): string {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'EUR'
-  }).format(price);
+export function formatPrice(_price: number): string {
+  return 'A consultar';
 }
 
 export function getEquipmentById(id: string): Equipment | undefined {

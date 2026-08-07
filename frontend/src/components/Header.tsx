@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
 
         {/* Desktop CTA */}
         <a
-          href="https://wa.me/351933852559?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
+          href="https://wa.me/351933079179?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
           target="_blank"
           rel="noopener noreferrer"
           className="hidden rounded-full bg-[#D35400] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#c23d0e] md:inline-flex"
@@ -123,7 +123,7 @@ export const Header: React.FC = () => {
           </nav>
           <div className="mt-4 border-t border-gray-100 pt-4">
             <a
-              href="https://wa.me/351933852559?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
+              href="https://wa.me/351933079179?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}

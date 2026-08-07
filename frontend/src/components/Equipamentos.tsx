@@ -31,7 +31,7 @@ export const Equipamentos: React.FC = () => {
               A nossa frota
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-              Catálogo técnico com valor, especificações e disponibilidade.
+              Catálogo com valor, especificações e disponibilidade.
             </h2>
           </div>
 
@@ -105,10 +105,10 @@ export const Equipamentos: React.FC = () => {
                   </ul>
                   <div className="mt-6 flex items-end justify-between gap-3">
                     <div>
-                      <p className="text-xs uppercase tracking-wide text-gray-500">
+                      <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
                         Valor
                       </p>
-                      <p className="text-2xl font-black text-[#D35400]">
+                      <p className="mt-2 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-3 py-1 text-sm font-semibold text-[#9f3f00]">
                         {formatPrice(item.price)}
                       </p>
                     </div>

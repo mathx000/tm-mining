@@ -3,6 +3,7 @@ import escavadeiraImg from "../img/escavadeira.jpg";
 import primarioImg from "../img/primario.png";
 import criboImg from "../img/cribo.jpg";
 import moinhoImg from "../img/moinho.jpg";
+import hp300Img from "../img/hp300.jpg";
 
 export const equipmentImageMap: Record<string, string> = {
   "1": escavadeiraImg,
@@ -13,6 +14,7 @@ export const equipmentImageMap: Record<string, string> = {
   "6": primarioImg,
   "7": criboImg,
   "8": moinhoImg,
+  "9": hp300Img,
 };
 
 export function getEquipmentImageById(id: string): string {
@@ -29,5 +31,5 @@ export function buildWhatsAppLink(item: Equipment): string {
     .toString();
   const message = `Olá, estou interessado em adquirir o equipamento ${item.name}. Especificações principais: ${basicSpecs}. Imagem do produto: ${imageUrl}`;
 
-  return `https://wa.me/351933852559?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/351933079179?text=${encodeURIComponent(message)}`;
 }

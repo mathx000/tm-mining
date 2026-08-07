@@ -1,22 +1,37 @@
 import React from "react";
+import img1 from "../img/1.jpeg";
+import img2 from "../img/2.jpeg";
+import img3 from "../img/3.jpeg";
+import img4 from "../img/4.jpeg";
 
 const services = [
   {
-    icon: "⚙️",
-    title: "Automação",
+    image: img1,
+    imageAlt: "Inspecao tecnica de equipamento em operacao",
+    title: "Diagnóstico técnico especializado",
     description:
-      "Sistemas de automação avançados para máxima eficiência operacional.",
+      "Fazemos avaliação completa de máquinas para aumentar disponibilidade e reduzir paragens inesperadas na operação.",
   },
   {
-    icon: "📊",
-    title: "Rastreio",
+    image: img2,
+    imageAlt: "Painel de monitorizacao de desempenho",
+    title: "Monitorização e controlo operacional",
     description:
-      "Tecnologia de rastreio em tempo real de todos os equipamentos.",
+      "Acompanhamento contínuo dos indicadores de produção para melhorar eficiência, consumo e planeamento de manutenção.",
   },
   {
-    icon: "🔧",
-    title: "Manutenção",
-    description: "Suporte técnico completo e manutenção preventiva regular.",
+    image: img3,
+    imageAlt: "Equipa tecnica em manutencao de equipamento pesado",
+    title: "Manutenção preventiva programada",
+    description:
+      "Planos de manutenção ajustados ao ciclo de trabalho para prolongar a vida útil dos componentes críticos.",
+  },
+  {
+    image: img4,
+    imageAlt: "Gestao de frota e operacoes em ambiente industrial",
+    title: "Gestão integrada de frota",
+    description:
+      "Integramos informação técnica e operacional para apoiar decisões mais rápidas e seguras em campo.",
   },
 ];
 
@@ -33,18 +48,31 @@ export const Servicos: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <div
+        <div className="space-y-8">
+          {services.map((service, index) => (
+            <article
               key={service.title}
-              className="rounded-3xl border border-gray-200 bg-[#f5f5f5] p-8"
+              className="grid overflow-hidden rounded-3xl border border-gray-200 bg-[#f7f7f6] shadow-sm lg:grid-cols-2"
             >
-              <div className="text-4xl">{service.icon}</div>
-              <h3 className="mt-4 text-xl font-bold">{service.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-gray-600">
-                {service.description}
-              </p>
-            </div>
+              <div className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}>
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  className="h-72 w-full object-cover lg:h-full"
+                />
+              </div>
+
+              <div className="flex items-center bg-white p-8 sm:p-10">
+                <div>
+                  <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-gray-700 sm:text-base">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </div>

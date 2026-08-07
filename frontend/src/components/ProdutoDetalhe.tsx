@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { equipment, formatPrice } from "../data";
 import { buildWhatsAppLink, getEquipmentImageById } from "../utils/equipment";
@@ -7,12 +7,19 @@ export const ProdutoDetalhe: React.FC = () => {
   const { id } = useParams();
   const product = equipment.find((item) => item.id === id);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [id]);
+
   if (!product) {
     return <Navigate to="/" replace />;
   }
 
   const mainImage = getEquipmentImageById(product.id);
   const galleryImages = mainImage ? [mainImage] : [];
+  const relatedEquipment = equipment
+    .filter((item) => item.id !== product.id)
+    .slice(0, 5);
 
   return (
     <section className="px-6 py-14 lg:px-8">
@@ -83,28 +90,123 @@ export const ProdutoDetalhe: React.FC = () => {
             </ul>
           </article>
 
-          <aside className="h-fit rounded-3xl border border-gray-200 bg-white p-6 shadow-sm lg:sticky lg:top-24">
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-              Valor
-            </p>
-            <p className="mt-2 text-4xl font-black text-[#D35400]">
-              {formatPrice(product.price)}
-            </p>
-            <p className="mt-4 text-sm text-gray-700">
-              Atendimento dedicado para este equipamento, com envio de proposta
-              e cronograma de entrega.
-            </p>
+          <div className="h-fit space-y-6 lg:sticky lg:top-24">
+            <aside className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                Valor
+              </p>
+              <p className="mt-3 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-4 py-1.5 text-base font-semibold text-[#9f3f00]">
+                {formatPrice(product.price)}
+              </p>
+              <p className="mt-4 text-sm text-gray-700">
+                Atendimento dedicado para este equipamento, com envio de
+                proposta e cronograma de entrega.
+              </p>
 
-            <a
-              href={buildWhatsAppLink(product)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1ebe5b]"
-            >
-              Tenho Interesse
-            </a>
-          </aside>
+              <a
+                href={buildWhatsAppLink(product)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1ebe5b]"
+              >
+                Tenho Interesse
+              </a>
+            </aside>
+
+            <form className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+              <h3 className="text-2xl font-bold text-[#2a2a2a]">
+                Pergunte ao vendedor
+              </h3>
+              <div className="mt-6 space-y-4">
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="Nome"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                />
+                <input
+                  type="text"
+                  name="empresa"
+                  placeholder="Empresa"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                />
+                <input
+                  type="tel"
+                  name="telefone"
+                  placeholder="Telefone"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                />
+                <fieldset className="rounded-lg border border-gray-300 px-3 pb-3 pt-1.5">
+                  <legend className="px-1 text-sm font-semibold text-gray-600">
+                    Mensagem
+                  </legend>
+                  <textarea
+                    name="mensagem"
+                    rows={5}
+                    placeholder="Escreva a sua dúvida"
+                    className="w-full resize-none border-0 bg-transparent text-sm leading-6 text-gray-600 outline-none"
+                  />
+                </fieldset>
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#b74800]"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+
+        <section className="mt-14">
+          <h2 className="text-3xl font-bold text-[#0f2f3a]">
+            Anúncios relacionados
+          </h2>
+          <div className="mt-6 overflow-x-auto pb-2">
+            <div className="flex min-w-max gap-4">
+              {relatedEquipment.map((item) => (
+                <Link
+                  key={item.id}
+                  to={`/equipamentos/${item.id}`}
+                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="h-44 w-full bg-[#eef2f4] p-3">
+                    <img
+                      src={getEquipmentImageById(item.id)}
+                      alt={item.imageAlt}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <p className="line-clamp-2 text-lg font-medium leading-7 text-[#12323d]">
+                      {item.name}
+                    </p>
+                    <div className="mt-2">
+                      <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
+                        Valor
+                      </p>
+                      <p className="mt-2 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-3 py-1 text-sm font-semibold text-[#9f3f00]">
+                        {formatPrice(item.price)}
+                      </p>
+                    </div>
+                    <p className="mt-5 text-sm text-[#3c5b66]">
+                      {item.category}
+                    </p>
+                    <p className="mt-1 text-sm text-[#3c5b66]">
+                      {item.deliveryTime}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );
