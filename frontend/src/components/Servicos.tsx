@@ -37,7 +37,7 @@ const services = [
 
 export const Servicos: React.FC = () => {
   return (
-    <section id="servicos" className="bg-white px-6 py-20 lg:px-8">
+    <section id="servicos" className="bg-white px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
@@ -62,7 +62,7 @@ export const Servicos: React.FC = () => {
                 />
               </div>
 
-              <div className="flex items-center bg-white p-8 sm:p-10">
+              <div className="flex items-center bg-white p-6 sm:p-8 lg:p-10">
                 <div>
                   <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl">
                     {service.title}

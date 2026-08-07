@@ -23,7 +23,7 @@ export const RevendaDetalhe: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f7f5] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <section className="relative overflow-hidden bg-[#f7f7f5] px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(211,84,0,0.16),_transparent_55%),radial-gradient(circle_at_bottom_left,_rgba(255,184,28,0.2),_transparent_45%)]" />
 
       <div className="relative mx-auto max-w-7xl">

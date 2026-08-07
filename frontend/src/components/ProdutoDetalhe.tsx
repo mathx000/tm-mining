@@ -22,7 +22,7 @@ export const ProdutoDetalhe: React.FC = () => {
     .slice(0, 5);
 
   return (
-    <section className="px-6 py-14 lg:px-8">
+    <section className="px-4 py-8 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <Link
           to="/#equipamentos"
@@ -31,7 +31,7 @@ export const ProdutoDetalhe: React.FC = () => {
           Voltar para equipamentos
         </Link>
 
-        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+        <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8">
           <article className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D35400]">
               {product.category}
@@ -174,7 +174,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 <Link
                   key={item.id}
                   to={`/equipamentos/${item.id}`}
-                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:w-[320px] lg:w-[280px]"
                 >
                   <div className="h-44 w-full bg-[#eef2f4] p-3">
                     <img

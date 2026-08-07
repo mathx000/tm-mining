@@ -24,7 +24,7 @@ export const Equipamentos: React.FC = () => {
 
   return (
     <>
-      <section id="equipamentos" className="px-6 py-20 lg:px-8">
+      <section id="equipamentos" className="px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
@@ -35,7 +35,7 @@ export const Equipamentos: React.FC = () => {
             </h2>
           </div>
 
-          <div className="mb-8 grid gap-4 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm md:grid-cols-2">
+          <div className="mb-6 grid gap-3 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm sm:gap-4 sm:p-4 md:mb-8 md:grid-cols-2">
             <label className="text-sm font-semibold text-[#1a1a1a]">
               Filtro por nome
               <input
