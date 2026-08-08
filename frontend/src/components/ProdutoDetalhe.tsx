@@ -37,11 +37,11 @@ export const ProdutoDetalhe: React.FC = () => {
         </Link>
 
         <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8">
-          <article className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+          <article className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D35400]">
               {product.category}
             </p>
-            <h1 className="mt-3 text-3xl font-black text-[#1a1a1a] sm:text-4xl">
+            <h1 className="mt-3 break-words text-2xl font-black text-[#1a1a1a] sm:text-4xl">
               {product.name}
             </h1>
             <p className="mt-4 text-base leading-7 text-gray-700">
@@ -53,7 +53,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 <img
                   src={galleryImages[currentImageIndex]}
                   alt={`${product.imageAlt} - foto ${currentImageIndex + 1}`}
-                  className="h-96 w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3"
+                  className="h-64 w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3 sm:h-80 lg:h-96"
                 />
                 {galleryImages.length > 1 && (
                   <div className="mt-3 flex items-center justify-between">
@@ -140,7 +140,7 @@ export const ProdutoDetalhe: React.FC = () => {
           </article>
 
           <div className="h-fit space-y-6 lg:sticky lg:top-24">
-            <aside className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+            <aside className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
               <p className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
                 Valor
               </p>
@@ -162,8 +162,8 @@ export const ProdutoDetalhe: React.FC = () => {
               </a>
             </aside>
 
-            <form className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="text-2xl font-bold text-[#2a2a2a]">
+            <form className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+              <h3 className="text-xl font-bold text-[#2a2a2a] sm:text-2xl">
                 Pergunte ao vendedor
               </h3>
               <div className="mt-6 space-y-4">
@@ -214,16 +214,15 @@ export const ProdutoDetalhe: React.FC = () => {
         </div>
 
         <section className="mt-14">
-          <h2 className="text-3xl font-bold text-[#0f2f3a]">
+          <h2 className="text-2xl font-bold text-[#0f2f3a] sm:text-3xl">
             Anúncios relacionados
           </h2>
-          <div className="mt-6 overflow-x-auto pb-2">
-            <div className="flex min-w-max gap-4">
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {relatedEquipment.map((item) => (
                 <Link
                   key={item.id}
                   to={`/equipamentos/${item.id}`}
-                  className="w-[280px] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:w-[320px] lg:w-[280px]"
+                  className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="h-44 w-full bg-[#eef2f4] p-3">
                     <img
@@ -232,8 +231,8 @@ export const ProdutoDetalhe: React.FC = () => {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <div className="p-5">
-                    <p className="line-clamp-2 text-lg font-medium leading-7 text-[#12323d]">
+                  <div className="p-4 sm:p-5">
+                    <p className="line-clamp-2 break-words text-base font-medium leading-6 text-[#12323d] sm:text-lg sm:leading-7">
                       {item.name}
                     </p>
                     <div className="mt-2">
@@ -253,7 +252,6 @@ export const ProdutoDetalhe: React.FC = () => {
                   </div>
                 </Link>
               ))}
-            </div>
           </div>
         </section>
       </div>

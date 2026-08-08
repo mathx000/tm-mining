@@ -66,7 +66,7 @@ export const Equipamentos: React.FC = () => {
             </label>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {filteredEquipment.map((item) => (
               <article
                 key={item.id}
@@ -76,9 +76,9 @@ export const Equipamentos: React.FC = () => {
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  className="h-56 w-full bg-gray-50 p-3 object-contain"
+                  className="h-52 w-full bg-gray-50 object-contain p-3 sm:h-56"
                 />
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <div className="mb-3 flex items-center justify-between">
                     <span className="rounded-full bg-[#FFF3E0] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D35400]">
                       {item.category}
@@ -91,7 +91,7 @@ export const Equipamentos: React.FC = () => {
                       {item.inStock ? "Disponível" : "Sob encomenda"}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#1a1a1a]">
+                  <h3 className="break-words text-lg font-bold text-[#1a1a1a] sm:text-xl">
                     {item.name}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-gray-600">
@@ -105,7 +105,7 @@ export const Equipamentos: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 flex items-end justify-between gap-3">
+                  <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                       <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
                         Valor
@@ -114,14 +114,14 @@ export const Equipamentos: React.FC = () => {
                         {formatPrice(item.price)}
                       </p>
                     </div>
-                    <div className="flex flex-col items-end gap-2">
+                    <div className="flex flex-col gap-2 sm:items-end">
                       <button
                         type="button"
                         onClick={(event) => {
                           event.stopPropagation();
                           navigate(`/equipamentos/${item.id}`);
                         }}
-                        className="rounded-full bg-[#FFB81C] px-4 py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e]"
+                        className="w-full rounded-full bg-[#FFB81C] px-4 py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e] sm:w-auto"
                       >
                         Especificações
                       </button>
