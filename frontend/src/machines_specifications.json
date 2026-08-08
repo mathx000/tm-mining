@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Britadeira de maxilas Allis-Chalmers 1100 x 600",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Allis-Chalmers",
+      "modelo": "1100 x 600",
+      "tipo": "britadeira de maxilas",
+      "ano": "",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "16/07/2026",
+      "machinerylineId": "QK46728",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Britador em muito bom estado"
+    }
+  },
+  {
+    "name": "Britadeira de maxilas Metso Nordberg C125",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Metso",
+      "modelo": "Nordberg C125",
+      "tipo": "britadeira de maxilas",
+      "ano": "2018-04",
+      "primeiroRegisto": "2018-04",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "17/07/2026",
+      "machinerylineId": "DB50490",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "1 250 m/h",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Descrição fornecida pelo vendedor. Confirme todas as informações diretamente com o vendedor"
+    }
+  },
+  {
+    "name": "Britadeira de maxilas Parker 36X24",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Parker",
+      "modelo": "36X24",
+      "tipo": "britadeira de maxilas",
+      "ano": "1973",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "16/07/2026",
+      "machinerylineId": "RU46728",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Britadeira móvel Parker 900x600, completa em muito bom estado"
+    }
+  },
+  {
+    "name": "Britadeira de maxilas Sany SANYO 1050 x 750",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Sany",
+      "modelo": "SANYO 1050 x 750",
+      "tipo": "britadeira de maxilas",
+      "ano": "",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "16/07/2026",
+      "machinerylineId": "KG46729",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Britador SANYYO em muito bom estado com pouco uso"
+    }
+  },
+  {
+    "name": "Britador de cone Metso HP200",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Metso",
+      "modelo": "HP200",
+      "tipo": "britador de cone",
+      "ano": "",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "16/07/2026",
+      "machinerylineId": "TB46729",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "HP200 em muito bom estado e com muito pouco uso"
+    }
+  },
+  {
+    "name": "Britador de cone Sandvik CH430",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Sandvik",
+      "modelo": "CH430",
+      "tipo": "britador de cone",
+      "ano": "2019-01",
+      "primeiroRegisto": "2019-01",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "hoje",
+      "machinerylineId": "VX51801",
+      "motor": {
+        "marca": "Siemens",
+        "potencia": "160 cv (118 kW)"
+      },
+      "estado": "usados",
+      "tecnicalControl": "2026-07",
+      "cor": "vermelho",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Britador cônico Sandvik CH 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassi"
+    }
+  },
+  {
+    "name": "Britador de cone Sandvik cs 430",
+    "category": "Britagem",
+    "specifications": {
+      "marca": "Sandvik",
+      "modelo": "cs 430",
+      "tipo": "britador de cone",
+      "ano": "2019-01",
+      "primeiroRegisto": "2019-01",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "hoje",
+      "machinerylineId": "QjM51801",
+      "motor": {
+        "marca": "Siemens",
+        "potencia": "218 cv (160 kW)"
+      },
+      "estado": "usados",
+      "tecnicalControl": "2026-07",
+      "cor": "",
+      "horasUtilizacao": "1 500 m/h",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Britador cônico Sandvik Cs 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassi"
+    }
+  },
+  {
+    "name": "Escavadora de rastos Komatsu PC600",
+    "category": "Escavação",
+    "specifications": {
+      "marca": "Komatsu",
+      "modelo": "PC600",
+      "tipo": "escavadora de rastos",
+      "ano": "2003-01",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "17/07/2026",
+      "machinerylineId": "GR50312",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "amarelo",
+      "horasUtilizacao": "12 500 m/h",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "A MÁQUINA ESTA EM BOM ESTADO!"
+    }
+  },
+  {
+    "name": "Mini-escavadora Kubota KX057-4",
+    "category": "Escavação",
+    "specifications": {
+      "marca": "Kubota",
+      "modelo": "KX057-4",
+      "tipo": "mini-escavadora",
+      "ano": "2017",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "16/07/2026",
+      "machinerylineId": "XV46564",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "cor-de-laranja",
+      "horasUtilizacao": "1 600 m/h",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Equipamento adicional: Pá niveladora"
+    }
+  },
+  {
+    "name": "Mini-escavadora Yanmar Vio 55",
+    "category": "Escavação",
+    "specifications": {
+      "marca": "Yanmar",
+      "modelo": "Vio 55",
+      "tipo": "mini-escavadora",
+      "ano": "2015",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "16/07/2026",
+      "machinerylineId": "QN46329",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "2 500 m/h",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Equipamentos adicionais: Lagartas de borracha, Tesoura hidráulica"
+    }
+  },
+  {
+    "name": "Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI",
+    "category": "Trituração",
+    "specifications": {
+      "marca": "Metso",
+      "modelo": "Barmac B9100SE VSI",
+      "tipo": "triturador de impacto de eixo vertical",
+      "ano": "2018-04",
+      "primeiroRegisto": "2018-04",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "17/07/2026",
+      "machinerylineId": "KB50490",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": "Descrição fornecida pelo vendedor. Confirme todas as informações diretamente com o vendedor"
+    }
+  },
+  {
+    "name": "Trituradora de rotor Metso BARMAC B6150SE VSI",
+    "category": "Trituração",
+    "specifications": {
+      "marca": "Metso",
+      "modelo": "BARMAC B6150SE VSI",
+      "tipo": "trituradora de rotor",
+      "ano": "",
+      "primeiroRegisto": "",
+      "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
+      "dataDiaria": "17/07/2026",
+      "machinerylineId": "VE46737",
+      "motor": {
+        "marca": "",
+        "potencia": ""
+      },
+      "estado": "usados",
+      "tecnicalControl": "",
+      "cor": "",
+      "horasUtilizacao": "",
+      "servicosAdicionais": "Serviço de entrega de veículos",
+      "informacaoAdicional": ""
+    }
+  }
+]

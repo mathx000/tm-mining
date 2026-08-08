@@ -27,38 +27,50 @@ export const Sobre: React.FC = () => {
               Quem somos
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-              Experiência, resposta rápida e equipamentos certos para cada
-              operação.
+              Mais de vinte anos de experiência nos setores de mineração e
+              construção.
             </h2>
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-[#D35400]/15 bg-white p-8 shadow-sm">
+        <div className="rounded-[2rem] border border-[#D35400]/15 bg-white p-6 shadow-sm sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
-                Por que escolher a TM Mining?
+                Sobre nós
               </p>
               <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl">
-                Uma parceria que combina disponibilidade, suporte e retorno.
+                A TM Mining International
               </h3>
-              <p className="mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
-                Trabalhamos para entregar uma proposta completa: linha de
-                equipamentos premium, acompanhamento técnico e uma operação
-                preparada para responder com confiança às exigências do setor.
+              <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base">
+                A TM Mining International dedica-se ao comércio internacional de
+                maquinaria industrial para pedreiras, disponibilizando
+                equipamentos de escavação, britagem e crivagem a operadores em
+                toda a Europa. Atuamos como elo entre fabricantes e vendedores
+                de equipamento usado e novo e as empresas que deles necessitam,
+                promovendo a circulação de máquinas entre mercados e
+                consolidando relações comerciais duradouras com clientes e
+                parceiros internacionais.
               </p>
             </div>
 
             <div className="rounded-3xl border border-white/20 bg-[#1a1a1a] p-6 shadow-2xl backdrop-blur">
-              <ul className="space-y-3 text-sm text-gray-200 sm:text-base">
-                <li>• Linha completa de equipamentos premium</li>
-                <li>• Atendimento técnico especializado</li>
-                <li>• Entrega com prazo claro e transparente</li>
-                <li>• Soluções para mineração, britagem e transporte</li>
-                <li className="text-[#FFB81C]">
-                  • Revenda de equipamentos com comissão
-                </li>
-              </ul>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#FFB81C]">
+                Grupo Seixas Pinto
+              </p>
+              <p className="mt-3 text-sm leading-7 text-gray-200 sm:text-base">
+                Integramos o Grupo Seixas Pinto, com mais de duas décadas de
+                atividade nos setores da mineração e da construção em Portugal e
+                em Angola. O Grupo detém e opera mais de dez pedreiras,
+                complementadas por empresas próprias de construção civil, o que
+                nos confere um conhecimento aprofundado e transversal de toda a
+                cadeia de valor — da extração à máquina.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-gray-400">
+                É esta experiência de terreno, acumulada ao longo de mais de
+                vinte anos, que aplicamos na comercialização de milhares de
+                equipamentos junto de produtores em todo o mundo.
+              </p>
             </div>
           </div>
         </div>
