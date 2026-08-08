@@ -30,7 +30,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britadeira de maxilas Allis-Chalmers 1100 x 600/mining-equipment-jaw-crusher-Allis-Chalmers-1100-x-600---1753433642974890894_big--25072511512641899000.jpg',
+    image: 'src/img/Britadeira de maxilas Allis-Chalmers 1100 x 600.jpg',
     imageAlt: 'Britadeira de maxilas Allis-Chalmers 1100 x 600',
     description: 'Britador em muito bom estado',
     specifications: [
@@ -53,7 +53,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britadeira de maxilas Metso Nordberg C125/mining-equipment-jaw-crusher-Metso-Nordberg-C125---1750707149308813299_big--24032512301823500800.jpg',
+    image: 'src/img/Britadeira de maxilas Metso Nordberg C125.jpg',
     imageAlt: 'Britadeira de maxilas Metso Nordberg C125',
     description: 'Britadeira de maxilas com 1.250 m/h de horas de utilização',
     specifications: [
@@ -79,7 +79,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britadeira de maxilas Parker 36X24/mining-equipment-jaw-crusher-Parker-36X24---1750906816549882618_big--25072511512641899000.jpg',
+    image: 'src/img/Britadeira de maxilas Parker 36X24.jpg',
     imageAlt: 'Britadeira de maxilas Parker 36X24',
     description: 'Britadeira móvel Parker 900x600, completa em muito bom estado',
     specifications: [
@@ -103,7 +103,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britadeira de maxilas Sany SANYO 1050 x 750/mining-equipment-jaw-crusher-Sany-SANYO-1050-x-750---1753266873509854123_big--25072511512641899000.jpg',
+    image: 'src/img/Britadeira de maxilas Sany SANYO 1050 x 750.jpg',
     imageAlt: 'Britadeira de maxilas Sany SANYO 1050 x 750',
     description: 'Britador SANYYO em muito bom estado com pouco uso',
     specifications: [
@@ -126,7 +126,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britador de cone Metso HP200/mining-equipment-cone-crusher-Metso-HP200---1775474908792772306_big--25072512365776953400.jpg',
+    image: 'src/img/Britador de cone Metso HP200.jpg',
     imageAlt: 'Britador de cone Metso HP200',
     description: 'HP200 em muito bom estado e com muito pouco uso',
     specifications: [
@@ -149,7 +149,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britador de cone Sandvik CH430/mining-equipment-cone-crusher-Sandvik-CH430---1753434122844819357_big--25072511512641899000.jpg',
+    image: 'src/img/Britador de cone Sandvik CH430.jpg',
     imageAlt: 'Britador de cone Sandvik CH430',
     description: 'Britador cônico Sandvik CH 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassi',
     specifications: [
@@ -178,7 +178,7 @@ export const equipment: Equipment[] = [
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Britador de cone Sandvik cs 430/mining-equipment-cone-crusher-Sandvik-cs-430---1752994055755356308_big--25072511512641899000.jpg',
+    image: 'src/img/Britador de cone Sandvik cs 430.jpg',
     imageAlt: 'Britador de cone Sandvik cs 430',
     description: 'Britador cônico Sandvik Cs 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassi',
     specifications: [
@@ -207,7 +207,7 @@ export const equipment: Equipment[] = [
     category: 'Escavação',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Escavadora de rastos Komatsu PC600/construction-equipment-tracked-excavator-Komatsu-PC600---1775479460191271840_big--26040615412242084700.jpg',
+    image: 'src/img/Escavadora de rastos Komatsu PC600.jpg',
     imageAlt: 'Escavadora de rastos Komatsu PC600',
     description: 'A máquina está em bom estado! Escavadora Komatsu PC600 com 12.500 m/h de horas de utilização',
     specifications: [
@@ -233,7 +233,7 @@ export const equipment: Equipment[] = [
     category: 'Escavação',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Mini-escavadora Kubota KX057-4/construction-equipment-mini-excavator-Kubota-KX057-4---1775479219379521703_big--26040615412242084700.jpg',
+    image: 'src/img/Mini-escavadora Kubota KX057-4.jpg',
     imageAlt: 'Mini-escavadora Kubota KX057-4',
     description: 'Mini-escavadora Kubota KX057-4 com pá niveladora incluída',
     specifications: [
@@ -256,11 +256,11 @@ export const equipment: Equipment[] = [
 
   {
     id: '11',
-    name: 'Mini-escavadora Yanmar Vio 55',
+    name: 'Mini-escavadora Yammer Vio 55',
     category: 'Escavação',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Mini-escavadora Yanmar Vio 55/construction-equipment-mini-excavator-Yanmar-Vio-55---1752994063842887908_big--25072511512641899000.jpg',
+    image: 'src/img/Mini-escavadora Yammer Vio 55.jpg',
     imageAlt: 'Mini-escavadora Yanmar Vio 55',
     description: 'Mini-escavadora Yanmar Vio 55 com lagartas de borracha e tesoura hidráulica',
     specifications: [
@@ -286,7 +286,7 @@ export const equipment: Equipment[] = [
     category: 'Trituração',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI/mining-equipment-impact-crusher-vsi-Metso-Barmac-B9100SE-VSI---1750707191609256956_big--24032512301823500800.jpg',
+    image: 'src/img/Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI.jpg',
     imageAlt: 'Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI',
     description: 'Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI',
     specifications: [
@@ -311,7 +311,7 @@ export const equipment: Equipment[] = [
     category: 'Trituração',
     price: 0,
     currency: 'EUR',
-    image: 'src/machines/Trituradora de rotor Metso BARMAC B6150SE VSI/mining-equipment-rotor-crusher-vsi-Metso-BARMAC-B6150SE-VSI---1750707206937848810_big--24032512301823500800.jpg',
+    image: 'src/img/Trituradora de rotor Metso BARMAC B6150SE VSI.jpg',
     imageAlt: 'Trituradora de rotor Metso BARMAC B6150SE VSI',
     description: 'Trituradora de rotor Metso BARMAC B6150SE VSI',
     specifications: [
