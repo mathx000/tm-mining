@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { equipment, formatPrice } from "../data";
 import { buildWhatsAppLink, getEquipmentImageById } from "../utils/equipment";
@@ -6,6 +6,7 @@ import { buildWhatsAppLink, getEquipmentImageById } from "../utils/equipment";
 export const ProdutoDetalhe: React.FC = () => {
   const { id } = useParams();
   const product = equipment.find((item) => item.id === id);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -15,8 +16,11 @@ export const ProdutoDetalhe: React.FC = () => {
     return <Navigate to="/" replace />;
   }
 
-  const mainImage = getEquipmentImageById(product.id);
-  const galleryImages = mainImage ? [mainImage] : [];
+  // Usar array de imagens se disponível, senão usar imagem única
+  const galleryImages = product.images && product.images.length > 0 
+    ? product.images 
+    : [product.image];
+  
   const relatedEquipment = equipment
     .filter((item) => item.id !== product.id)
     .slice(0, 5);
@@ -43,19 +47,55 @@ export const ProdutoDetalhe: React.FC = () => {
               {product.description}
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {galleryImages.map((image, index) => (
-                <figure
-                  key={`${product.id}-${index}`}
-                  className="sm:col-span-2"
-                >
-                  <img
-                    src={image}
-                    alt={`${product.imageAlt} - foto ${index + 1}`}
-                    className="h-72 w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3"
-                  />
-                </figure>
-              ))}
+            <div className="mt-8 space-y-4">
+              <figure className="relative">
+                <img
+                  src={galleryImages[currentImageIndex]}
+                  alt={`${product.imageAlt} - foto ${currentImageIndex + 1}`}
+                  className="h-96 w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3"
+                />
+                {galleryImages.length > 1 && (
+                  <div className="mt-3 flex items-center justify-between">
+                    <button
+                      onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))}
+                      className="rounded-full bg-[#D35400] p-2 text-white transition hover:bg-[#b44500]"
+                    >
+                      ←
+                    </button>
+                    <span className="text-sm font-semibold text-gray-600">
+                      {currentImageIndex + 1} de {galleryImages.length}
+                    </span>
+                    <button
+                      onClick={() => setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))}
+                      className="rounded-full bg-[#D35400] p-2 text-white transition hover:bg-[#b44500]"
+                    >
+                      →
+                    </button>
+                  </div>
+                )}
+              </figure>
+              
+              {galleryImages.length > 1 && (
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {galleryImages.map((image, index) => (
+                    <button
+                      key={`thumb-${index}`}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`h-16 w-16 flex-shrink-0 rounded-lg border-2 transition ${
+                        currentImageIndex === index
+                          ? 'border-[#D35400]'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Miniatura ${index + 1}`}
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             <h2 className="mt-10 text-xl font-bold text-[#1a1a1a]">

@@ -5,6 +5,7 @@ export interface Equipment {
   price: number;
   currency: string;
   image: string;
+  images?: string[];
   imageAlt: string;
   description: string;
   specifications: {
