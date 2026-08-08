@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { equipment, formatPrice } from "../data";
-import { getEquipmentImageById } from "../utils/equipment";
 
 export const Equipamentos: React.FC = () => {
   const navigate = useNavigate();
@@ -75,7 +74,7 @@ export const Equipamentos: React.FC = () => {
                 className="cursor-pointer overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                 <img
-                  src={getEquipmentImageById(item.id)}
+                  src={item.image}
                   alt={item.imageAlt}
                   className="h-56 w-full bg-gray-50 p-3 object-contain"
                 />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { equipment, formatPrice } from "../data";
-import { buildWhatsAppLink, getEquipmentImageById } from "../utils/equipment";
+import { buildWhatsAppLink } from "../utils/equipment";
 
 export const ProdutoDetalhe: React.FC = () => {
   const { id } = useParams();
@@ -17,10 +17,11 @@ export const ProdutoDetalhe: React.FC = () => {
   }
 
   // Usar array de imagens se disponível, senão usar imagem única
-  const galleryImages = product.images && product.images.length > 0 
-    ? product.images 
-    : [product.image];
-  
+  const galleryImages =
+    product.images && product.images.length > 0
+      ? product.images
+      : [product.image];
+
   const relatedEquipment = equipment
     .filter((item) => item.id !== product.id)
     .slice(0, 5);
@@ -57,7 +58,11 @@ export const ProdutoDetalhe: React.FC = () => {
                 {galleryImages.length > 1 && (
                   <div className="mt-3 flex items-center justify-between">
                     <button
-                      onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))}
+                      onClick={() =>
+                        setCurrentImageIndex((prev) =>
+                          prev === 0 ? galleryImages.length - 1 : prev - 1,
+                        )
+                      }
                       className="rounded-full bg-[#D35400] p-2 text-white transition hover:bg-[#b44500]"
                     >
                       ←
@@ -66,7 +71,11 @@ export const ProdutoDetalhe: React.FC = () => {
                       {currentImageIndex + 1} de {galleryImages.length}
                     </span>
                     <button
-                      onClick={() => setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))}
+                      onClick={() =>
+                        setCurrentImageIndex((prev) =>
+                          prev === galleryImages.length - 1 ? 0 : prev + 1,
+                        )
+                      }
                       className="rounded-full bg-[#D35400] p-2 text-white transition hover:bg-[#b44500]"
                     >
                       →
@@ -74,7 +83,7 @@ export const ProdutoDetalhe: React.FC = () => {
                   </div>
                 )}
               </figure>
-              
+
               {galleryImages.length > 1 && (
                 <div className="flex gap-2 overflow-x-auto pb-2">
                   {galleryImages.map((image, index) => (
@@ -83,8 +92,8 @@ export const ProdutoDetalhe: React.FC = () => {
                       onClick={() => setCurrentImageIndex(index)}
                       className={`h-16 w-16 flex-shrink-0 rounded-lg border-2 transition ${
                         currentImageIndex === index
-                          ? 'border-[#D35400]'
-                          : 'border-gray-200 hover:border-gray-300'
+                          ? "border-[#D35400]"
+                          : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
                       <img
@@ -218,7 +227,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 >
                   <div className="h-44 w-full bg-[#eef2f4] p-3">
                     <img
-                      src={getEquipmentImageById(item.id)}
+                      src={item.image}
                       alt={item.imageAlt}
                       className="h-full w-full object-contain"
                     />

@@ -5,6 +5,12 @@ const imgDir = path.join(__dirname, 'src', 'img');
 let fileContent = '';
 const imageMap = {};
 
+const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
+
+function isSupportedImage(fileName) {
+  return SUPPORTED_EXTENSIONS.includes(path.extname(fileName).toLowerCase());
+}
+
 const folders = fs.readdirSync(imgDir)
   .filter(f => fs.statSync(path.join(imgDir, f)).isDirectory())
   .sort();
@@ -13,7 +19,7 @@ const folders = fs.readdirSync(imgDir)
 folders.forEach(folder => {
   const folderPath = path.join(imgDir, folder);
   const images = fs.readdirSync(folderPath)
-    .filter(f => f.endsWith('.jpg'))
+    .filter(isSupportedImage)
     .sort();
   
   const folderKey = folder
@@ -22,8 +28,26 @@ folders.forEach(folder => {
     .replace(/^_|_$/g, '');
   
   imageMap[folder] = [];
+
+  const imagesToImport = [...images];
+
+  // Fallback: usa imagem solta com o mesmo nome da pasta quando ela existe.
+  if (imagesToImport.length === 0) {
+    const fallback = fs.readdirSync(imgDir)
+      .filter(fileName => fs.statSync(path.join(imgDir, fileName)).isFile())
+      .find(fileName => {
+        const base = path.basename(fileName, path.extname(fileName));
+        return base === folder && isSupportedImage(fileName);
+      });
+
+    if (fallback) {
+      const varName = `img_${folderKey}_fallback`;
+      fileContent += `import ${varName} from './img/${fallback}';\n`;
+      imageMap[folder].push(varName);
+    }
+  }
   
-  images.forEach((img, idx) => {
+  imagesToImport.forEach((img, idx) => {
     const varName = `img_${folderKey}_${idx}`;
     fileContent += `import ${varName} from './img/${folder}/${img}';\n`;
     imageMap[folder].push(varName);
