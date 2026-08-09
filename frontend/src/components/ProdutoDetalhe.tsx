@@ -76,14 +76,14 @@ export const ProdutoDetalhe: React.FC = () => {
         </Link>
 
         <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8">
-          <article className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+          <article className="min-w-0 rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#D35400]">
               {product.category}
             </p>
-            <h1 className="mt-3 break-words text-2xl font-black text-[#1a1a1a] sm:text-4xl">
+            <h1 className="mt-3 break-words text-xl font-black text-[#1a1a1a] sm:text-3xl lg:text-4xl">
               {product.name}
             </h1>
-            <p className="mt-4 text-base leading-7 text-gray-700">
+            <p className="mt-4 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7">
               {product.description}
             </p>
 
@@ -96,7 +96,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 <img
                   src={galleryImages[currentImageIndex]}
                   alt={`${product.imageAlt} - foto ${currentImageIndex + 1}`}
-                  className="h-[52vh] min-h-[16rem] w-full max-w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3 sm:h-80 lg:h-96"
+                  className="h-[40vh] min-h-[12rem] w-full max-w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain sm:h-72 lg:h-96"
                 />
                 {galleryImages.length > 1 && (
                   <div className="mt-4 flex items-center justify-center gap-4">
@@ -144,24 +144,26 @@ export const ProdutoDetalhe: React.FC = () => {
               </figure>
 
               {galleryImages.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {galleryImages.map((image, index) => (
-                    <button
-                      key={`thumb-${index}`}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`h-16 w-16 flex-shrink-0 rounded-lg border-2 transition ${
-                        currentImageIndex === index
-                          ? "border-[#D35400]"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
-                    >
-                      <img
-                        src={image}
-                        alt={`Miniatura ${index + 1}`}
-                        className="h-full w-full rounded-md object-cover"
-                      />
-                    </button>
-                  ))}
+                <div className="overflow-x-auto pb-2">
+                  <div className="flex w-max gap-2 pr-1">
+                    {galleryImages.map((image, index) => (
+                      <button
+                        key={`thumb-${index}`}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`h-16 w-16 flex-shrink-0 rounded-lg border-2 transition ${
+                          currentImageIndex === index
+                            ? "border-[#D35400]"
+                            : "border-gray-200 hover:border-gray-300"
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`Miniatura ${index + 1}`}
+                          className="h-full w-full rounded-md object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -175,7 +177,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 .map((spec) => (
                   <li
                     key={spec.key}
-                    className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[1fr_1fr]"
+                    className="grid grid-cols-1 gap-1 px-3 py-3 text-sm sm:grid-cols-[1fr_1fr] sm:px-4"
                   >
                     <span className="font-semibold text-gray-700">
                       {spec.key}
@@ -183,7 +185,7 @@ export const ProdutoDetalhe: React.FC = () => {
                     <span className="text-gray-600">{spec.value}</span>
                   </li>
                 ))}
-              <li className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[1fr_1fr]">
+              <li className="grid grid-cols-1 gap-1 px-3 py-3 text-sm sm:grid-cols-[1fr_1fr] sm:px-4">
                 <span className="font-semibold text-gray-700">
                   Disponibilidade
                 </span>
@@ -191,7 +193,7 @@ export const ProdutoDetalhe: React.FC = () => {
                   {product.inStock ? "Disponível" : "Sob encomenda"}
                 </span>
               </li>
-              <li className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[1fr_1fr]">
+              <li className="grid grid-cols-1 gap-1 px-3 py-3 text-sm sm:grid-cols-[1fr_1fr] sm:px-4">
                 <span className="font-semibold text-gray-700">
                   Prazo de entrega
                 </span>
@@ -200,8 +202,8 @@ export const ProdutoDetalhe: React.FC = () => {
             </ul>
           </article>
 
-          <div className="h-fit space-y-6 lg:sticky lg:top-24">
-            <aside className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+          <div className="min-w-0 h-fit space-y-6 lg:sticky lg:top-24">
+            <aside className="rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6">
               <p className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
                 Valor
               </p>
@@ -217,13 +219,13 @@ export const ProdutoDetalhe: React.FC = () => {
                 href={buildWhatsAppLink(product)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#1ebe5b]"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] px-3 py-3 sm:px-4 text-sm font-semibold text-white transition hover:bg-[#1ebe5b]"
               >
                 Tenho Interesse
               </a>
             </aside>
 
-            <form className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+            <form className="rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6">
               <h3 className="text-xl font-bold text-[#2a2a2a] sm:text-2xl">
                 Pergunte ao vendedor
               </h3>
@@ -232,25 +234,25 @@ export const ProdutoDetalhe: React.FC = () => {
                   type="text"
                   name="nome"
                   placeholder="Nome"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                 />
                 <input
                   type="text"
                   name="empresa"
                   placeholder="Empresa"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                 />
                 <input
                   type="tel"
                   name="telefone"
                   placeholder="Telefone"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="E-mail"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                 />
                 <fieldset className="rounded-lg border border-gray-300 px-3 pb-3 pt-1.5">
                   <legend className="px-1 text-sm font-semibold text-gray-600">
@@ -265,7 +267,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 </fieldset>
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#b74800]"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-3 py-2 sm:px-4 sm:py-3 text-sm font-semibold text-white transition hover:bg-[#b74800]"
                 >
                   Enviar
                 </button>
@@ -274,12 +276,12 @@ export const ProdutoDetalhe: React.FC = () => {
           </div>
         </div>
 
-        <section className="mt-14 rounded-3xl bg-white p-4 sm:rounded-none sm:bg-transparent sm:p-0">
-          <h2 className="text-2xl font-bold text-[#0f2f3a] sm:text-3xl">
+        <section className="mt-14 sm:rounded-none sm:bg-transparent">
+          <h2 className="px-3 text-2xl font-bold text-[#0f2f3a] sm:px-0 sm:text-3xl">
             Anúncios relacionados
           </h2>
-          <div className="mt-6 w-full overflow-x-auto pb-3 sm:px-0">
-            <div className="flex items-stretch gap-4 snap-x snap-mandatory">
+          <div className="mt-6 w-full overflow-x-auto">
+            <div className="flex items-stretch gap-3 px-3 pb-2 sm:px-0 sm:gap-4 snap-x snap-mandatory">
               {relatedEquipment.map((item) => (
                 <Link
                   key={item.id}

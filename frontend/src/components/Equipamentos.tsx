@@ -46,7 +46,7 @@ export const Equipamentos: React.FC = () => {
                 value={nameFilter}
                 onChange={(event) => setNameFilter(event.target.value)}
                 placeholder="Ex.: Escavadeira"
-                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
+                className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               />
             </label>
 
@@ -55,7 +55,7 @@ export const Equipamentos: React.FC = () => {
               <select
                 value={categoryFilter}
                 onChange={(event) => setCategoryFilter(event.target.value)}
-                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
+                className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               >
                 <option value="todos">Todos os tipos</option>
                 {categories.map((category) => (
@@ -77,9 +77,9 @@ export const Equipamentos: React.FC = () => {
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  className="h-52 w-full bg-gray-50 object-contain p-3 sm:h-56"
+                  className="h-52 w-full bg-gray-50 object-contain sm:h-56"
                 />
-                <div className="p-4 sm:p-6">
+                <div className="p-3 sm:p-4 lg:p-6">
                   <div className="mb-3 flex items-center justify-between">
                     <span className="rounded-full bg-[#FFF3E0] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D35400]">
                       {item.category}
@@ -92,7 +92,7 @@ export const Equipamentos: React.FC = () => {
                       {item.inStock ? "Disponível" : "Sob encomenda"}
                     </span>
                   </div>
-                  <h3 className="break-words text-lg font-bold text-[#1a1a1a] sm:text-xl">
+                  <h3 className="break-words text-base font-bold text-[#1a1a1a] sm:text-lg lg:text-xl">
                     {item.name}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-gray-600">
@@ -122,7 +122,7 @@ export const Equipamentos: React.FC = () => {
                           event.stopPropagation();
                           navigate(`/equipamentos/${item.id}`);
                         }}
-                        className="w-full rounded-full bg-[#FFB81C] px-4 py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e] sm:w-auto"
+                        className="w-full rounded-full bg-[#FFB81C] px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e] sm:w-auto"
                       >
                         Especificações
                       </button>

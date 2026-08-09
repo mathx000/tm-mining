@@ -26,7 +26,7 @@ export const Sobre: React.FC = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
               Quem somos
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl lg:text-4xl">
               Mais de vinte anos de experiência nos setores de mineração e
               construção.
             </h2>

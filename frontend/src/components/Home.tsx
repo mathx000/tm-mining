@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#FFB81C]">
             Equipamentos pesados para construção e mineração
           </p>
-          <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl xl:text-6xl">
             Tecnologia e potência em cada operação.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-200">

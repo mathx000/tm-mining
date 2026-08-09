@@ -37,7 +37,7 @@ export const RevendaDetalhe: React.FC = () => {
                 <h1 className="mt-5 text-2xl font-black leading-tight text-[#1a1a1a] sm:text-3xl lg:text-4xl">
                   Torne-se um Revendedor
                 </h1>
-                <p className="mt-5 text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
+                <p className="mt-5 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">
                   Faça parte da nossa rede de parceiros e aumente os seus
                   rendimentos. Ao revender os nossos equipamentos, recebe{" "}
                   <strong>5% de comissão por cada venda concluída</strong>, com
@@ -82,7 +82,7 @@ export const RevendaDetalhe: React.FC = () => {
                     alt={item.title}
                     className="h-36 w-full object-cover"
                   />
-                  <div className="p-5">
+                  <div className="p-3 sm:p-4 lg:p-5">
                     <h3 className="text-base font-bold text-[#1a1a1a]">
                       {item.title}
                     </h3>
@@ -95,7 +95,7 @@ export const RevendaDetalhe: React.FC = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-[#1a1a1a]/10 bg-white p-6 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] sm:p-8 lg:p-10">
+          <div className="rounded-3xl border border-[#1a1a1a]/10 bg-white p-3 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] sm:p-6 lg:p-8">
             <h2 className="text-2xl font-bold text-[#1a1a1a]">
               Candidatura de Revenda
             </h2>
@@ -113,7 +113,7 @@ export const RevendaDetalhe: React.FC = () => {
                   <input
                     type="text"
                     name="nome"
-                    className="rounded-xl border border-gray-300 px-4 py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
+                    className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
                     placeholder="O seu nome"
                   />
                 </label>
@@ -122,7 +122,7 @@ export const RevendaDetalhe: React.FC = () => {
                   <input
                     type="text"
                     name="empresa"
-                    className="rounded-xl border border-gray-300 px-4 py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
+                    className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
                     placeholder="Nome da empresa"
                   />
                 </label>
@@ -134,7 +134,7 @@ export const RevendaDetalhe: React.FC = () => {
                   <input
                     type="text"
                     name="nif"
-                    className="rounded-xl border border-gray-300 px-4 py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
+                    className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
                     placeholder="NIF da empresa"
                   />
                 </label>
@@ -146,7 +146,7 @@ export const RevendaDetalhe: React.FC = () => {
                   <input
                     type="email"
                     name="email"
-                    className="rounded-xl border border-gray-300 px-4 py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
+                    className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
                     placeholder="email@empresa.com"
                   />
                 </label>
@@ -155,7 +155,7 @@ export const RevendaDetalhe: React.FC = () => {
                   <input
                     type="tel"
                     name="contacto"
-                    className="rounded-xl border border-gray-300 px-4 py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
+                    className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
                     placeholder="+351"
                   />
                 </label>
@@ -172,7 +172,7 @@ export const RevendaDetalhe: React.FC = () => {
                   type="button"
                   onClick={() => setShowEquipmentList((prev) => !prev)}
                   aria-expanded={showEquipmentList}
-                  className="inline-flex w-fit items-center rounded-full border border-[#D35400]/30 bg-white px-4 py-2 text-sm font-semibold text-[#D35400] transition hover:border-[#D35400] hover:bg-[#fff7eb]"
+                  className="inline-flex w-fit items-center rounded-full border border-[#D35400]/30 bg-white px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-semibold text-[#D35400] transition hover:border-[#D35400] hover:bg-[#fff7eb]"
                 >
                   {showEquipmentList
                     ? "Ocultar equipamentos"
@@ -203,7 +203,7 @@ export const RevendaDetalhe: React.FC = () => {
                 <textarea
                   name="mensagem"
                   rows={5}
-                  className="rounded-xl border border-gray-300 px-4 py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
+                  className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
                   placeholder="Conte-nos sobre o seu perfil e objetivos de revenda."
                 />
               </label>
