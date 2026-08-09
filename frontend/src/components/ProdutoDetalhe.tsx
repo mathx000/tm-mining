@@ -7,6 +7,7 @@ export const ProdutoDetalhe: React.FC = () => {
   const { id } = useParams();
   const product = equipment.find((item) => item.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -22,12 +23,50 @@ export const ProdutoDetalhe: React.FC = () => {
       ? product.images
       : [product.image];
 
+  const showPreviousImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1,
+    );
+  };
+
+  const showNextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  const handleImageTouchStart = (event: React.TouchEvent<HTMLElement>) => {
+    setTouchStartX(event.changedTouches[0].clientX);
+  };
+
+  const handleImageTouchEnd = (event: React.TouchEvent<HTMLElement>) => {
+    if (touchStartX === null) {
+      return;
+    }
+
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    const swipeThreshold = 45;
+
+    if (Math.abs(deltaX) < swipeThreshold) {
+      setTouchStartX(null);
+      return;
+    }
+
+    if (deltaX < 0) {
+      showNextImage();
+    } else {
+      showPreviousImage();
+    }
+
+    setTouchStartX(null);
+  };
+
   const relatedEquipment = equipment
     .filter((item) => item.id !== product.id)
     .slice(0, 5);
 
   return (
-    <section className="px-4 py-8 sm:px-6 sm:py-14 lg:px-8">
+    <section className="px-3 py-8 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <Link
           to="/#equipamentos"
@@ -49,36 +88,56 @@ export const ProdutoDetalhe: React.FC = () => {
             </p>
 
             <div className="mt-8 space-y-4">
-              <figure className="relative">
+              <figure
+                className="relative touch-pan-y"
+                onTouchStart={handleImageTouchStart}
+                onTouchEnd={handleImageTouchEnd}
+              >
                 <img
                   src={galleryImages[currentImageIndex]}
                   alt={`${product.imageAlt} - foto ${currentImageIndex + 1}`}
-                  className="h-64 w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3 sm:h-80 lg:h-96"
+                  className="h-[52vh] min-h-[16rem] w-full max-w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain p-3 sm:h-80 lg:h-96"
                 />
                 {galleryImages.length > 1 && (
-                  <div className="mt-3 flex items-center justify-between">
+                  <div className="mt-4 flex items-center justify-center gap-4">
                     <button
-                      onClick={() =>
-                        setCurrentImageIndex((prev) =>
-                          prev === 0 ? galleryImages.length - 1 : prev - 1,
-                        )
-                      }
-                      className="rounded-full bg-[#D35400] p-2 text-white transition hover:bg-[#b44500]"
+                      type="button"
+                      onClick={showPreviousImage}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#D35400]/25 bg-white text-[#D35400] shadow-sm transition hover:bg-[#fff2e9] active:scale-95"
+                      aria-label="Imagem anterior"
                     >
-                      ←
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.25"
+                        className="h-5 w-5"
+                        aria-hidden="true"
+                      >
+                        <path d="m15 18-6-6 6-6" />
+                      </svg>
                     </button>
-                    <span className="text-sm font-semibold text-gray-600">
+                    <span className="min-w-[84px] text-center text-sm font-semibold text-gray-600">
                       {currentImageIndex + 1} de {galleryImages.length}
                     </span>
                     <button
-                      onClick={() =>
-                        setCurrentImageIndex((prev) =>
-                          prev === galleryImages.length - 1 ? 0 : prev + 1,
-                        )
-                      }
-                      className="rounded-full bg-[#D35400] p-2 text-white transition hover:bg-[#b44500]"
+                      type="button"
+                      onClick={showNextImage}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#D35400]/25 bg-white text-[#D35400] shadow-sm transition hover:bg-[#fff2e9] active:scale-95"
+                      aria-label="Próxima imagem"
                     >
-                      →
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.25"
+                        className="h-5 w-5"
+                        aria-hidden="true"
+                      >
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
                     </button>
                   </div>
                 )}
@@ -111,17 +170,19 @@ export const ProdutoDetalhe: React.FC = () => {
               Especificações completas
             </h2>
             <ul className="mt-4 divide-y divide-gray-200 rounded-2xl border border-gray-200">
-              {product.specifications.map((spec) => (
-                <li
-                  key={spec.key}
-                  className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[1fr_1fr]"
-                >
-                  <span className="font-semibold text-gray-700">
-                    {spec.key}
-                  </span>
-                  <span className="text-gray-600">{spec.value}</span>
-                </li>
-              ))}
+              {product.specifications
+                .filter((spec) => spec.key.toLowerCase() !== "machineryline id")
+                .map((spec) => (
+                  <li
+                    key={spec.key}
+                    className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[1fr_1fr]"
+                  >
+                    <span className="font-semibold text-gray-700">
+                      {spec.key}
+                    </span>
+                    <span className="text-gray-600">{spec.value}</span>
+                  </li>
+                ))}
               <li className="grid grid-cols-1 gap-1 px-4 py-3 text-sm sm:grid-cols-[1fr_1fr]">
                 <span className="font-semibold text-gray-700">
                   Disponibilidade
@@ -213,18 +274,19 @@ export const ProdutoDetalhe: React.FC = () => {
           </div>
         </div>
 
-        <section className="mt-14">
+        <section className="mt-14 rounded-3xl bg-white p-4 sm:rounded-none sm:bg-transparent sm:p-0">
           <h2 className="text-2xl font-bold text-[#0f2f3a] sm:text-3xl">
             Anúncios relacionados
           </h2>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="-mx-1 mt-6 overflow-x-auto px-1 pb-3 sm:mx-0 sm:px-0">
+            <div className="flex items-stretch gap-4 snap-x snap-mandatory">
               {relatedEquipment.map((item) => (
                 <Link
                   key={item.id}
                   to={`/equipamentos/${item.id}`}
-                  className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="min-w-[88%] max-w-[88%] shrink-0 snap-center overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:min-w-[48%] sm:max-w-none sm:snap-start lg:min-w-[31%] xl:min-w-[24%]"
                 >
-                  <div className="h-44 w-full bg-[#eef2f4] p-3">
+                  <div className="h-44 w-full bg-white p-3 sm:bg-[#eef2f4]">
                     <img
                       src={item.image}
                       alt={item.imageAlt}
@@ -252,6 +314,7 @@ export const ProdutoDetalhe: React.FC = () => {
                   </div>
                 </Link>
               ))}
+            </div>
           </div>
         </section>
       </div>

@@ -15,7 +15,7 @@ import {
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-[#1a1a1a]">
+    <div className="min-h-screen overflow-x-hidden bg-[#f5f5f5] text-[#1a1a1a]">
       <Header />
       <main>
         <Routes>

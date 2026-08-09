@@ -11,6 +11,7 @@ export const Equipamentos: React.FC = () => {
     () => Array.from(new Set(equipment.map((item) => item.category))),
     [],
   );
+
   const filteredEquipment = equipment.filter((item) => {
     const matchesName = item.name
       .toLowerCase()
