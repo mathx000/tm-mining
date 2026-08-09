@@ -4,7 +4,7 @@ export const Contato: React.FC = () => {
   return (
     <section
       id="contacto"
-      className="bg-[#1a1a1a] px-4 py-12 sm:px-6 sm:py-20 text-white lg:px-8"
+      className="bg-[#1a1a1a] px-3 py-12 sm:px-6 sm:py-20 text-white lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div>

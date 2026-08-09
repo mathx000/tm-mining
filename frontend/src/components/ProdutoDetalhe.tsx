@@ -278,7 +278,7 @@ export const ProdutoDetalhe: React.FC = () => {
           <h2 className="text-2xl font-bold text-[#0f2f3a] sm:text-3xl">
             Anúncios relacionados
           </h2>
-          <div className="-mx-1 mt-6 overflow-x-auto px-1 pb-3 sm:mx-0 sm:px-0">
+          <div className="mt-6 w-full overflow-x-auto pb-3 sm:px-0">
             <div className="flex items-stretch gap-4 snap-x snap-mandatory">
               {relatedEquipment.map((item) => (
                 <Link

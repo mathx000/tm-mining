@@ -39,7 +39,7 @@ export const Servicos: React.FC = () => {
   return (
     <section
       id="servicos"
-      className="bg-white px-4 py-12 sm:px-6 sm:py-20 lg:px-8"
+      className="bg-white px-3 py-12 sm:px-6 sm:py-20 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-2xl">

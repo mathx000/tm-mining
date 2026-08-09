@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur">
       {/* Top bar */}
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-4 sm:px-6 lg:px-8">
         <a href="/" className="flex items-center gap-3">
           <img
             src={logo}

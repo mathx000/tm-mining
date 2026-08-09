@@ -19,7 +19,7 @@ const values = [
 
 export const Sobre: React.FC = () => {
   return (
-    <section id="sobre" className="px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
+    <section id="sobre" className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 flex flex-col items-start gap-3 sm:gap-4 md:mb-10 md:gap-5 md:flex-row md:items-center">
           <div className="max-w-2xl">

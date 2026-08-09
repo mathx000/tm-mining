@@ -5,7 +5,7 @@ export const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-[78vh] bg-cover bg-center bg-no-repeat px-4 py-20 sm:px-6 sm:py-32 lg:min-h-[88vh] lg:px-8 lg:py-40 text-white"
+      className="min-h-[78vh] bg-cover bg-center bg-no-repeat px-3 py-20 sm:px-6 sm:py-32 lg:min-h-[88vh] lg:px-8 lg:py-40 text-white"
       style={{
         backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.38)), url(${backgroundImage})`,
       }}

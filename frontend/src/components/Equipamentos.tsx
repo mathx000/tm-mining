@@ -26,7 +26,7 @@ export const Equipamentos: React.FC = () => {
     <>
       <section
         id="equipamentos"
-        className="px-4 py-12 sm:px-6 sm:py-20 lg:px-8"
+        className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">

@@ -5,7 +5,7 @@ export const Revendas: React.FC = () => {
   return (
     <section
       id="revenda"
-      className="bg-white px-4 py-12 sm:px-6 sm:py-20 lg:px-8"
+      className="bg-white px-3 py-12 sm:px-6 sm:py-20 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="overflow-hidden rounded-[32px] border border-[#D35400]/20 bg-gradient-to-br from-[#FFF4E5] via-[#FFE8C2] to-[#FFFDF8] shadow-[0_20px_60px_-20px_rgba(211,84,0,0.35)]">
