@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import imgAttachments from "../img/attachments.png";
 import imgExcavators from "../img/excavators.png";
 import imgFeeders from "../img/feeders.png";
@@ -7,6 +8,9 @@ import imgScreens from "../img/Screens.png";
 import imgSpareParts from "../img/spare-parts.png";
 import imgTrucks from "../img/trucks.png";
 import imgWheelLoaders from "../img/wheel-loaders.png";
+import imgBritador from "../img/britador.png";
+import imgMiniEscavadora from "../img/mini escavadeira.png";
+import imgTriturador from "../img/triturador.png";
 
 const categories = [
   { name: "Acessórios", img: imgAttachments },
@@ -17,6 +21,9 @@ const categories = [
   { name: "Peças sobressalentes", img: imgSpareParts },
   { name: "Camiões", img: imgTrucks },
   { name: "Carregadoras", img: imgWheelLoaders },
+  { name: "Britador", img: imgBritador },
+  { name: "Mini-escavadora", img: imgMiniEscavadora },
+  { name: "Triturador", img: imgTriturador },
 ];
 
 const values = [
@@ -37,24 +44,40 @@ const values = [
 ];
 
 export const Sobre: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (name: string) => {
+    navigate(`/?categoria=${encodeURIComponent(name)}`);
+    setTimeout(() => {
+      document
+        .getElementById("equipamentos")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }, 80);
+  };
+
   return (
     <section id="sobre" className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        {/* Category icons strip */}
-        <div className="mb-14 grid grid-cols-4 gap-4 sm:grid-cols-4 md:grid-cols-8 md:gap-6">
+        {/* Category icons strip — fixed container ensures uniform size for all image types */}
+        <div className="mb-14 grid grid-cols-4 gap-4 sm:grid-cols-4 md:grid-cols-7 md:gap-6">
           {categories.map((cat) => (
-            <div key={cat.name} className="flex flex-col items-center gap-3">
-              <div className="flex h-28 w-28 items-center justify-center rounded-3xl border border-[#D35400]/20 bg-white shadow-md transition hover:border-[#D35400]/50 hover:shadow-lg sm:h-32 sm:w-32">
+            <button
+              key={cat.name}
+              type="button"
+              onClick={() => handleCategoryClick(cat.name)}
+              className="group flex flex-col items-center gap-3 cursor-pointer bg-transparent border-0 p-0"
+            >
+              <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full transition duration-200 group-hover:scale-110 group-hover:drop-shadow-lg sm:h-28 sm:w-28">
                 <img
                   src={cat.img}
                   alt={cat.name}
-                  className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <span className="text-center text-xs font-semibold leading-4 text-gray-700 sm:text-sm">
+              <span className="text-center text-xs font-semibold leading-4 text-gray-700 transition duration-200 group-hover:text-[#D35400] sm:text-sm">
                 {cat.name}
               </span>
-            </div>
+            </button>
           ))}
         </div>
 

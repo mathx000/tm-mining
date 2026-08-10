@@ -1,16 +1,45 @@
-import React, { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useMemo, useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
 
 const getEquipmentSubcategory = (name: string): string => {
-  return name.trim().split(/\s+/)[0];
+  const first = name.trim().split(/\s+/)[0];
+  // merge aliases into their canonical filter name
+  if (first === "Britadeira") return "Britador";
+  if (first === "Escavadora") return "Escavadoras";
+  if (first === "Trituradora") return "Triturador";
+  return first;
 };
+
+// Extra category names from the icon strip in Sobre
+const extraCategories = [
+  "Acessórios",
+  "Escavadoras",
+  "Alimentadores",
+  "Britador de rolos",
+  "Crivos",
+  "Peças sobressalentes",
+  "Camiões",
+  "Carregadoras",
+  "Britador",
+  "Mini-escavadora",
+  "Triturador",
+];
 
 export const Equipamentos: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [nameFilter, setNameFilter] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("todos");
   const [subcategoryFilter, setSubcategoryFilter] = useState("todos");
+
+  useEffect(() => {
+    const cat = searchParams.get("categoria");
+    if (cat) {
+      setSubcategoryFilter(cat);
+      setSearchParams({}, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
 
   const categories = useMemo(
     () =>
@@ -22,13 +51,13 @@ export const Equipamentos: React.FC = () => {
     [],
   );
 
-  const subcategories = useMemo(
-    () =>
-      Array.from(
-        new Set(equipment.map((item) => getEquipmentSubcategory(item.name))),
-      ),
-    [],
-  );
+  const subcategories = useMemo(() => {
+    const fromEquipment = equipment.map((item) =>
+      getEquipmentSubcategory(item.name),
+    );
+    const merged = Array.from(new Set([...fromEquipment, ...extraCategories]));
+    return merged.sort((a, b) => a.localeCompare(b, "pt"));
+  }, []);
 
   const filteredEquipment = equipment.filter((item) => {
     const normalizedCategory = normalizeEquipmentCategory(item.category);
