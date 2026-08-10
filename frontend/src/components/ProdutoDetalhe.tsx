@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { equipment, formatPrice } from "../data";
+import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
 import { buildWhatsAppLink } from "../utils/equipment";
 
 export const ProdutoDetalhe: React.FC = () => {
@@ -388,7 +388,7 @@ export const ProdutoDetalhe: React.FC = () => {
                         </p>
                       </div>
                       <p className="mt-5 text-sm text-[#3c5b66]">
-                        {item.category}
+                        {normalizeEquipmentCategory(item.category)}
                       </p>
                       <p className="mt-1 text-sm text-[#3c5b66]">
                         {item.deliveryTime}

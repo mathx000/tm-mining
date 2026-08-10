@@ -126,6 +126,16 @@ export const imageMap = {
 };
 
 
+export function normalizeEquipmentCategory(category: string): string {
+  const normalized = category.trim().toLowerCase();
+
+  if (normalized === 'trituração' || normalized === 'trituracao') {
+    return 'Britagem';
+  }
+
+  return category;
+}
+
 export const equipment: Equipment[] = [
   {
     id: '9',
@@ -420,7 +430,7 @@ export const equipment: Equipment[] = [
   {
     id: '12',
     name: 'Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI',
-    category: 'Trituração',
+    category: normalizeEquipmentCategory('Trituração'),
     price: 0,
     currency: 'EUR',
     images: imageMap['Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI'],
@@ -446,7 +456,7 @@ export const equipment: Equipment[] = [
   {
     id: '13',
     name: 'Trituradora de rotor Metso BARMAC B6150SE VSI',
-    category: 'Trituração',
+    category: normalizeEquipmentCategory('Trituração'),
     price: 0,
     currency: 'EUR',
     images: imageMap['Trituradora de rotor Metso BARMAC B6150SE VSI'],
@@ -477,10 +487,11 @@ export function getEquipmentById(id: string): Equipment | undefined {
 }
 
 export function getEquipmentByCategory(category: string): Equipment[] {
-  return equipment.filter(item => item.category === category);
+  const normalizedCategory = normalizeEquipmentCategory(category);
+  return equipment.filter(item => normalizeEquipmentCategory(item.category) === normalizedCategory);
 }
 
 export function getCategories(): string[] {
-  const categories = new Set(equipment.map(item => item.category));
+  const categories = new Set(equipment.map(item => normalizeEquipmentCategory(item.category)));
   return Array.from(categories);
 }

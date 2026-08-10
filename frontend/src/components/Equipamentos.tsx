@@ -1,25 +1,50 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { equipment, formatPrice } from "../data";
+import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
+
+const getEquipmentSubcategory = (name: string): string => {
+  return name.trim().split(/\s+/)[0];
+};
 
 export const Equipamentos: React.FC = () => {
   const navigate = useNavigate();
   const [nameFilter, setNameFilter] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("todos");
+  const [subcategoryFilter, setSubcategoryFilter] = useState("todos");
 
   const categories = useMemo(
-    () => Array.from(new Set(equipment.map((item) => item.category))),
+    () =>
+      Array.from(
+        new Set(
+          equipment.map((item) => normalizeEquipmentCategory(item.category)),
+        ),
+      ),
+    [],
+  );
+
+  const subcategories = useMemo(
+    () =>
+      Array.from(
+        new Set(equipment.map((item) => getEquipmentSubcategory(item.name))),
+      ),
     [],
   );
 
   const filteredEquipment = equipment.filter((item) => {
+    const normalizedCategory = normalizeEquipmentCategory(item.category);
+    const normalizedName = getEquipmentSubcategory(item.name)
+      .trim()
+      .toLowerCase();
+    const normalizedSubcategory = subcategoryFilter.trim().toLowerCase();
     const matchesName = item.name
       .toLowerCase()
       .includes(nameFilter.trim().toLowerCase());
     const matchesCategory =
-      categoryFilter === "todos" || item.category === categoryFilter;
+      categoryFilter === "todos" || normalizedCategory === categoryFilter;
+    const matchesSubcategory =
+      subcategoryFilter === "todos" || normalizedName === normalizedSubcategory;
 
-    return matchesName && matchesCategory;
+    return matchesName && matchesCategory && matchesSubcategory;
   });
 
   return (
@@ -38,7 +63,7 @@ export const Equipamentos: React.FC = () => {
             </h2>
           </div>
 
-          <div className="mb-6 grid gap-3 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm sm:gap-4 sm:p-4 md:mb-8 md:grid-cols-2">
+          <div className="mb-6 grid gap-3 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm sm:gap-4 sm:p-4 md:mb-8 md:grid-cols-3">
             <label className="text-sm font-semibold text-[#1a1a1a]">
               Filtro por nome
               <input
@@ -54,13 +79,31 @@ export const Equipamentos: React.FC = () => {
               Filtro por tipo
               <select
                 value={categoryFilter}
-                onChange={(event) => setCategoryFilter(event.target.value)}
+                onChange={(event) => {
+                  setCategoryFilter(event.target.value);
+                }}
                 className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               >
                 <option value="todos">Todos os tipos</option>
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="text-sm font-semibold text-[#1a1a1a]">
+              Filtro por categoria
+              <select
+                value={subcategoryFilter}
+                onChange={(event) => setSubcategoryFilter(event.target.value)}
+                className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
+              >
+                <option value="todos">Todas as categorias</option>
+                {subcategories.map((subcategory) => (
+                  <option key={subcategory} value={subcategory}>
+                    {subcategory}
                   </option>
                 ))}
               </select>
@@ -82,7 +125,7 @@ export const Equipamentos: React.FC = () => {
                 <div className="p-3 sm:p-4 lg:p-6">
                   <div className="mb-3 flex items-center justify-between">
                     <span className="rounded-full bg-[#FFF3E0] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D35400]">
-                      {item.category}
+                      {normalizeEquipmentCategory(item.category)}
                     </span>
                     <span
                       className={`text-sm font-semibold ${

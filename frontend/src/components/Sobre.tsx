@@ -1,4 +1,23 @@
 import React from "react";
+import imgAttachments from "../img/attachments.png";
+import imgExcavators from "../img/excavators.png";
+import imgFeeders from "../img/feeders.png";
+import imgRollerCrusher from "../img/roller-crusher.png";
+import imgScreens from "../img/Screens.png";
+import imgSpareParts from "../img/spare-parts.png";
+import imgTrucks from "../img/trucks.png";
+import imgWheelLoaders from "../img/wheel-loaders.png";
+
+const categories = [
+  { name: "Acessórios", img: imgAttachments },
+  { name: "Escavadoras", img: imgExcavators },
+  { name: "Alimentadores", img: imgFeeders },
+  { name: "Britador de rolos", img: imgRollerCrusher },
+  { name: "Crivos", img: imgScreens },
+  { name: "Peças sobressalentes", img: imgSpareParts },
+  { name: "Camiões", img: imgTrucks },
+  { name: "Carregadoras", img: imgWheelLoaders },
+];
 
 const values = [
   {
@@ -21,6 +40,24 @@ export const Sobre: React.FC = () => {
   return (
     <section id="sobre" className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
+        {/* Category icons strip */}
+        <div className="mb-14 grid grid-cols-4 gap-4 sm:grid-cols-4 md:grid-cols-8 md:gap-6">
+          {categories.map((cat) => (
+            <div key={cat.name} className="flex flex-col items-center gap-3">
+              <div className="flex h-28 w-28 items-center justify-center rounded-3xl border border-[#D35400]/20 bg-white shadow-md transition hover:border-[#D35400]/50 hover:shadow-lg sm:h-32 sm:w-32">
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+                />
+              </div>
+              <span className="text-center text-xs font-semibold leading-4 text-gray-700 sm:text-sm">
+                {cat.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
         <div className="mb-6 flex flex-col items-start gap-3 sm:gap-4 md:mb-10 md:gap-5 md:flex-row md:items-center">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
