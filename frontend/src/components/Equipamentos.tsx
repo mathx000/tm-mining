@@ -13,17 +13,19 @@ const getEquipmentSubcategory = (name: string): string => {
 
 // Extra category names from the icon strip in Sobre
 const extraCategories = [
+  "Britador de mandibula",
+  "Britador de impacto",
+  "Britador cônico",
+  "Britador de VSI",
+  "Britador de rolo",
+  "Crivos (screens)",
+  "Alimentadores (feeders)",
+  "Peças de desgaste (Spare and Wear parts)",
   "Acessórios",
-  "Escavadoras",
-  "Alimentadores",
-  "Britador de rolos",
-  "Crivos",
-  "Peças sobressalentes",
   "Camiões",
-  "Carregadoras",
-  "Britador",
-  "Mini-escavadora",
-  "Triturador",
+  "Pá carregadoras",
+  "Escavadoras",
+  "Mini escavadoras",
 ];
 
 export const Equipamentos: React.FC = () => {

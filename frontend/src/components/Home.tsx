@@ -19,8 +19,8 @@ export const Home: React.FC = () => {
             Tecnologia e potência em cada operação.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-200">
-            Oferecemos máquinas de alto desempenho, disponibilidade imediata e
-            suporte especializado para projetos de grande porte.
+            Oferecemos máquinas de alto desempenho com disponibilidade imediata
+            e suporte especializado para projetos de grande porte.
           </p>
         </div>
       </div>

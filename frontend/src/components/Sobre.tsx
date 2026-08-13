@@ -8,22 +8,27 @@ import imgScreens from "../img/Screens.png";
 import imgSpareParts from "../img/spare-parts.png";
 import imgTrucks from "../img/trucks.png";
 import imgWheelLoaders from "../img/wheel-loaders.png";
-import imgBritador from "../img/britador.png";
+import imgBritadorMandibula from "../img/Britador de mandibula.png";
+import imgBritadorImpacto from "../img/Britador de impacto.png";
+import imgBritadorConico from "../img/Britador cônico.png";
+import imgBritadorVsi from "../img/Britador de VSI.png";
 import imgMiniEscavadora from "../img/mini escavadeira.png";
-import imgTriturador from "../img/triturador.png";
+import imgPecasDesgaste from "../img/Peças de desgaste (Spare and Wear parts).png";
 
 const categories = [
+  { name: "Britador de mandibula", img: imgBritadorMandibula },
+  { name: "Britador de impacto", img: imgBritadorImpacto },
+  { name: "Britador cônico", img: imgBritadorConico },
+  { name: "Britador de VSI", img: imgBritadorVsi },
+  { name: "Britador de rolo", img: imgRollerCrusher },
+  { name: "Crivos (screens)", img: imgScreens },
+  { name: "Alimentadores (feeders)", img: imgFeeders },
+  { name: "Peças de desgaste (Spare and Wear parts)", img: imgPecasDesgaste },
   { name: "Acessórios", img: imgAttachments },
-  { name: "Escavadoras", img: imgExcavators },
-  { name: "Alimentadores", img: imgFeeders },
-  { name: "Britador de rolos", img: imgRollerCrusher },
-  { name: "Crivos", img: imgScreens },
-  { name: "Peças sobressalentes", img: imgSpareParts },
   { name: "Camiões", img: imgTrucks },
-  { name: "Carregadoras", img: imgWheelLoaders },
-  { name: "Britador", img: imgBritador },
-  { name: "Mini-escavadora", img: imgMiniEscavadora },
-  { name: "Triturador", img: imgTriturador },
+  { name: "Pá carregadoras", img: imgWheelLoaders },
+  { name: "Escavadoras", img: imgExcavators },
+  { name: "Mini escavadoras", img: imgMiniEscavadora },
 ];
 
 const values = [
@@ -58,23 +63,23 @@ export const Sobre: React.FC = () => {
   return (
     <section id="sobre" className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        {/* Category icons strip — fixed container ensures uniform size for all image types */}
-        <div className="mb-14 grid grid-cols-4 gap-4 sm:grid-cols-4 md:grid-cols-7 md:gap-6">
+        {/* Category cards — grid layout with rectangular cards */}
+        <div className="mb-16 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {categories.map((cat) => (
             <button
               key={cat.name}
               type="button"
               onClick={() => handleCategoryClick(cat.name)}
-              className="group flex flex-col items-center gap-3 cursor-pointer bg-transparent border-0 p-0"
+              className="group flex flex-col overflow-hidden rounded-lg bg-transparent border-0 p-0 transition duration-200 hover:shadow-lg hover:-translate-y-1"
             >
-              <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full transition duration-200 group-hover:scale-110 group-hover:drop-shadow-lg sm:h-28 sm:w-28">
+              <div className="h-40 w-full shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:h-48 lg:h-56">
                 <img
                   src={cat.img}
                   alt={cat.name}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain p-6 transition duration-200 group-hover:scale-105"
                 />
               </div>
-              <span className="text-center text-xs font-semibold leading-4 text-gray-700 transition duration-200 group-hover:text-[#D35400] sm:text-sm">
+              <span className="mt-4 text-center text-xs font-bold uppercase tracking-wide leading-5 text-gray-900 sm:text-sm">
                 {cat.name}
               </span>
             </button>
@@ -87,7 +92,7 @@ export const Sobre: React.FC = () => {
               Quem somos
             </p>
             <h2 className="mt-3 text-2xl font-bold sm:text-3xl lg:text-4xl">
-              Mais de vinte anos de experiência nos setores de mineração e
+              Mais de 20 anos de experiência nos setores de mineração e
               construção.
             </h2>
           </div>
