@@ -1,35 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import imgAttachments from "../img/attachments.png";
-import imgExcavators from "../img/excavators.png";
-import imgFeeders from "../img/feeders.png";
-import imgRollerCrusher from "../img/roller-crusher.png";
-import imgScreens from "../img/Screens.png";
-import imgSpareParts from "../img/spare-parts.png";
-import imgTrucks from "../img/trucks.png";
-import imgWheelLoaders from "../img/wheel-loaders.png";
-import imgBritadorMandibula from "../img/Britador de mandibula.png";
-import imgBritadorImpacto from "../img/Britador de impacto.png";
-import imgBritadorConico from "../img/Britador cônico.png";
-import imgBritadorVsi from "../img/Britador de VSI.png";
-import imgMiniEscavadora from "../img/mini escavadeira.png";
-import imgPecasDesgaste from "../img/Peças de desgaste (Spare and Wear parts).png";
-
-const categories = [
-  { name: "Britador de mandibula", img: imgBritadorMandibula },
-  { name: "Britador de impacto", img: imgBritadorImpacto },
-  { name: "Britador cônico", img: imgBritadorConico },
-  { name: "Britador de VSI", img: imgBritadorVsi },
-  { name: "Britador de rolo", img: imgRollerCrusher },
-  { name: "Crivos (screens)", img: imgScreens },
-  { name: "Alimentadores (feeders)", img: imgFeeders },
-  { name: "Peças de desgaste (Spare and Wear parts)", img: imgPecasDesgaste },
-  { name: "Acessórios", img: imgAttachments },
-  { name: "Camiões", img: imgTrucks },
-  { name: "Pá carregadoras", img: imgWheelLoaders },
-  { name: "Escavadoras", img: imgExcavators },
-  { name: "Mini escavadoras", img: imgMiniEscavadora },
-];
 
 const values = [
   {
@@ -49,43 +18,9 @@ const values = [
 ];
 
 export const Sobre: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleCategoryClick = (name: string) => {
-    navigate(`/?categoria=${encodeURIComponent(name)}`);
-    setTimeout(() => {
-      document
-        .getElementById("equipamentos")
-        ?.scrollIntoView({ behavior: "smooth" });
-    }, 80);
-  };
-
   return (
     <section id="sobre" className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        {/* Category cards — grid layout with rectangular cards */}
-        <div className="mb-16 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {categories.map((cat) => (
-            <button
-              key={cat.name}
-              type="button"
-              onClick={() => handleCategoryClick(cat.name)}
-              className="group flex flex-col overflow-hidden rounded-lg bg-transparent border-0 p-0 transition duration-200 hover:shadow-lg hover:-translate-y-1"
-            >
-              <div className="h-40 w-full shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:h-48 lg:h-56">
-                <img
-                  src={cat.img}
-                  alt={cat.name}
-                  className="h-full w-full object-contain p-6 transition duration-200 group-hover:scale-105"
-                />
-              </div>
-              <span className="mt-4 text-center text-xs font-bold uppercase tracking-wide leading-5 text-gray-900 sm:text-sm">
-                {cat.name}
-              </span>
-            </button>
-          ))}
-        </div>
-
         <div className="mb-6 flex flex-col items-start gap-3 sm:gap-4 md:mb-10 md:gap-5 md:flex-row md:items-center">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">

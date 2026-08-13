@@ -1,6 +1,20 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
+import imgAttachments from "../img/attachments.png";
+import imgExcavators from "../img/excavators.png";
+import imgFeeders from "../img/feeders.png";
+import imgRollerCrusher from "../img/roller-crusher.png";
+import imgScreens from "../img/Screens.png";
+import imgSpareParts from "../img/spare-parts.png";
+import imgTrucks from "../img/trucks.png";
+import imgWheelLoaders from "../img/wheel-loaders.png";
+import imgBritadorMandibula from "../img/Britador de mandibula.png";
+import imgBritadorImpacto from "../img/Britador de impacto.png";
+import imgBritadorConico from "../img/Britador cônico.png";
+import imgBritadorVsi from "../img/Britador de VSI.png";
+import imgMiniEscavadora from "../img/mini escavadeira.png";
+import imgPecasDesgaste from "../img/Peças de desgaste (Spare and Wear parts).png";
 
 const getEquipmentSubcategory = (name: string): string => {
   const normalizedName = name
@@ -11,7 +25,10 @@ const getEquipmentSubcategory = (name: string): string => {
     .replace(/[-\s]+/g, " ");
   const first = name.trim().split(/\s+/)[0];
 
-  if (normalizedName.includes("maxilas") || normalizedName.includes("mandibula")) {
+  if (
+    normalizedName.includes("maxilas") ||
+    normalizedName.includes("mandibula")
+  ) {
     return "Britador de mandibula";
   }
   if (normalizedName.includes("cone") || normalizedName.includes("conico")) {
@@ -25,6 +42,22 @@ const getEquipmentSubcategory = (name: string): string => {
   if (first === "Trituradora") return "Triturador";
   return first;
 };
+
+const catalogCategories = [
+  { name: "Britador de mandibula", img: imgBritadorMandibula },
+  { name: "Britador de impacto", img: imgBritadorImpacto },
+  { name: "Britador cônico", img: imgBritadorConico },
+  { name: "Britador de VSI", img: imgBritadorVsi },
+  { name: "Britador de rolo", img: imgRollerCrusher },
+  { name: "Crivos (screens)", img: imgScreens },
+  { name: "Alimentadores (feeders)", img: imgFeeders },
+  { name: "Peças de desgaste (Spare and Wear parts)", img: imgPecasDesgaste },
+  { name: "Acessórios", img: imgAttachments },
+  { name: "Camiões", img: imgTrucks },
+  { name: "Pá carregadoras", img: imgWheelLoaders },
+  { name: "Escavadoras", img: imgExcavators },
+  { name: "Mini escavadoras", img: imgMiniEscavadora },
+];
 
 // Extra category names from the icon strip in Sobre
 const extraCategories = [
@@ -107,11 +140,36 @@ export const Equipamentos: React.FC = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
-              A nossa frota
+              Os nossos Equipamentos
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
               Catálogo com valor, especificações e disponibilidade.
             </h2>
+          </div>
+
+          <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {catalogCategories.map((cat) => (
+              <button
+                key={cat.name}
+                type="button"
+                onClick={() => {
+                  setSubcategoryFilter(cat.name);
+                  setCategoryFilter("todos");
+                }}
+                className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border-0 bg-transparent p-0 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="h-40 w-full shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:h-48 lg:h-56">
+                  <img
+                    src={cat.img}
+                    alt={cat.name}
+                    className="h-full w-full object-contain p-6 transition duration-200 group-hover:scale-105"
+                  />
+                </div>
+                <span className="mt-4 text-center text-xs font-bold uppercase tracking-wide leading-5 text-gray-900 sm:text-sm">
+                  {cat.name}
+                </span>
+              </button>
+            ))}
           </div>
 
           <div className="mb-6 grid gap-3 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm sm:gap-4 sm:p-4 md:mb-8 md:grid-cols-3">
