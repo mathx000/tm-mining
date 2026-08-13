@@ -3,9 +3,24 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
 
 const getEquipmentSubcategory = (name: string): string => {
+  const normalizedName = name
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[-\s]+/g, " ");
   const first = name.trim().split(/\s+/)[0];
-  // merge aliases into their canonical filter name
-  if (first === "Britadeira") return "Britador";
+
+  if (normalizedName.includes("maxilas") || normalizedName.includes("mandibula")) {
+    return "Britador de mandibula";
+  }
+  if (normalizedName.includes("cone") || normalizedName.includes("conico")) {
+    return "Britador cônico";
+  }
+  if (normalizedName.includes("vsi")) return "Britador de VSI";
+  if (normalizedName.includes("impacto")) return "Britador de impacto";
+  if (normalizedName.includes("rolo")) return "Britador de rolo";
+  if (normalizedName.startsWith("mini escavadora")) return "Mini escavadoras";
   if (first === "Escavadora") return "Escavadoras";
   if (first === "Trituradora") return "Triturador";
   return first;
@@ -66,14 +81,19 @@ export const Equipamentos: React.FC = () => {
     const normalizedName = getEquipmentSubcategory(item.name)
       .trim()
       .toLowerCase();
-    const normalizedSubcategory = subcategoryFilter.trim().toLowerCase();
+    const normalizedSubcategory = getEquipmentSubcategory(subcategoryFilter)
+      .trim()
+      .toLowerCase();
     const matchesName = item.name
       .toLowerCase()
       .includes(nameFilter.trim().toLowerCase());
     const matchesCategory =
       categoryFilter === "todos" || normalizedCategory === categoryFilter;
     const matchesSubcategory =
-      subcategoryFilter === "todos" || normalizedName === normalizedSubcategory;
+      subcategoryFilter === "todos" ||
+      normalizedName === normalizedSubcategory ||
+      (normalizedSubcategory === "britador de impacto" &&
+        normalizedName === "britador de vsi");
 
     return matchesName && matchesCategory && matchesSubcategory;
   });
