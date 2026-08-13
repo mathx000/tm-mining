@@ -26,9 +26,8 @@ export const Sobre: React.FC = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
               Quem somos
             </p>
-            <h2 className="mt-3 text-2xl font-bold sm:text-3xl lg:text-4xl">
-              Mais de 20 anos de experiência nos setores de mineração e
-              construção.
+            <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl xl:text-[4rem]">
+              A TM Mining International
             </h2>
           </div>
         </div>
@@ -39,8 +38,9 @@ export const Sobre: React.FC = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
                 Sobre nós
               </p>
-              <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl">
-                A TM Mining International
+              <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl lg:text-[3rem] lg:leading-[1.05]">
+                Mais de 20 anos de experiência nos setores de mineração e
+                construção.
               </h3>
               <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base">
                 A TM Mining International dedica-se ao comércio internacional de
