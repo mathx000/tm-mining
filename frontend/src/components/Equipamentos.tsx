@@ -83,6 +83,13 @@ export const Equipamentos: React.FC = () => {
   const [categoryFilter, setCategoryFilter] = useState("todos");
   const [subcategoryFilter, setSubcategoryFilter] = useState("todos");
 
+  const scrollToEquipamentos = () => {
+    const element = document.getElementById("filtered-equipment");
+    if (!element) return;
+    const top = element.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
   useEffect(() => {
     const cat = searchParams.get("categoria");
     if (cat) {
@@ -155,6 +162,8 @@ export const Equipamentos: React.FC = () => {
                 onClick={() => {
                   setSubcategoryFilter(cat.name);
                   setCategoryFilter("todos");
+                  navigate(`/?categoria=${encodeURIComponent(cat.name)}`);
+                  window.setTimeout(scrollToEquipamentos, 150);
                 }}
                 className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border-0 bg-transparent p-0 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
@@ -219,7 +228,10 @@ export const Equipamentos: React.FC = () => {
             </label>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div
+            id="filtered-equipment"
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
+          >
             {filteredEquipment.map((item) => (
               <article
                 key={item.id}
