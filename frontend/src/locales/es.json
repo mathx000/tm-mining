@@ -1,0 +1,242 @@
+{
+  "header": {
+    "nav": {
+      "home": "Inicio",
+      "equipamentos": "Equipos",
+      "servicos": "Servicios",
+      "sobre": "Acerca de",
+      "revendas": "Distribuidores",
+      "contato": "Contacto"
+    }
+  },
+  "home": {
+    "subtitle": "Equipos pesados para construcción y minería",
+    "title": "Tecnología y potencia en cada operación.",
+    "description": "Ofrecemos máquinas de alto rendimiento con disponibilidad inmediata y apoyo especializado para proyectos a gran escala."
+  },
+  "equipamentos": {
+    "label": "Nuestros Equipos",
+    "title": "Catálogo con valor, especificaciones y disponibilidad.",
+    "filters": {
+      "byName": "Filtrar por nombre",
+      "byType": "Filtrar por tipo",
+      "byCategory": "Filtrar por categoría",
+      "namePlaceholder": "Ej.: Excavadora",
+      "allTypes": "Todos los tipos",
+      "allCategories": "Todas las categorías"
+    },
+    "categories": {
+      "jawCrusher": "Trituradora de mandíbulas",
+      "impactCrusher": "Trituradora de impacto",
+      "coneCrusher": "Trituradora de cono",
+      "vsiCrusher": "Trituradora VSI",
+      "rollerCrusher": "Trituradora de rodillos",
+      "screens": "Cribas",
+      "feeders": "Alimentadores",
+      "spareParts": "Piezas de desgaste",
+      "accessories": "Accesorios",
+      "trucks": "Camiones",
+      "wheelLoaders": "Cargadores sobre ruedas",
+      "excavators": "Excavadoras",
+      "miniExcavators": "Mini excavadoras"
+    },
+    "noResults": "No se encontraron equipos con los filtros seleccionados."
+  },
+  "equipment": {
+    "category": "Trituración",
+    "inStock": "Disponible",
+    "onOrder": "Bajo pedido",
+    "specifications": "Especificaciones",
+    "brand": "Marca",
+    "model": "Modelo",
+    "type": "Tipo",
+    "price": "Precio",
+    "inquire": "Consultar",
+    "specKeys": {
+      "brand": "Marca",
+      "model": "Modelo",
+      "type": "Tipo",
+      "year": "Año",
+      "location": "Ubicación",
+      "publicationDate": "Fecha de publicación",
+      "date": "Fecha",
+      "machineryId": "Machineryline ID",
+      "condition": "Estado",
+      "additionalServices": "Servicios adicionales",
+      "color": "Color",
+      "additionalInfo": "Información adicional",
+      "firstRegistration": "Primer registro",
+      "hoursUsed": "Horas de uso",
+      "engine": "Motor",
+      "power": "Potencia",
+      "technicalInspection": "Inspección técnica"
+    },
+    "specValues": {
+      "used": "usado",
+      "new": "nuevo",
+      "coneCrusherType": "Trituradora de cono",
+      "jawCrusherType": "Trituradora de mandíbulas",
+      "trackExcavatorType": "Excavadora de orugas",
+      "miniExcavatorType": "Miniexcavadora",
+      "vsiCrusherType": "Trituradora de impacto de eje vertical",
+      "rotorCrusherType": "Trituradora de rotor",
+      "vehicleDeliveryService": "Servicio de entrega de vehículos",
+      "mangideLocation": "Portugal - Mangide, a 143 km de Portugal/Porto"
+    },
+    "deliveryTimes": {
+      "immediateAvailability": "Disponibilidad inmediata",
+      "inquire": "Consultar"
+    },
+    "availableEquipmentDesc": "Equipo disponible"
+  },
+  "sobre": {
+    "label": "Acerca de nosotros",
+    "title": "TM Mining International",
+    "experienceLabel": "Quiénes somos",
+    "experienceTitle": "Más de 20 años de experiencia en los sectores de minería y construcción.",
+    "experienceDesc": "TM Mining International se dedica al comercio internacional de maquinaria industrial para canteras, proporcionando equipos de excavación, trituración y cribado a operadores en toda Europa. Actuamos como un vínculo entre fabricantes y vendedores de equipos nuevos y usados y las empresas que los necesitan, promoviendo la circulación de máquinas entre mercados y consolidando relaciones comerciales duraderas con clientes y socios internacionales.",
+    "groupLabel": "Grupo Seixas Pinto",
+    "groupDesc1": "Formamos parte del Grupo Seixas Pinto, con más de dos décadas de actividad en los sectores de minería y construcción en Portugal y Angola. El Grupo posee y opera más de diez canteras, complementadas por sus propias empresas de construcción civil, lo que nos confiere un conocimiento profundo y transversal de toda la cadena de valor — desde la extracción hasta la máquina.",
+    "groupDesc2": "Es esta experiencia de campo, acumulada durante más de veinte años, la que aplicamos en la comercialización de miles de equipos con productores en todo el mundo.",
+    "values": {
+      "innovation": "Innovación",
+      "innovationDesc": "Buscamos constantemente las mejores soluciones tecnológicas para nuestros clientes.",
+      "reliability": "Confiabilidad",
+      "reliabilityDesc": "Equipos robustos y confiables que garantizan la continuidad operativa.",
+      "sustainability": "Sostenibilidad",
+      "sustainabilityDesc": "Prácticas ambientales responsables y soluciones más eficientes."
+    }
+  },
+  "servicos": {
+    "label": "Soluciones inteligentes",
+    "title": "Servicios y soluciones completas para proyectos pesados.",
+    "service1Title": "Diagnóstico técnico especializado",
+    "service1Desc": "Realizamos una evaluación completa de máquinas para aumentar la disponibilidad y reducir paradas inesperadas en operación.",
+    "service2Title": "Monitoreo y control operacional",
+    "service2Desc": "Seguimiento continuo de indicadores de producción para mejorar eficiencia, consumo y planificación de mantenimiento.",
+    "service3Title": "Mantenimiento preventivo programado",
+    "service3Desc": "Planes de mantenimiento ajustados al ciclo de trabajo para prolongar la vida útil de componentes críticos.",
+    "service4Title": "Gestión integrada de flota",
+    "service4Desc": "Integramos información técnica y operacional para respaldar decisiones más rápidas y seguras en el campo."
+  },
+  "revendas": {
+    "label": "Asociaciones estratégicas",
+    "title": "Conviértete en distribuidor",
+    "description": "Forma parte de nuestra red de socios y aumenta tus ingresos. Al revender nuestros equipos, recibes 5% de comisión por cada venta completada, con total transparencia y apoyo de nuestro equipo.",
+    "benefit": "Beneficio",
+    "benefitValue": "+5%",
+    "support": "Soporte",
+    "supportValue": "Comercial y técnico",
+    "learnMore": "Más información"
+  },
+  "contato": {
+    "label": "Póngase en contacto",
+    "title": "Estamos listos para ayudar en tu próxima operación.",
+    "description": "Cuéntanos cuál es tu necesidad y nuestros especialistas responderán con la solución ideal para tu proyecto.",
+    "contact1Name": "Miguel Moura Pinto",
+    "contact1Phone": "+351 933 852 559",
+    "contact1Email": "nordareias@mail.telepac.pt",
+    "contact2Name": "Tomás Moura Pinto",
+    "contact2Phone": "+351 933 079 179",
+    "contact2Email": "blocifel@hotmail.com"
+  },
+  "footer": {
+    "title": "TM Mining Internacional",
+    "description": "Calidad, tecnología y confiabilidad en cada operación."
+  },
+  "produtoDetalhe": {
+    "backToEquipment": "Volver a equipamientos",
+    "expandImage": "Ampliar imagen",
+    "previousImage": "Imagen anterior",
+    "nextImage": "Imagen siguiente",
+    "imageOf": "de",
+    "thumbnail": "Miniatura",
+    "fullSpecifications": "Especificaciones completas",
+    "availability": "Disponibilidad",
+    "deliveryTime": "Plazo de entrega",
+    "price": "Precio",
+    "dedicatedSupport": "Atención dedicada para este equipo, con envío de propuesta y cronograma de entrega.",
+    "iAmInterested": "Estoy Interesado",
+    "askSeller": "Preguntar al vendedor",
+    "namePlaceholder": "Nombre",
+    "companyPlaceholder": "Empresa",
+    "phonePlaceholder": "Teléfono",
+    "emailPlaceholder": "Correo electrónico",
+    "message": "Mensaje",
+    "messagePlaceholder": "Escriba su consulta",
+    "send": "Enviar",
+    "relatedListings": "Anuncios relacionados",
+    "expandedImageView": "Vista ampliada de la imagen",
+    "closeImage": "Cerrar imagen"
+  },
+  "revendaDetalhe": {
+    "partnershipProgram": "Programa de asociación",
+    "title": "Conviértase en Revendedor",
+    "description": "Forme parte de nuestra red de socios y aumente sus ingresos. Al revender nuestros equipos, recibe <1>{{highlight}}</1>, con total transparencia y soporte de nuestro equipo.",
+    "descriptionHighlight": "5% de comisión por cada venta concluida",
+    "commission": "Comisión",
+    "support": "Soporte",
+    "supportValue": "Comercial y técnico",
+    "highlight1Title": "Captación comercial activa",
+    "highlight1Desc": "Reciba materiales de apoyo y enfoque comercial para acelerar nuevas oportunidades de negocio.",
+    "highlight2Title": "Seguimiento técnico",
+    "highlight2Desc": "Soporte técnico continuo para responder dudas y presentar las soluciones correctas al cliente final.",
+    "formTitle": "Solicitud de Reventa",
+    "formDesc": "Complete los datos a continuación y nuestro equipo se pondrá en contacto.",
+    "name": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "company": "Empresa",
+    "companyPlaceholder": "Nombre de la empresa",
+    "taxId": "NIF",
+    "taxIdPlaceholder": "NIF de la empresa",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "correo@empresa.com",
+    "contact": "Contacto",
+    "equipment": "Equipo",
+    "equipmentHelp": "Seleccione uno o más equipos de interés.",
+    "showEquipment": "Mostrar equipos",
+    "hideEquipment": "Ocultar equipos",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntenos sobre su perfil y objetivos de reventa.",
+    "submit": "Enviar solicitud"
+  },
+  "equipmentContent": {
+    "9": {
+      "description": "Trituradora de cono para trituración secundaria y terciaria, con alta fiabilidad operativa y excelente rendimiento en producción continua.",
+      "additionalInfo": "Máquina en excelente estado, con muy poco uso. Incluye central de lubricación e hidráulica, motor eléctrico, cuadro eléctrico y chasis de la máquina."
+    },
+    "1": {
+      "additionalInfo": "Trituradora en muy buen estado"
+    },
+    "2": {
+      "additionalInfo": "Descripción proporcionada por el vendedor. Confirme toda la información directamente con el vendedor"
+    },
+    "3": {
+      "additionalInfo": "Trituradora móvil Parker 900x600, completa y en muy buen estado"
+    },
+    "4": {
+      "additionalInfo": "Trituradora SANYO en muy buen estado con poco uso"
+    },
+    "5": {
+      "additionalInfo": "HP200 en muy buen estado y con muy poco uso"
+    },
+    "6": {
+      "additionalInfo": "Trituradora de cono Sandvik CH 430 en estado imprescindible! Equipada con motor eléctrico Siemens, cuadro eléctrico, central de lubricación e hidráulica, y también con su propio chasis"
+    },
+    "7": {
+      "additionalInfo": "Trituradora de cono Sandvik Cs 430 en estado imprescindible! Equipada con motor eléctrico Siemens, cuadro eléctrico, central de lubricación e hidráulica, y también con su propio chasis"
+    },
+    "8": {
+      "additionalInfo": "¡LA MÁQUINA ESTÁ EN BUEN ESTADO!"
+    },
+    "10": {
+      "additionalInfo": "Equipo adicional: Cuchilla niveladora"
+    },
+    "11": {
+      "additionalInfo": "Equipos adicionales: Orugas de goma, Cizalla hidráulica"
+    },
+    "12": {
+      "additionalInfo": "Descripción proporcionada por el vendedor. Confirme toda la información directamente con el vendedor"
+    }
+  }
+}

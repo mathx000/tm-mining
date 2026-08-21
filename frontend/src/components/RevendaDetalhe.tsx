@@ -1,24 +1,24 @@
 import React, { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { equipment } from "../data";
 import img5 from "../img/5.jpeg";
 import img6 from "../img/6.jpeg";
 import img7 from "../img/7.jpeg";
 
 export const RevendaDetalhe: React.FC = () => {
+  const { t } = useTranslation();
   const [showEquipmentList, setShowEquipmentList] = useState(false);
 
   const highlights = [
     {
       image: img6,
-      title: "Captação comercial ativa",
-      description:
-        "Receba materiais de apoio e abordagem comercial para acelerar novas oportunidades de negócio.",
+      title: t("revendaDetalhe.highlight1Title"),
+      description: t("revendaDetalhe.highlight1Desc"),
     },
     {
       image: img7,
-      title: "Acompanhamento técnico",
-      description:
-        "Suporte técnico contínuo para responder a dúvidas e apresentar soluções certas ao cliente final.",
+      title: t("revendaDetalhe.highlight2Title"),
+      description: t("revendaDetalhe.highlight2Desc"),
     },
   ];
 
@@ -32,22 +32,25 @@ export const RevendaDetalhe: React.FC = () => {
             <article className="grid overflow-hidden rounded-3xl border border-[#1a1a1a]/10 bg-white shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] lg:grid-cols-[1.1fr_0.9fr]">
               <div className="p-6 sm:p-8 lg:p-10">
                 <p className="inline-flex items-center rounded-full border border-[#D35400]/20 bg-[#fff3e1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#D35400]">
-                  Programa de parceria
+                  {t("revendaDetalhe.partnershipProgram")}
                 </p>
                 <h1 className="mt-5 text-2xl font-black leading-tight text-[#1a1a1a] sm:text-3xl lg:text-4xl">
-                  Torne-se um Revendedor
+                  {t("revendaDetalhe.title")}
                 </h1>
                 <p className="mt-5 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">
-                  Faça parte da nossa rede de parceiros e aumente os seus
-                  rendimentos. Ao revender os nossos equipamentos, recebe{" "}
-                  <strong>5% de comissão por cada venda concluída</strong>, com
-                  total transparência e suporte da nossa equipa.
+                  <Trans
+                    i18nKey="revendaDetalhe.description"
+                    values={{
+                      highlight: t("revendaDetalhe.descriptionHighlight"),
+                    }}
+                    components={{ 1: <strong /> }}
+                  />
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl border border-[#D35400]/20 bg-[#fff7eb] p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D35400]">
-                      Comissão
+                      {t("revendaDetalhe.commission")}
                     </p>
                     <p className="mt-2 text-3xl font-black text-[#1a1a1a]">
                       5%
@@ -55,10 +58,10 @@ export const RevendaDetalhe: React.FC = () => {
                   </div>
                   <div className="rounded-2xl border border-[#d9d9d6] bg-[#fafafa] p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6b7280]">
-                      Suporte
+                      {t("revendaDetalhe.support")}
                     </p>
                     <p className="mt-2 text-base font-semibold text-[#1a1a1a]">
-                      Comercial e técnico
+                      {t("revendaDetalhe.supportValue")}
                     </p>
                   </div>
                 </div>
@@ -97,10 +100,10 @@ export const RevendaDetalhe: React.FC = () => {
 
           <div className="rounded-3xl border border-[#1a1a1a]/10 bg-white p-3 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] sm:p-6 lg:p-8">
             <h2 className="text-2xl font-bold text-[#1a1a1a]">
-              Candidatura de Revenda
+              {t("revendaDetalhe.formTitle")}
             </h2>
             <p className="mt-3 text-sm leading-6 text-gray-600">
-              Preencha os dados abaixo e a nossa equipa entrará em contacto.
+              {t("revendaDetalhe.formDesc")}
             </p>
 
             <form
@@ -109,49 +112,49 @@ export const RevendaDetalhe: React.FC = () => {
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-semibold text-gray-700">
-                  Nome
+                  {t("revendaDetalhe.name")}
                   <input
                     type="text"
                     name="nome"
                     className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
-                    placeholder="O seu nome"
+                    placeholder={t("revendaDetalhe.namePlaceholder")}
                   />
                 </label>
                 <label className="grid gap-2 text-sm font-semibold text-gray-700">
-                  Empresa
+                  {t("revendaDetalhe.company")}
                   <input
                     type="text"
                     name="empresa"
                     className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
-                    placeholder="Nome da empresa"
+                    placeholder={t("revendaDetalhe.companyPlaceholder")}
                   />
                 </label>
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-semibold text-gray-700">
-                  NIF
+                  {t("revendaDetalhe.taxId")}
                   <input
                     type="text"
                     name="nif"
                     className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
-                    placeholder="NIF da empresa"
+                    placeholder={t("revendaDetalhe.taxIdPlaceholder")}
                   />
                 </label>
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-semibold text-gray-700">
-                  Email
+                  {t("revendaDetalhe.email")}
                   <input
                     type="email"
                     name="email"
                     className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
-                    placeholder="email@empresa.com"
+                    placeholder={t("revendaDetalhe.emailPlaceholder")}
                   />
                 </label>
                 <label className="grid gap-2 text-sm font-semibold text-gray-700">
-                  Contacto
+                  {t("revendaDetalhe.contact")}
                   <input
                     type="tel"
                     name="contacto"
@@ -163,10 +166,10 @@ export const RevendaDetalhe: React.FC = () => {
 
               <fieldset className="grid gap-3 rounded-2xl border border-gray-300 bg-[#fcfcfb] p-4">
                 <legend className="px-1 text-sm font-semibold text-gray-700">
-                  Equipamento
+                  {t("revendaDetalhe.equipment")}
                 </legend>
                 <p className="text-xs text-gray-500">
-                  Selecione um ou mais equipamentos de interesse.
+                  {t("revendaDetalhe.equipmentHelp")}
                 </p>
                 <button
                   type="button"
@@ -175,8 +178,8 @@ export const RevendaDetalhe: React.FC = () => {
                   className="inline-flex w-fit items-center rounded-full border border-[#D35400]/30 bg-white px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-semibold text-[#D35400] transition hover:border-[#D35400] hover:bg-[#fff7eb]"
                 >
                   {showEquipmentList
-                    ? "Ocultar equipamentos"
-                    : "Mostrar equipamentos"}
+                    ? t("revendaDetalhe.hideEquipment")
+                    : t("revendaDetalhe.showEquipment")}
                 </button>
                 {showEquipmentList ? (
                   <div className="grid gap-2 sm:grid-cols-2">
@@ -199,12 +202,12 @@ export const RevendaDetalhe: React.FC = () => {
               </fieldset>
 
               <label className="grid gap-2 text-sm font-semibold text-gray-700">
-                Mensagem
+                {t("revendaDetalhe.message")}
                 <textarea
                   name="mensagem"
                   rows={5}
                   className="rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm text-[#1a1a1a] outline-none transition focus:border-[#D35400] focus:ring-2 focus:ring-[#D35400]/20"
-                  placeholder="Conte-nos sobre o seu perfil e objetivos de revenda."
+                  placeholder={t("revendaDetalhe.messagePlaceholder")}
                 />
               </label>
 
@@ -212,7 +215,7 @@ export const RevendaDetalhe: React.FC = () => {
                 type="submit"
                 className="inline-flex items-center justify-center rounded-full bg-[#D35400] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b74800]"
               >
-                Enviar candidatura
+                {t("revendaDetalhe.submit")}
               </button>
             </form>
           </div>

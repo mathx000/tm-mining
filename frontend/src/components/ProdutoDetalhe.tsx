@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
-import { buildWhatsAppLink } from "../utils/equipment";
+import {
+  buildWhatsAppLink,
+  translateDeliveryTime,
+  translateDescription,
+  translateSpecKey,
+  translateSpecValue,
+} from "../utils/equipment";
 
 export const ProdutoDetalhe: React.FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const product = equipment.find((item) => item.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -143,7 +151,7 @@ export const ProdutoDetalhe: React.FC = () => {
             to="/#equipamentos"
             className="mb-8 inline-block text-sm font-semibold text-[#D35400] transition hover:text-[#b44500]"
           >
-            Voltar para equipamentos
+            {t("produtoDetalhe.backToEquipment")}
           </Link>
 
           <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8">
@@ -155,7 +163,7 @@ export const ProdutoDetalhe: React.FC = () => {
                 {product.name}
               </h1>
               <p className="mt-4 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7">
-                {product.description}
+                {translateDescription(product.description, product.id, t)}
               </p>
 
               <div className="mt-8 space-y-4">
@@ -168,7 +176,7 @@ export const ProdutoDetalhe: React.FC = () => {
                     type="button"
                     onClick={() => setIsLightboxOpen(true)}
                     className="block w-full cursor-zoom-in"
-                    aria-label="Expandir imagem"
+                    aria-label={t("produtoDetalhe.expandImage")}
                   >
                     <img
                       src={galleryImages[currentImageIndex]}
@@ -182,7 +190,7 @@ export const ProdutoDetalhe: React.FC = () => {
                         type="button"
                         onClick={showPreviousImage}
                         className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#D35400]/25 bg-white text-[#D35400] shadow-sm transition hover:bg-[#fff2e9] active:scale-95"
-                        aria-label="Imagem anterior"
+                        aria-label={t("produtoDetalhe.previousImage")}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -197,13 +205,14 @@ export const ProdutoDetalhe: React.FC = () => {
                         </svg>
                       </button>
                       <span className="min-w-[84px] text-center text-sm font-semibold text-gray-600">
-                        {currentImageIndex + 1} de {galleryImages.length}
+                        {currentImageIndex + 1} {t("produtoDetalhe.imageOf")}{" "}
+                        {galleryImages.length}
                       </span>
                       <button
                         type="button"
                         onClick={showNextImage}
                         className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#D35400]/25 bg-white text-[#D35400] shadow-sm transition hover:bg-[#fff2e9] active:scale-95"
-                        aria-label="Próxima imagem"
+                        aria-label={t("produtoDetalhe.nextImage")}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +245,7 @@ export const ProdutoDetalhe: React.FC = () => {
                         >
                           <img
                             src={image}
-                            alt={`Miniatura ${index + 1}`}
+                            alt={`${t("produtoDetalhe.thumbnail")} ${index + 1}`}
                             className="h-full w-full rounded-md object-cover"
                           />
                         </button>
@@ -247,7 +256,7 @@ export const ProdutoDetalhe: React.FC = () => {
               </div>
 
               <h2 className="mt-10 text-xl font-bold text-[#1a1a1a]">
-                Especificações completas
+                {t("produtoDetalhe.fullSpecifications")}
               </h2>
               <ul className="mt-4 divide-y divide-gray-200 rounded-2xl border border-gray-200">
                 {product.specifications
@@ -260,24 +269,35 @@ export const ProdutoDetalhe: React.FC = () => {
                       className="grid grid-cols-1 gap-1 px-3 py-3 text-sm sm:grid-cols-[1fr_1fr] sm:px-4"
                     >
                       <span className="font-semibold text-gray-700">
-                        {spec.key}
+                        {translateSpecKey(spec.key, t)}
                       </span>
-                      <span className="text-gray-600">{spec.value}</span>
+                      <span className="text-gray-600">
+                        {translateSpecValue(
+                          spec.key,
+                          spec.value,
+                          t,
+                          product.id,
+                        )}
+                      </span>
                     </li>
                   ))}
                 <li className="grid grid-cols-1 gap-1 px-3 py-3 text-sm sm:grid-cols-[1fr_1fr] sm:px-4">
                   <span className="font-semibold text-gray-700">
-                    Disponibilidade
+                    {t("produtoDetalhe.availability")}
                   </span>
                   <span className="text-gray-600">
-                    {product.inStock ? "Disponível" : "Sob encomenda"}
+                    {product.inStock
+                      ? t("equipment.inStock")
+                      : t("equipment.onOrder")}
                   </span>
                 </li>
                 <li className="grid grid-cols-1 gap-1 px-3 py-3 text-sm sm:grid-cols-[1fr_1fr] sm:px-4">
                   <span className="font-semibold text-gray-700">
-                    Prazo de entrega
+                    {t("produtoDetalhe.deliveryTime")}
                   </span>
-                  <span className="text-gray-600">{product.deliveryTime}</span>
+                  <span className="text-gray-600">
+                    {translateDeliveryTime(product.deliveryTime, t)}
+                  </span>
                 </li>
               </ul>
             </article>
@@ -285,14 +305,13 @@ export const ProdutoDetalhe: React.FC = () => {
             <div className="min-w-0 h-fit space-y-6 lg:sticky lg:top-24">
               <aside className="rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6">
                 <p className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
-                  Valor
+                  {t("produtoDetalhe.price")}
                 </p>
                 <p className="mt-3 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-4 py-1.5 text-base font-semibold text-[#9f3f00]">
-                  {formatPrice(product.price)}
+                  {t("equipment.inquire")}
                 </p>
                 <p className="mt-4 text-sm text-gray-700">
-                  Atendimento dedicado para este equipamento, com envio de
-                  proposta e cronograma de entrega.
+                  {t("produtoDetalhe.dedicatedSupport")}
                 </p>
 
                 <a
@@ -301,47 +320,47 @@ export const ProdutoDetalhe: React.FC = () => {
                   rel="noopener noreferrer"
                   className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] px-3 py-3 sm:px-4 text-sm font-semibold text-white transition hover:bg-[#1ebe5b]"
                 >
-                  Tenho Interesse
+                  {t("produtoDetalhe.iAmInterested")}
                 </a>
               </aside>
 
               <form className="rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6">
                 <h3 className="text-xl font-bold text-[#2a2a2a] sm:text-2xl">
-                  Pergunte ao vendedor
+                  {t("produtoDetalhe.askSeller")}
                 </h3>
                 <div className="mt-6 space-y-4">
                   <input
                     type="text"
                     name="nome"
-                    placeholder="Nome"
+                    placeholder={t("produtoDetalhe.namePlaceholder")}
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                   />
                   <input
                     type="text"
                     name="empresa"
-                    placeholder="Empresa"
+                    placeholder={t("produtoDetalhe.companyPlaceholder")}
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                   />
                   <input
                     type="tel"
                     name="telefone"
-                    placeholder="Telefone"
+                    placeholder={t("produtoDetalhe.phonePlaceholder")}
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                   />
                   <input
                     type="email"
                     name="email"
-                    placeholder="E-mail"
+                    placeholder={t("produtoDetalhe.emailPlaceholder")}
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
                   />
                   <fieldset className="rounded-lg border border-gray-300 px-3 pb-3 pt-1.5">
                     <legend className="px-1 text-sm font-semibold text-gray-600">
-                      Mensagem
+                      {t("produtoDetalhe.message")}
                     </legend>
                     <textarea
                       name="mensagem"
                       rows={5}
-                      placeholder="Escreva a sua dúvida"
+                      placeholder={t("produtoDetalhe.messagePlaceholder")}
                       className="w-full resize-none border-0 bg-transparent text-sm leading-6 text-gray-600 outline-none"
                     />
                   </fieldset>
@@ -349,7 +368,7 @@ export const ProdutoDetalhe: React.FC = () => {
                     type="submit"
                     className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-3 py-2 sm:px-4 sm:py-3 text-sm font-semibold text-white transition hover:bg-[#b74800]"
                   >
-                    Enviar
+                    {t("produtoDetalhe.send")}
                   </button>
                 </div>
               </form>
@@ -358,7 +377,7 @@ export const ProdutoDetalhe: React.FC = () => {
 
           <section className="mt-14 sm:rounded-none sm:bg-transparent">
             <h2 className="px-3 text-2xl font-bold text-[#0f2f3a] sm:px-0 sm:text-3xl">
-              Anúncios relacionados
+              {t("produtoDetalhe.relatedListings")}
             </h2>
             <div className="mt-6 w-full overflow-x-auto">
               <div className="flex items-stretch gap-3 px-3 pb-2 sm:px-0 sm:gap-4 snap-x snap-mandatory">
@@ -381,17 +400,17 @@ export const ProdutoDetalhe: React.FC = () => {
                       </p>
                       <div className="mt-2">
                         <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
-                          Valor
+                          {t("produtoDetalhe.price")}
                         </p>
                         <p className="mt-2 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-3 py-1 text-sm font-semibold text-[#9f3f00]">
-                          {formatPrice(item.price)}
+                          {t("equipment.inquire")}
                         </p>
                       </div>
                       <p className="mt-5 text-sm text-[#3c5b66]">
                         {normalizeEquipmentCategory(item.category)}
                       </p>
                       <p className="mt-1 text-sm text-[#3c5b66]">
-                        {item.deliveryTime}
+                        {translateDeliveryTime(item.deliveryTime, t)}
                       </p>
                     </div>
                   </Link>
@@ -407,7 +426,7 @@ export const ProdutoDetalhe: React.FC = () => {
           className="fixed inset-0 z-[70] bg-black/90 px-3 py-6 sm:px-6"
           role="dialog"
           aria-modal="true"
-          aria-label="Visualização expandida da imagem"
+          aria-label={t("produtoDetalhe.expandedImageView")}
           onClick={() => setIsLightboxOpen(false)}
         >
           <div
@@ -416,13 +435,14 @@ export const ProdutoDetalhe: React.FC = () => {
           >
             <div className="mb-4 flex items-center justify-between">
               <p className="text-sm font-semibold text-white/85">
-                {currentImageIndex + 1} de {galleryImages.length}
+                {currentImageIndex + 1} {t("produtoDetalhe.imageOf")}{" "}
+                {galleryImages.length}
               </p>
               <button
                 type="button"
                 onClick={() => setIsLightboxOpen(false)}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:bg-white/10"
-                aria-label="Fechar imagem"
+                aria-label={t("produtoDetalhe.closeImage")}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -460,7 +480,7 @@ export const ProdutoDetalhe: React.FC = () => {
                     type="button"
                     onClick={showPreviousImage}
                     className="absolute left-0 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-black/35 text-white transition hover:bg-black/55"
-                    aria-label="Imagem anterior"
+                    aria-label={t("produtoDetalhe.previousImage")}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -479,7 +499,7 @@ export const ProdutoDetalhe: React.FC = () => {
                     type="button"
                     onClick={showNextImage}
                     className="absolute right-0 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-black/35 text-white transition hover:bg-black/55"
-                    aria-label="Próxima imagem"
+                    aria-label={t("produtoDetalhe.nextImage")}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

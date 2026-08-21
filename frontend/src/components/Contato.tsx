@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Contato: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contacto"
@@ -9,40 +12,43 @@ export const Contato: React.FC = () => {
       <div className="mx-auto max-w-7xl">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FFB81C]">
-            Entre em contacto
+            {t("contato.label")}
           </p>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            Estamos prontos para ajudar na sua próxima operação.
+            {t("contato.title")}
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-7 text-gray-300">
-            Diga-nos qual é a sua necessidade e os nossos especialistas irão
-            responder com a solução ideal para o seu projeto.
+            {t("contato.description")}
           </p>
           <div className="mt-8 space-y-4 text-sm text-gray-300">
             <div>
-              <p className="font-semibold text-white">Miguel Moura Pinto</p>
+              <p className="font-semibold text-white">
+                {t("contato.contact1Name")}
+              </p>
               <p className="mt-1 flex items-center gap-2">
                 <span aria-hidden="true">🇵🇹</span>
-                <span>+351 933 852 559</span>
+                <span>{t("contato.contact1Phone")}</span>
               </p>
               <a
                 href="mailto:nordareias@mail.telepac.pt"
                 className="mt-1 inline-block text-gray-300 transition hover:text-white"
               >
-                nordareias@mail.telepac.pt
+                {t("contato.contact1Email")}
               </a>
             </div>
             <div>
-              <p className="font-semibold text-white">Tomás Moura Pinto</p>
+              <p className="font-semibold text-white">
+                {t("contato.contact2Name")}
+              </p>
               <p className="mt-1 flex items-center gap-2">
                 <span aria-hidden="true">🇵🇹</span>
-                <span>+351 933 079 179</span>
+                <span>{t("contato.contact2Phone")}</span>
               </p>
               <a
                 href="mailto:blocifel@hotmail.com"
                 className="mt-1 inline-block text-gray-300 transition hover:text-white"
               >
-                blocifel@hotmail.com
+                {t("contato.contact2Email")}
               </a>
             </div>
           </div>

@@ -1,0 +1,242 @@
+{
+  "header": {
+    "nav": {
+      "home": "Accueil",
+      "equipamentos": "Équipements",
+      "servicos": "Services",
+      "sobre": "À propos",
+      "revendas": "Revendeurs",
+      "contato": "Contact"
+    }
+  },
+  "home": {
+    "subtitle": "Équipements lourds pour la construction et l'exploitation minière",
+    "title": "Technologie et puissance dans chaque opération.",
+    "description": "Nous proposons des machines haute performance avec disponibilité immédiate et support spécialisé pour les projets à grande échelle."
+  },
+  "equipamentos": {
+    "label": "Nos Équipements",
+    "title": "Catalogue avec valeur, spécifications et disponibilité.",
+    "filters": {
+      "byName": "Filtrer par nom",
+      "byType": "Filtrer par type",
+      "byCategory": "Filtrer par catégorie",
+      "namePlaceholder": "Ex.: Pelle",
+      "allTypes": "Tous les types",
+      "allCategories": "Toutes les catégories"
+    },
+    "categories": {
+      "jawCrusher": "Concasseur à mâchoires",
+      "impactCrusher": "Concasseur à percussion",
+      "coneCrusher": "Concasseur conique",
+      "vsiCrusher": "Concasseur VSI",
+      "rollerCrusher": "Concasseur à rouleaux",
+      "screens": "Cribles",
+      "feeders": "Alimentateurs",
+      "spareParts": "Pièces d'usure",
+      "accessories": "Accessoires",
+      "trucks": "Camions",
+      "wheelLoaders": "Chargeuses sur roues",
+      "excavators": "Excavateurs",
+      "miniExcavators": "Mini-pelles"
+    },
+    "noResults": "Aucun équipement trouvé avec les filtres sélectionnés."
+  },
+  "equipment": {
+    "category": "Concassage",
+    "inStock": "Disponible",
+    "onOrder": "Sur commande",
+    "specifications": "Spécifications",
+    "brand": "Marque",
+    "model": "Modèle",
+    "type": "Type",
+    "price": "Prix",
+    "inquire": "Demander un devis",
+    "specKeys": {
+      "brand": "Marque",
+      "model": "Modèle",
+      "type": "Type",
+      "year": "Année",
+      "location": "Localisation",
+      "publicationDate": "Date de publication",
+      "date": "Date",
+      "machineryId": "Machineryline ID",
+      "condition": "État",
+      "additionalServices": "Services supplémentaires",
+      "color": "Couleur",
+      "additionalInfo": "Informations supplémentaires",
+      "firstRegistration": "Première immatriculation",
+      "hoursUsed": "Heures d'utilisation",
+      "engine": "Moteur",
+      "power": "Puissance",
+      "technicalInspection": "Inspection technique"
+    },
+    "specValues": {
+      "used": "occasion",
+      "new": "neuf",
+      "coneCrusherType": "Concasseur à cône",
+      "jawCrusherType": "Concasseur à mâchoires",
+      "trackExcavatorType": "Excavatrice à chenilles",
+      "miniExcavatorType": "Mini-excavatrice",
+      "vsiCrusherType": "Concasseur à percussion à axe vertical",
+      "rotorCrusherType": "Concasseur à rotor",
+      "vehicleDeliveryService": "Service de livraison de véhicules",
+      "mangideLocation": "Portugal - Mangide, à 143 km de Portugal/Porto"
+    },
+    "deliveryTimes": {
+      "immediateAvailability": "Disponibilité immédiate",
+      "inquire": "Sur demande"
+    },
+    "availableEquipmentDesc": "Équipement disponible"
+  },
+  "sobre": {
+    "label": "À propos de nous",
+    "title": "TM Mining International",
+    "experienceLabel": "Qui sommes-nous",
+    "experienceTitle": "Plus de 20 ans d'expérience dans les secteurs de l'exploitation minière et de la construction.",
+    "experienceDesc": "TM Mining International est spécialisée dans le commerce international de machines industrielles pour les carrières, fournissant des équipements d'excavation, de concassage et de criblage aux opérateurs dans toute l'Europe. Nous agissons comme un lien entre les fabricants et les vendeurs d'équipements neufs et d'occasion et les entreprises qui en ont besoin, en favorisant la circulation des machines entre les marchés et en consolidant des relations commerciales durables avec les clients et les partenaires internationaux.",
+    "groupLabel": "Groupe Seixas Pinto",
+    "groupDesc1": "Nous faisons partie du Groupe Seixas Pinto, qui compte plus de deux décennies d'activité dans les secteurs de l'exploitation minière et de la construction au Portugal et en Angola. Le Groupe possède et exploite plus de dix carrières, complétées par ses propres entreprises de construction civile, ce qui nous confère une connaissance approfondie et transversale de toute la chaîne de valeur — de l'extraction à la machine.",
+    "groupDesc2": "C'est cette expérience de terrain, accumulée au fil de plus de vingt ans, que nous appliquons à la commercialisation de milliers d'équipements auprès de producteurs du monde entier.",
+    "values": {
+      "innovation": "Innovation",
+      "innovationDesc": "Nous recherchons constamment les meilleures solutions technologiques pour nos clients.",
+      "reliability": "Fiabilité",
+      "reliabilityDesc": "Équipements robustes et fiables qui garantissent la continuité opérationnelle.",
+      "sustainability": "Durabilité",
+      "sustainabilityDesc": "Pratiques environnementales responsables et solutions plus efficaces."
+    }
+  },
+  "servicos": {
+    "label": "Solutions intelligentes",
+    "title": "Services et solutions complets pour les projets lourds.",
+    "service1Title": "Diagnostic technique spécialisé",
+    "service1Desc": "Nous effectuons une évaluation complète des machines pour augmenter la disponibilité et réduire les arrêts inattendus en opération.",
+    "service2Title": "Surveillance et contrôle opérationnel",
+    "service2Desc": "Suivi continu des indicateurs de production pour améliorer l'efficacité, la consommation et la planification de la maintenance.",
+    "service3Title": "Maintenance préventive programmée",
+    "service3Desc": "Plans de maintenance adaptés au cycle de travail pour prolonger la durée de vie des composants critiques.",
+    "service4Title": "Gestion de flotte intégrée",
+    "service4Desc": "Nous intégrons les informations techniques et opérationnelles pour soutenir des décisions plus rapides et plus sécurisées sur le terrain."
+  },
+  "revendas": {
+    "label": "Partenariats stratégiques",
+    "title": "Devenez revendeur",
+    "description": "Rejoignez notre réseau de partenaires et augmentez vos revenus. En revendant nos équipements, vous recevez 5% de commission pour chaque vente conclue, avec une transparence totale et le soutien de notre équipe.",
+    "benefit": "Avantage",
+    "benefitValue": "+5%",
+    "support": "Support",
+    "supportValue": "Commercial et technique",
+    "learnMore": "En savoir plus"
+  },
+  "contato": {
+    "label": "Contactez-nous",
+    "title": "Nous sommes prêts à vous aider dans votre prochaine opération.",
+    "description": "Dites-nous ce dont vous avez besoin et nos spécialistes vous répondront avec la solution idéale pour votre projet.",
+    "contact1Name": "Miguel Moura Pinto",
+    "contact1Phone": "+351 933 852 559",
+    "contact1Email": "nordareias@mail.telepac.pt",
+    "contact2Name": "Tomás Moura Pinto",
+    "contact2Phone": "+351 933 079 179",
+    "contact2Email": "blocifel@hotmail.com"
+  },
+  "footer": {
+    "title": "TM Mining Internacional",
+    "description": "Qualité, technologie et fiabilité dans chaque opération."
+  },
+  "produtoDetalhe": {
+    "backToEquipment": "Retour aux équipements",
+    "expandImage": "Agrandir l'image",
+    "previousImage": "Image précédente",
+    "nextImage": "Image suivante",
+    "imageOf": "sur",
+    "thumbnail": "Miniature",
+    "fullSpecifications": "Spécifications complètes",
+    "availability": "Disponibilité",
+    "deliveryTime": "Délai de livraison",
+    "price": "Prix",
+    "dedicatedSupport": "Assistance dédiée pour cet équipement, avec envoi de proposition et calendrier de livraison.",
+    "iAmInterested": "Je suis intéressé",
+    "askSeller": "Poser une question au vendeur",
+    "namePlaceholder": "Nom",
+    "companyPlaceholder": "Entreprise",
+    "phonePlaceholder": "Téléphone",
+    "emailPlaceholder": "E-mail",
+    "message": "Message",
+    "messagePlaceholder": "Écrivez votre question",
+    "send": "Envoyer",
+    "relatedListings": "Annonces similaires",
+    "expandedImageView": "Vue agrandie de l'image",
+    "closeImage": "Fermer l'image"
+  },
+  "revendaDetalhe": {
+    "partnershipProgram": "Programme de partenariat",
+    "title": "Devenez Revendeur",
+    "description": "Rejoignez notre réseau de partenaires et augmentez vos revenus. En revendant nos équipements, vous recevez <1>{{highlight}}</1>, en toute transparence et avec le soutien de notre équipe.",
+    "descriptionHighlight": "5% de commission pour chaque vente conclue",
+    "commission": "Commission",
+    "support": "Support",
+    "supportValue": "Commercial et technique",
+    "highlight1Title": "Prospection commerciale active",
+    "highlight1Desc": "Recevez du matériel de soutien et une approche commerciale pour accélérer de nouvelles opportunités d'affaires.",
+    "highlight2Title": "Suivi technique",
+    "highlight2Desc": "Support technique continu pour répondre aux questions et présenter les bonnes solutions au client final.",
+    "formTitle": "Candidature de Revente",
+    "formDesc": "Remplissez les informations ci-dessous et notre équipe vous contactera.",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "company": "Entreprise",
+    "companyPlaceholder": "Nom de l'entreprise",
+    "taxId": "Numéro fiscal",
+    "taxIdPlaceholder": "Numéro fiscal de l'entreprise",
+    "email": "Email",
+    "emailPlaceholder": "email@entreprise.com",
+    "contact": "Contact",
+    "equipment": "Équipement",
+    "equipmentHelp": "Sélectionnez un ou plusieurs équipements d'intérêt.",
+    "showEquipment": "Afficher les équipements",
+    "hideEquipment": "Masquer les équipements",
+    "message": "Message",
+    "messagePlaceholder": "Parlez-nous de votre profil et de vos objectifs de revente.",
+    "submit": "Envoyer la candidature"
+  },
+  "equipmentContent": {
+    "9": {
+      "description": "Concasseur à cône pour le concassage secondaire et tertiaire, avec une grande fiabilité opérationnelle et d'excellentes performances en production continue.",
+      "additionalInfo": "Machine en excellent état, très peu utilisée. Comprend une centrale de lubrification et hydraulique, un moteur électrique, un tableau électrique et le châssis de la machine."
+    },
+    "1": {
+      "additionalInfo": "Concasseur en très bon état"
+    },
+    "2": {
+      "additionalInfo": "Description fournie par le vendeur. Confirmez toutes les informations directement avec le vendeur"
+    },
+    "3": {
+      "additionalInfo": "Concasseur mobile Parker 900x600, complet et en très bon état"
+    },
+    "4": {
+      "additionalInfo": "Concasseur SANYO en très bon état, peu utilisé"
+    },
+    "5": {
+      "additionalInfo": "HP200 en très bon état et très peu utilisé"
+    },
+    "6": {
+      "additionalInfo": "Concasseur à cône Sandvik CH 430 en état impeccable ! Équipé d'un moteur électrique Siemens, d'un tableau électrique, d'une centrale de lubrification et hydraulique, ainsi que de son propre châssis"
+    },
+    "7": {
+      "additionalInfo": "Concasseur à cône Sandvik Cs 430 en état impeccable ! Équipé d'un moteur électrique Siemens, d'un tableau électrique, d'une centrale de lubrification et hydraulique, ainsi que de son propre châssis"
+    },
+    "8": {
+      "additionalInfo": "LA MACHINE EST EN BON ÉTAT !"
+    },
+    "10": {
+      "additionalInfo": "Équipement supplémentaire : Lame niveleuse"
+    },
+    "11": {
+      "additionalInfo": "Équipements supplémentaires : Chenilles en caoutchouc, Cisaille hydraulique"
+    },
+    "12": {
+      "additionalInfo": "Description fournie par le vendeur. Confirmez toutes les informations directement avec le vendeur"
+    }
+  }
+}

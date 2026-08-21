@@ -1,6 +1,12 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
+import {
+  translateDescription,
+  translateSpecKey,
+  translateSpecValue,
+} from "../utils/equipment";
 import imgAttachments from "../img/attachments.png";
 import imgExcavators from "../img/excavators.png";
 import imgFeeders from "../img/feeders.png";
@@ -78,6 +84,7 @@ const extraCategories = [
 
 export const Equipamentos: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [nameFilter, setNameFilter] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("todos");
@@ -147,10 +154,10 @@ export const Equipamentos: React.FC = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
-              Os nossos Equipamentos
+              {t("equipamentos.label")}
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-              Catálogo com valor, especificações e disponibilidade.
+              {t("equipamentos.title")}
             </h2>
           </div>
 
@@ -167,12 +174,20 @@ export const Equipamentos: React.FC = () => {
                 }}
                 className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border-0 bg-transparent p-0 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="h-40 w-full shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:h-48 lg:h-56">
+                <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:h-48 lg:h-56">
                   <img
                     src={cat.img}
                     alt={cat.name}
                     className="h-full w-full object-contain p-6 transition duration-200 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition duration-200 group-hover:opacity-100 group-active:opacity-100">
+                    <button
+                      type="button"
+                      className="rounded-full bg-[#FFB81C] px-6 py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e]"
+                    >
+                      View products
+                    </button>
+                  </div>
                 </div>
                 <span className="mt-4 text-center text-xs font-bold uppercase tracking-wide leading-5 text-gray-900 sm:text-sm">
                   {cat.name}
@@ -183,18 +198,18 @@ export const Equipamentos: React.FC = () => {
 
           <div className="mb-6 grid gap-3 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm sm:gap-4 sm:p-4 md:mb-8 md:grid-cols-3">
             <label className="text-sm font-semibold text-[#1a1a1a]">
-              Filtro por nome
+              {t("equipamentos.filters.byName")}
               <input
                 type="text"
                 value={nameFilter}
                 onChange={(event) => setNameFilter(event.target.value)}
-                placeholder="Ex.: Escavadeira"
+                placeholder={t("equipamentos.filters.namePlaceholder")}
                 className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               />
             </label>
 
             <label className="text-sm font-semibold text-[#1a1a1a]">
-              Filtro por tipo
+              {t("equipamentos.filters.byType")}
               <select
                 value={categoryFilter}
                 onChange={(event) => {
@@ -202,7 +217,9 @@ export const Equipamentos: React.FC = () => {
                 }}
                 className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               >
-                <option value="todos">Todos os tipos</option>
+                <option value="todos">
+                  {t("equipamentos.filters.allTypes")}
+                </option>
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
@@ -212,13 +229,15 @@ export const Equipamentos: React.FC = () => {
             </label>
 
             <label className="text-sm font-semibold text-[#1a1a1a]">
-              Filtro por categoria
+              {t("equipamentos.filters.byCategory")}
               <select
                 value={subcategoryFilter}
                 onChange={(event) => setSubcategoryFilter(event.target.value)}
                 className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               >
-                <option value="todos">Todas as categorias</option>
+                <option value="todos">
+                  {t("equipamentos.filters.allCategories")}
+                </option>
                 {subcategories.map((subcategory) => (
                   <option key={subcategory} value={subcategory}>
                     {subcategory}
@@ -253,30 +272,34 @@ export const Equipamentos: React.FC = () => {
                         item.inStock ? "text-emerald-600" : "text-amber-600"
                       }`}
                     >
-                      {item.inStock ? "Disponível" : "Sob encomenda"}
+                      {item.inStock
+                        ? t("equipment.inStock")
+                        : t("equipment.onOrder")}
                     </span>
                   </div>
                   <h3 className="break-words text-base font-bold text-[#1a1a1a] sm:text-lg lg:text-xl">
                     {item.name}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-gray-600">
-                    {item.description}
+                    {translateDescription(item.description, item.id, t)}
                   </p>
                   <ul className="mt-4 space-y-2 text-sm text-gray-700">
                     {item.specifications.slice(0, 3).map((spec) => (
                       <li key={spec.key}>
-                        <span className="font-semibold">{spec.key}:</span>{" "}
-                        {spec.value}
+                        <span className="font-semibold">
+                          {translateSpecKey(spec.key, t)}:
+                        </span>{" "}
+                        {translateSpecValue(spec.key, spec.value, t, item.id)}
                       </li>
                     ))}
                   </ul>
                   <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                       <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
-                        Valor
+                        {t("equipment.price")}
                       </p>
                       <p className="mt-2 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-3 py-1 text-sm font-semibold text-[#9f3f00]">
-                        {formatPrice(item.price)}
+                        {t("equipment.inquire")}
                       </p>
                     </div>
                     <div className="flex flex-col gap-2 sm:items-end">
@@ -288,7 +311,7 @@ export const Equipamentos: React.FC = () => {
                         }}
                         className="w-full rounded-full bg-[#FFB81C] px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e] sm:w-auto"
                       >
-                        Especificações
+                        {t("equipment.specifications")}
                       </button>
                     </div>
                   </div>
@@ -298,7 +321,7 @@ export const Equipamentos: React.FC = () => {
           </div>
           {filteredEquipment.length === 0 && (
             <p className="mt-6 rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-4 py-6 text-center text-sm text-gray-600">
-              Nenhum equipamento encontrado para os filtros selecionados.
+              {t("equipamentos.noResults")}
             </p>
           )}
         </div>

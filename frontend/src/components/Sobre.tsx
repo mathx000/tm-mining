@@ -1,33 +1,34 @@
 import React from "react";
-
-const values = [
-  {
-    title: "Inovação",
-    description:
-      "Procuramos constantemente as melhores soluções tecnológicas para os nossos clientes.",
-  },
-  {
-    title: "Confiabilidade",
-    description:
-      "Equipamentos robustos e confiáveis que garantem continuidade operacional.",
-  },
-  {
-    title: "Sustentabilidade",
-    description: "Práticas ambientais responsáveis e soluções mais eficientes.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const Sobre: React.FC = () => {
+  const { t } = useTranslation();
+
+  const values = [
+    {
+      title: t("sobre.values.innovation"),
+      description: t("sobre.values.innovationDesc"),
+    },
+    {
+      title: t("sobre.values.reliability"),
+      description: t("sobre.values.reliabilityDesc"),
+    },
+    {
+      title: t("sobre.values.sustainability"),
+      description: t("sobre.values.sustainabilityDesc"),
+    },
+  ];
+
   return (
     <section id="sobre" className="px-3 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 flex flex-col items-start gap-3 sm:gap-4 md:mb-10 md:gap-5 md:flex-row md:items-center">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
-              Quem somos
+              {t("sobre.experienceLabel")}
             </p>
             <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl xl:text-[4rem]">
-              A TM Mining International
+              {t("sobre.title")}
             </h2>
           </div>
         </div>
@@ -36,40 +37,25 @@ export const Sobre: React.FC = () => {
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D35400]">
-                Sobre nós
+                {t("sobre.label")}
               </p>
               <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl lg:text-[3rem] lg:leading-[1.05]">
-                Mais de 20 anos de experiência nos setores de mineração e
-                construção.
+                {t("sobre.experienceTitle")}
               </h3>
               <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base">
-                A TM Mining International dedica-se ao comércio internacional de
-                maquinaria industrial para pedreiras, disponibilizando
-                equipamentos de escavação, britagem e crivagem a operadores em
-                toda a Europa. Atuamos como elo entre fabricantes e vendedores
-                de equipamento usado e novo e as empresas que deles necessitam,
-                promovendo a circulação de máquinas entre mercados e
-                consolidando relações comerciais duradouras com clientes e
-                parceiros internacionais.
+                {t("sobre.experienceDesc")}
               </p>
             </div>
 
             <div className="rounded-3xl border border-white/20 bg-[#1a1a1a] p-6 shadow-2xl backdrop-blur">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#FFB81C]">
-                Grupo Seixas Pinto
+                {t("sobre.groupLabel")}
               </p>
               <p className="mt-3 text-sm leading-7 text-gray-200 sm:text-base">
-                Integramos o Grupo Seixas Pinto, com mais de duas décadas de
-                atividade nos setores da mineração e da construção em Portugal e
-                em Angola. O Grupo detém e opera mais de dez pedreiras,
-                complementadas por empresas próprias de construção civil, o que
-                nos confere um conhecimento aprofundado e transversal de toda a
-                cadeia de valor — da extração à máquina.
+                {t("sobre.groupDesc1")}
               </p>
               <p className="mt-4 text-sm leading-7 text-gray-400">
-                É esta experiência de terreno, acumulada ao longo de mais de
-                vinte anos, que aplicamos na comercialização de milhares de
-                equipamentos junto de produtores em todo o mundo.
+                {t("sobre.groupDesc2")}
               </p>
             </div>
           </div>

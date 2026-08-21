@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import logo from "../logo/logo-removebg.png";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -25,34 +28,37 @@ export const Header: React.FC = () => {
         {/* Desktop nav */}
         <nav className="hidden gap-6 text-sm font-semibold text-gray-700 md:flex">
           <a href="/#home" className="hover:text-[#D35400]">
-            Início
+            {t("header.nav.home")}
           </a>
           <a href="/#sobre" className="hover:text-[#D35400]">
-            Sobre
+            {t("header.nav.sobre")}
           </a>
           <a href="/#equipamentos" className="hover:text-[#D35400]">
-            Equipamentos
+            {t("header.nav.equipamentos")}
           </a>
           <a href="/#servicos" className="hover:text-[#D35400]">
-            Serviços
+            {t("header.nav.servicos")}
           </a>
           <a href="/#revenda" className="hover:text-[#D35400]">
-            Revenda
+            {t("header.nav.revendas")}
           </a>
           <a href="/#contacto" className="hover:text-[#D35400]">
-            Contacto
+            {t("header.nav.contato")}
           </a>
         </nav>
 
-        {/* Desktop CTA */}
-        <a
-          href="https://wa.me/351933079179?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-[#D35400] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#c23d0e] md:inline-flex"
-        >
-          Contacto
-        </a>
+        {/* Language Switcher + Desktop CTA */}
+        <div className="hidden items-center gap-4 md:flex">
+          <LanguageSwitcher />
+          <a
+            href="https://wa.me/351933079179?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-[#D35400] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#c23d0e]"
+          >
+            {t("header.nav.contato")}
+          </a>
+        </div>
 
         {/* Hamburger button (mobile only) */}
         <button
@@ -83,45 +89,48 @@ export const Header: React.FC = () => {
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Início
+              {t("header.nav.home")}
             </a>
             <a
               href="/#sobre"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Sobre
+              {t("header.nav.sobre")}
             </a>
             <a
               href="/#equipamentos"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Equipamentos
+              {t("header.nav.equipamentos")}
             </a>
             <a
               href="/#servicos"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Serviços
+              {t("header.nav.servicos")}
             </a>
             <a
               href="/#revenda"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Revenda
+              {t("header.nav.revendas")}
             </a>
             <a
-              href="/#contacto"
+              href="/#contato"
               onClick={closeMenu}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
-              Contacto
+              {t("header.nav.contato")}
             </a>
           </nav>
           <div className="mt-4 border-t border-gray-100 pt-4">
+            <div className="mb-4">
+              <LanguageSwitcher />
+            </div>
             <a
               href="https://wa.me/351933079179?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20dos%20equipamentos%20TM%20Mining."
               target="_blank"
@@ -129,7 +138,7 @@ export const Header: React.FC = () => {
               onClick={closeMenu}
               className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#c23d0e]"
             >
-              Contacto via WhatsApp
+              {t("header.nav.contato")} via WhatsApp
             </a>
           </div>
         </div>

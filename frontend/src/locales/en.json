@@ -1,0 +1,242 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "equipamentos": "Equipment",
+      "servicos": "Services",
+      "sobre": "About",
+      "revendas": "Resellers",
+      "contato": "Contact"
+    }
+  },
+  "home": {
+    "subtitle": "Heavy equipment for construction and mining",
+    "title": "Technology and power in every operation.",
+    "description": "We offer high-performance machines with immediate availability and specialized support for large-scale projects."
+  },
+  "equipamentos": {
+    "label": "Our Equipment",
+    "title": "Catalog with value, specifications and availability.",
+    "filters": {
+      "byName": "Filter by name",
+      "byType": "Filter by type",
+      "byCategory": "Filter by category",
+      "namePlaceholder": "Ex.: Excavator",
+      "allTypes": "All types",
+      "allCategories": "All categories"
+    },
+    "categories": {
+      "jawCrusher": "Jaw Crusher",
+      "impactCrusher": "Impact Crusher",
+      "coneCrusher": "Cone Crusher",
+      "vsiCrusher": "VSI Crusher",
+      "rollerCrusher": "Roller Crusher",
+      "screens": "Screens",
+      "feeders": "Feeders",
+      "spareParts": "Spare and Wear parts",
+      "accessories": "Accessories",
+      "trucks": "Trucks",
+      "wheelLoaders": "Wheel Loaders",
+      "excavators": "Excavators",
+      "miniExcavators": "Mini Excavators"
+    },
+    "noResults": "No equipment found with the selected filters."
+  },
+  "equipment": {
+    "category": "Crushing",
+    "inStock": "Available",
+    "onOrder": "On order",
+    "specifications": "Specifications",
+    "brand": "Brand",
+    "model": "Model",
+    "type": "Type",
+    "price": "Price",
+    "inquire": "Inquire",
+    "specKeys": {
+      "brand": "Brand",
+      "model": "Model",
+      "type": "Type",
+      "year": "Year",
+      "location": "Location",
+      "publicationDate": "Publication date",
+      "date": "Date",
+      "machineryId": "Machineryline ID",
+      "condition": "Condition",
+      "additionalServices": "Additional services",
+      "color": "Color",
+      "additionalInfo": "Additional information",
+      "firstRegistration": "First registration",
+      "hoursUsed": "Hours used",
+      "engine": "Engine",
+      "power": "Power",
+      "technicalInspection": "Technical inspection"
+    },
+    "specValues": {
+      "used": "used",
+      "new": "new",
+      "coneCrusherType": "Cone Crusher",
+      "jawCrusherType": "Jaw Crusher",
+      "trackExcavatorType": "Track Excavator",
+      "miniExcavatorType": "Mini Excavator",
+      "vsiCrusherType": "Vertical Shaft Impact Crusher",
+      "rotorCrusherType": "Rotor Crusher",
+      "vehicleDeliveryService": "Vehicle delivery service",
+      "mangideLocation": "Portugal - Mangide, 143 km from Portugal/Porto"
+    },
+    "deliveryTimes": {
+      "immediateAvailability": "Immediate availability",
+      "inquire": "Inquire"
+    },
+    "availableEquipmentDesc": "Equipment available"
+  },
+  "sobre": {
+    "label": "About us",
+    "title": "TM Mining International",
+    "experienceLabel": "Who we are",
+    "experienceTitle": "Over 20 years of experience in the mining and construction sectors.",
+    "experienceDesc": "TM Mining International is dedicated to the international trade of industrial machinery for quarries, providing excavation, crushing and screening equipment to operators throughout Europe. We act as a link between manufacturers and sellers of used and new equipment and companies that need them, promoting the circulation of machines between markets and consolidating lasting business relationships with customers and international partners.",
+    "groupLabel": "Seixas Pinto Group",
+    "groupDesc1": "We are part of the Seixas Pinto Group, with over two decades of activity in the mining and construction sectors in Portugal and Angola. The Group owns and operates more than ten quarries, complemented by its own civil construction companies, which gives us an in-depth and transversal knowledge of the entire value chain — from extraction to machine.",
+    "groupDesc2": "It is this field experience, accumulated over more than twenty years, that we apply in the commercialization of thousands of equipment with producers worldwide.",
+    "values": {
+      "innovation": "Innovation",
+      "innovationDesc": "We constantly seek the best technological solutions for our customers.",
+      "reliability": "Reliability",
+      "reliabilityDesc": "Robust and reliable equipment that ensures operational continuity.",
+      "sustainability": "Sustainability",
+      "sustainabilityDesc": "Responsible environmental practices and more efficient solutions."
+    }
+  },
+  "servicos": {
+    "label": "Smart Solutions",
+    "title": "Complete services and solutions for heavy projects.",
+    "service1Title": "Specialized technical diagnosis",
+    "service1Desc": "We perform complete machine evaluation to increase availability and reduce unexpected downtime in operation.",
+    "service2Title": "Monitoring and operational control",
+    "service2Desc": "Continuous monitoring of production indicators to improve efficiency, consumption and maintenance planning.",
+    "service3Title": "Scheduled preventive maintenance",
+    "service3Desc": "Maintenance plans tailored to the work cycle to extend the life of critical components.",
+    "service4Title": "Integrated fleet management",
+    "service4Desc": "We integrate technical and operational information to support faster and safer decisions in the field."
+  },
+  "revendas": {
+    "label": "Strategic Partnerships",
+    "title": "Become a Reseller",
+    "description": "Join our partner network and increase your earnings. By reselling our equipment, you receive 5% commission for each completed sale, with total transparency and support from our team.",
+    "benefit": "Benefit",
+    "benefitValue": "+5%",
+    "support": "Support",
+    "supportValue": "Commercial and technical",
+    "learnMore": "Learn more"
+  },
+  "contato": {
+    "label": "Get in touch",
+    "title": "We're ready to help with your next operation.",
+    "description": "Tell us what you need and our specialists will respond with the ideal solution for your project.",
+    "contact1Name": "Miguel Moura Pinto",
+    "contact1Phone": "+351 933 852 559",
+    "contact1Email": "nordareias@mail.telepac.pt",
+    "contact2Name": "Tomás Moura Pinto",
+    "contact2Phone": "+351 933 079 179",
+    "contact2Email": "blocifel@hotmail.com"
+  },
+  "footer": {
+    "title": "TM Mining Internacional",
+    "description": "Quality, technology and reliability in every operation."
+  },
+  "produtoDetalhe": {
+    "backToEquipment": "Back to equipment",
+    "expandImage": "Expand image",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "imageOf": "of",
+    "thumbnail": "Thumbnail",
+    "fullSpecifications": "Full specifications",
+    "availability": "Availability",
+    "deliveryTime": "Delivery time",
+    "price": "Price",
+    "dedicatedSupport": "Dedicated support for this equipment, with proposal and delivery schedule.",
+    "iAmInterested": "I'm Interested",
+    "askSeller": "Ask the seller",
+    "namePlaceholder": "Name",
+    "companyPlaceholder": "Company",
+    "phonePlaceholder": "Phone",
+    "emailPlaceholder": "Email",
+    "message": "Message",
+    "messagePlaceholder": "Write your question",
+    "send": "Send",
+    "relatedListings": "Related listings",
+    "expandedImageView": "Expanded image view",
+    "closeImage": "Close image"
+  },
+  "revendaDetalhe": {
+    "partnershipProgram": "Partnership program",
+    "title": "Become a Reseller",
+    "description": "Join our partner network and increase your earnings. By reselling our equipment, you receive <1>{{highlight}}</1>, with total transparency and support from our team.",
+    "descriptionHighlight": "5% commission for each completed sale",
+    "commission": "Commission",
+    "support": "Support",
+    "supportValue": "Commercial and technical",
+    "highlight1Title": "Active commercial outreach",
+    "highlight1Desc": "Receive support materials and commercial approach to accelerate new business opportunities.",
+    "highlight2Title": "Technical follow-up",
+    "highlight2Desc": "Continuous technical support to answer questions and present the right solutions to the end customer.",
+    "formTitle": "Reseller Application",
+    "formDesc": "Fill in the details below and our team will get in touch.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "company": "Company",
+    "companyPlaceholder": "Company name",
+    "taxId": "Tax ID",
+    "taxIdPlaceholder": "Company tax ID",
+    "email": "Email",
+    "emailPlaceholder": "email@company.com",
+    "contact": "Contact",
+    "equipment": "Equipment",
+    "equipmentHelp": "Select one or more equipment of interest.",
+    "showEquipment": "Show equipment",
+    "hideEquipment": "Hide equipment",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your profile and reseller goals.",
+    "submit": "Submit application"
+  },
+  "equipmentContent": {
+    "9": {
+      "description": "Cone crusher for secondary and tertiary crushing, with high operational reliability and excellent performance in continuous production.",
+      "additionalInfo": "Machine in excellent condition, with very little use. Includes lubrication and hydraulic unit, electric motor, electrical panel and machine chassis."
+    },
+    "1": {
+      "additionalInfo": "Crusher in very good condition"
+    },
+    "2": {
+      "additionalInfo": "Description provided by the seller. Confirm all information directly with the seller"
+    },
+    "3": {
+      "additionalInfo": "Parker 900x600 mobile crusher, complete and in very good condition"
+    },
+    "4": {
+      "additionalInfo": "SANYO crusher in very good condition with little use"
+    },
+    "5": {
+      "additionalInfo": "HP200 in very good condition and with very little use"
+    },
+    "6": {
+      "additionalInfo": "Sandvik CH 430 cone crusher in essential condition! Equipped with Siemens electric motor, electrical panel, lubrication and hydraulic unit, and also its own chassis"
+    },
+    "7": {
+      "additionalInfo": "Sandvik Cs 430 cone crusher in essential condition! Equipped with Siemens electric motor, electrical panel, lubrication and hydraulic unit, and also its own chassis"
+    },
+    "8": {
+      "additionalInfo": "THE MACHINE IS IN GOOD CONDITION!"
+    },
+    "10": {
+      "additionalInfo": "Additional equipment: Grading blade"
+    },
+    "11": {
+      "additionalInfo": "Additional equipment: Rubber tracks, Hydraulic shears"
+    },
+    "12": {
+      "additionalInfo": "Description provided by the seller. Confirm all information directly with the seller"
+    }
+  }
+}

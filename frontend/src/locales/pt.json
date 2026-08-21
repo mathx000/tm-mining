@@ -1,0 +1,201 @@
+{
+  "header": {
+    "nav": {
+      "home": "Início",
+      "equipamentos": "Equipamentos",
+      "servicos": "Serviços",
+      "sobre": "Sobre",
+      "revendas": "Revendas",
+      "contato": "Contato"
+    }
+  },
+  "home": {
+    "subtitle": "Equipamentos pesados para construção e mineração",
+    "title": "Tecnologia e potência em cada operação.",
+    "description": "Oferecemos máquinas de alto desempenho com disponibilidade imediata e suporte especializado para projetos de grande porte."
+  },
+  "equipamentos": {
+    "label": "Os nossos Equipamentos",
+    "title": "Catálogo com valor, especificações e disponibilidade.",
+    "filters": {
+      "byName": "Filtro por nome",
+      "byType": "Filtro por tipo",
+      "byCategory": "Filtro por categoria",
+      "namePlaceholder": "Ex.: Escavadeira",
+      "allTypes": "Todos os tipos",
+      "allCategories": "Todas as categorias"
+    },
+    "categories": {
+      "jawCrusher": "Britador de mandibula",
+      "impactCrusher": "Britador de impacto",
+      "coneCrusher": "Britador cônico",
+      "vsiCrusher": "Britador de VSI",
+      "rollerCrusher": "Britador de rolo",
+      "screens": "Crivos (screens)",
+      "feeders": "Alimentadores (feeders)",
+      "spareParts": "Peças de desgaste (Spare and Wear parts)",
+      "accessories": "Acessórios",
+      "trucks": "Camiões",
+      "wheelLoaders": "Pá carregadoras",
+      "excavators": "Escavadoras",
+      "miniExcavators": "Mini escavadoras"
+    },
+    "noResults": "Nenhum equipamento encontrado com os filtros selecionados."
+  },
+  "equipment": {
+    "category": "Britagem",
+    "inStock": "Disponível",
+    "onOrder": "Sob encomenda",
+    "specifications": "Especificações",
+    "brand": "Marca",
+    "model": "Modelo",
+    "type": "Tipo",
+    "price": "Valor",
+    "inquire": "A consultar",
+    "specKeys": {
+      "brand": "Marca",
+      "model": "Modelo",
+      "type": "Tipo",
+      "year": "Ano",
+      "location": "Localização",
+      "publicationDate": "Data de publicação",
+      "date": "Data",
+      "machineryId": "Machineryline ID",
+      "condition": "Estado",
+      "additionalServices": "Serviços adicionais",
+      "color": "Cor",
+      "additionalInfo": "Informação adicional",
+      "firstRegistration": "Primeiro registo",
+      "hoursUsed": "Horas de utilização",
+      "engine": "Motor",
+      "power": "Potência",
+      "technicalInspection": "Inspeção técnica"
+    },
+    "specValues": {
+      "used": "usados",
+      "new": "novo",
+      "coneCrusherType": "Britador de cone",
+      "jawCrusherType": "Britadeira de maxilas",
+      "trackExcavatorType": "Escavadora de rastos",
+      "miniExcavatorType": "Mini-escavadora",
+      "vsiCrusherType": "Triturador de impacto de eixo vertical",
+      "rotorCrusherType": "Trituradora de rotor",
+      "vehicleDeliveryService": "Serviço de entrega de veículos"
+    },
+    "deliveryTimes": {
+      "immediateAvailability": "Disponibilidade imediata",
+      "inquire": "A consultar"
+    }
+  },
+  "sobre": {
+    "label": "Sobre nós",
+    "title": "A TM Mining International",
+    "experienceLabel": "Quem somos",
+    "experienceTitle": "Mais de 20 anos de experiência nos setores de mineração e construção.",
+    "experienceDesc": "A TM Mining International dedica-se ao comércio internacional de maquinaria industrial para pedreiras, disponibilizando equipamentos de escavação, britagem e crivagem a operadores em toda a Europa. Atuamos como elo entre fabricantes e vendedores de equipamento usado e novo e as empresas que deles necessitam, promovendo a circulação de máquinas entre mercados e consolidando relações comerciais duradouras com clientes e parceiros internacionais.",
+    "groupLabel": "Grupo Seixas Pinto",
+    "groupDesc1": "Integramos o Grupo Seixas Pinto, com mais de duas décadas de atividade nos setores da mineração e da construção em Portugal e em Angola. O Grupo detém e opera mais de dez pedreiras, complementadas por empresas próprias de construção civil, o que nos confere um conhecimento aprofundado e transversal de toda a cadeia de valor — da extração à máquina.",
+    "groupDesc2": "É esta experiência de terreno, acumulada ao longo de mais de vinte anos, que aplicamos na comercialização de milhares de equipamentos junto de produtores em todo o mundo.",
+    "values": {
+      "innovation": "Inovação",
+      "innovationDesc": "Procuramos constantemente as melhores soluções tecnológicas para os nossos clientes.",
+      "reliability": "Confiabilidade",
+      "reliabilityDesc": "Equipamentos robustos e confiáveis que garantem continuidade operacional.",
+      "sustainability": "Sustentabilidade",
+      "sustainabilityDesc": "Práticas ambientais responsáveis e soluções mais eficientes."
+    }
+  },
+  "servicos": {
+    "label": "Soluções inteligentes",
+    "title": "Serviços e soluções completas para projetos pesados.",
+    "service1Title": "Diagnóstico técnico especializado",
+    "service1Desc": "Fazemos avaliação completa de máquinas para aumentar disponibilidade e reduzir paragens inesperadas na operação.",
+    "service2Title": "Monitorização e controlo operacional",
+    "service2Desc": "Acompanhamento contínuo dos indicadores de produção para melhorar eficiência, consumo e planeamento de manutenção.",
+    "service3Title": "Manutenção preventiva programada",
+    "service3Desc": "Planos de manutenção ajustados ao ciclo de trabalho para prolongar a vida útil dos componentes críticos.",
+    "service4Title": "Gestão integrada de frota",
+    "service4Desc": "Integramos informação técnica e operacional para apoiar decisões mais rápidas e seguras em campo."
+  },
+  "revendas": {
+    "label": "Parcerias estratégicas",
+    "title": "Torne-se um Revendedor",
+    "description": "Faça parte da nossa rede de parceiros e aumente os seus rendimentos. Ao revender os nossos equipamentos, recebe 5% de comissão por cada venda concluída, com total transparência e suporte da nossa equipa.",
+    "benefit": "Benefício",
+    "benefitValue": "+5%",
+    "support": "Suporte",
+    "supportValue": "Comercial e técnico",
+    "learnMore": "Saiba mais"
+  },
+  "contato": {
+    "label": "Entre em contacto",
+    "title": "Estamos prontos para ajudar na sua próxima operação.",
+    "description": "Diga-nos qual é a sua necessidade e os nossos especialistas irão responder com a solução ideal para o seu projeto.",
+    "contact1Name": "Miguel Moura Pinto",
+    "contact1Phone": "+351 933 852 559",
+    "contact1Email": "nordareias@mail.telepac.pt",
+    "contact2Name": "Tomás Moura Pinto",
+    "contact2Phone": "+351 933 079 179",
+    "contact2Email": "blocifel@hotmail.com"
+  },
+  "footer": {
+    "title": "TM Mining Internacional",
+    "description": "Qualidade, tecnologia e confiabilidade em cada operação."
+  },
+  "produtoDetalhe": {
+    "backToEquipment": "Voltar para equipamentos",
+    "expandImage": "Expandir imagem",
+    "previousImage": "Imagem anterior",
+    "nextImage": "Próxima imagem",
+    "imageOf": "de",
+    "thumbnail": "Miniatura",
+    "fullSpecifications": "Especificações completas",
+    "availability": "Disponibilidade",
+    "deliveryTime": "Prazo de entrega",
+    "price": "Valor",
+    "dedicatedSupport": "Atendimento dedicado para este equipamento, com envio de proposta e cronograma de entrega.",
+    "iAmInterested": "Tenho Interesse",
+    "askSeller": "Pergunte ao vendedor",
+    "namePlaceholder": "Nome",
+    "companyPlaceholder": "Empresa",
+    "phonePlaceholder": "Telefone",
+    "emailPlaceholder": "E-mail",
+    "message": "Mensagem",
+    "messagePlaceholder": "Escreva a sua dúvida",
+    "send": "Enviar",
+    "relatedListings": "Anúncios relacionados",
+    "expandedImageView": "Visualização expandida da imagem",
+    "closeImage": "Fechar imagem"
+  },
+  "revendaDetalhe": {
+    "partnershipProgram": "Programa de parceria",
+    "title": "Torne-se um Revendedor",
+    "description": "Faça parte da nossa rede de parceiros e aumente os seus rendimentos. Ao revender os nossos equipamentos, recebe <1>{{highlight}}</1>, com total transparência e suporte da nossa equipa.",
+    "descriptionHighlight": "5% de comissão por cada venda concluída",
+    "commission": "Comissão",
+    "support": "Suporte",
+    "supportValue": "Comercial e técnico",
+    "highlight1Title": "Captação comercial ativa",
+    "highlight1Desc": "Receba materiais de apoio e abordagem comercial para acelerar novas oportunidades de negócio.",
+    "highlight2Title": "Acompanhamento técnico",
+    "highlight2Desc": "Suporte técnico contínuo para responder a dúvidas e apresentar soluções certas ao cliente final.",
+    "formTitle": "Candidatura de Revenda",
+    "formDesc": "Preencha os dados abaixo e a nossa equipa entrará em contacto.",
+    "name": "Nome",
+    "namePlaceholder": "O seu nome",
+    "company": "Empresa",
+    "companyPlaceholder": "Nome da empresa",
+    "taxId": "NIF",
+    "taxIdPlaceholder": "NIF da empresa",
+    "email": "Email",
+    "emailPlaceholder": "email@empresa.com",
+    "contact": "Contacto",
+    "equipment": "Equipamento",
+    "equipmentHelp": "Selecione um ou mais equipamentos de interesse.",
+    "showEquipment": "Mostrar equipamentos",
+    "hideEquipment": "Ocultar equipamentos",
+    "message": "Mensagem",
+    "messagePlaceholder": "Conte-nos sobre o seu perfil e objetivos de revenda.",
+    "submit": "Enviar candidatura"
+  }
+}

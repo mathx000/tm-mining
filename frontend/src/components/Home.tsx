@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import backgroundImage from "../img/capa.jpeg";
 
 export const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -13,14 +16,13 @@ export const Home: React.FC = () => {
       <div className="mx-auto grid max-w-7xl items-center gap-6 sm:gap-8 lg:gap-10 lg:grid-cols-1 lg:justify-items-start">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#FFB81C]">
-            Equipamentos pesados para construção e mineração
+            {t("home.subtitle")}
           </p>
           <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl xl:text-6xl">
-            Tecnologia e potência em cada operação.
+            {t("home.title")}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-200">
-            Oferecemos máquinas de alto desempenho com disponibilidade imediata
-            e suporte especializado para projetos de grande porte.
+            {t("home.description")}
           </p>
         </div>
       </div>
