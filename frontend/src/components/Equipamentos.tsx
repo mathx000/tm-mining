@@ -15,10 +15,10 @@ import imgScreens from "../img/Screens.png";
 import imgSpareParts from "../img/spare-parts.png";
 import imgTrucks from "../img/trucks.png";
 import imgWheelLoaders from "../img/wheel-loaders.png";
-import imgBritadorMandibula from "../img/Britador de mandibula.png";
-import imgBritadorImpacto from "../img/Britador de impacto.png";
-import imgBritadorConico from "../img/Britador cônico.png";
-import imgBritadorVsi from "../img/Britador de VSI.png";
+import imgBritadorMandibula from "../img/britador.mandibula.png";
+import imgBritadorImpacto from "../img/britador.impacto.png";
+import imgBritadorConico from "../img/britador.conico.png";
+import imgBritadorVsi from "../img/britador.vsi.png";
 import imgMiniEscavadora from "../img/mini escavadeira.png";
 import imgPecasDesgaste from "../img/Peças de desgaste (Spare and Wear parts).png";
 
