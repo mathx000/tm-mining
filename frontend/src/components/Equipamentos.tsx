@@ -15,7 +15,6 @@ import imgScreens from "../img/Screens.png";
 import imgSpareParts from "../img/spare-parts.png";
 import imgTrucks from "../img/trucks.png";
 import imgWheelLoaders from "../img/wheel-loaders.png";
-import imgBritadorMandibula from "../img/britador.mandibula.png";
 import imgBritadorImpacto from "../img/britador.impacto.png";
 import imgBritadorConico from "../img/britador.conico.png";
 import imgBritadorVsi from "../img/britador.vsi.png";
@@ -31,17 +30,17 @@ const getEquipmentSubcategory = (name: string): string => {
     .replace(/[-\s]+/g, " ");
   const first = name.trim().split(/\s+/)[0];
 
-  if (
-    normalizedName.includes("maxilas") ||
-    normalizedName.includes("mandibula")
-  ) {
+  if (normalizedName === "britador vsi") return "Britador VSI";
+  if (normalizedName === "britador") return "Britador";
+
+  if (normalizedName.includes("maxilas") || normalizedName.includes("mandibula")) {
     return "Britador de mandibula";
   }
   if (normalizedName.includes("cone") || normalizedName.includes("conico")) {
     return "Britador cônico";
   }
-  if (normalizedName.includes("vsi")) return "Britador de VSI";
-  if (normalizedName.includes("impacto")) return "Britador de impacto";
+  if (normalizedName.includes("impacto")) return "Britador VSI";
+  if (normalizedName.includes("vsi")) return "Britador";
   if (normalizedName.includes("rolo")) return "Britador de rolo";
   if (normalizedName.startsWith("mini escavadora")) return "Mini escavadoras";
   if (first === "Escavadora") return "Escavadoras";
@@ -50,10 +49,9 @@ const getEquipmentSubcategory = (name: string): string => {
 };
 
 const catalogCategories = [
-  { name: "Britador de mandibula", img: imgBritadorMandibula },
-  { name: "Britador de impacto", img: imgBritadorImpacto },
+  { name: "Britador VSI", img: imgBritadorImpacto },
   { name: "Britador cônico", img: imgBritadorConico },
-  { name: "Britador de VSI", img: imgBritadorVsi },
+  { name: "Britador", img: imgBritadorVsi },
   { name: "Britador de rolo", img: imgRollerCrusher },
   { name: "Crivos (screens)", img: imgScreens },
   { name: "Alimentadores (feeders)", img: imgFeeders },
@@ -67,10 +65,9 @@ const catalogCategories = [
 
 // Extra category names from the icon strip in Sobre
 const extraCategories = [
-  "Britador de mandibula",
-  "Britador de impacto",
+  "Britador VSI",
   "Britador cônico",
-  "Britador de VSI",
+  "Britador",
   "Britador de rolo",
   "Crivos (screens)",
   "Alimentadores (feeders)",
@@ -138,9 +135,7 @@ export const Equipamentos: React.FC = () => {
       categoryFilter === "todos" || normalizedCategory === categoryFilter;
     const matchesSubcategory =
       subcategoryFilter === "todos" ||
-      normalizedName === normalizedSubcategory ||
-      (normalizedSubcategory === "britador de impacto" &&
-        normalizedName === "britador de vsi");
+      normalizedName === normalizedSubcategory;
 
     return matchesName && matchesCategory && matchesSubcategory;
   });
