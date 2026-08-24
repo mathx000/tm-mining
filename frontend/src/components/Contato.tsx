@@ -51,6 +51,15 @@ export const Contato: React.FC = () => {
                 {t("contato.contact2Email")}
               </a>
             </div>
+            <div>
+              <p className="font-semibold text-white">
+                {t("contato.contact3Name")}
+              </p>
+              <p className="mt-1 flex items-center gap-2">
+                <span aria-hidden="true">🇵🇹</span>
+                <span>{t("contato.contact3Phone")}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

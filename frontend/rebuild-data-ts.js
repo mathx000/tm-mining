@@ -139,7 +139,17 @@ Object.entries(machineMap).forEach(([machineName, { id, data: specs }]) => {
 output += "];\n\n";
 
 // Adicionar funções helper
-output += `export function formatPrice(_price: number): string {
+output += `export function normalizeEquipmentCategory(category: string): string {
+  const normalized = category.trim().toLowerCase();
+
+  if (normalized === 'trituração' || normalized === 'trituracao') {
+    return 'Britagem';
+  }
+
+  return category;
+}
+
+export function formatPrice(_price: number): string {
   return 'A consultar';
 }
 

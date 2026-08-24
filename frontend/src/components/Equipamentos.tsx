@@ -7,19 +7,19 @@ import {
   translateSpecKey,
   translateSpecValue,
 } from "../utils/equipment";
-import imgAttachments from "../img/attachments.png";
-import imgExcavators from "../img/excavators.png";
-import imgFeeders from "../img/feeders.png";
-import imgRollerCrusher from "../img/roller-crusher.png";
-import imgScreens from "../img/Screens.png";
+import imgAttachments from "../img/categories/attachments.png";
+import imgExcavators from "../img/categories/excavators.png";
+import imgFeeders from "../img/categories/feeders.png";
+import imgRollerCrusher from "../img/categories/roller-crusher.png";
+import imgScreens from "../img/categories/Screens.png";
 import imgSpareParts from "../img/spare-parts.png";
-import imgTrucks from "../img/trucks.png";
-import imgWheelLoaders from "../img/wheel-loaders.png";
-import imgBritadorImpacto from "../img/britador.impacto.png";
-import imgBritadorConico from "../img/britador.conico.png";
-import imgBritadorVsi from "../img/britador.vsi.png";
-import imgMiniEscavadora from "../img/mini escavadeira.png";
-import imgPecasDesgaste from "../img/Peças de desgaste (Spare and Wear parts).png";
+import imgTrucks from "../img/categories/trucks.png";
+import imgWheelLoaders from "../img/categories/wheel-loaders.png";
+import imgBritadorImpacto from "../img/categories/britadorvsi.png";
+import imgBritadorConico from "../img/categories/britadorconico.png";
+import imgBritadorMandibula from "../img/categories/britadordemandibula.png";
+import imgMiniEscavadora from "../img/categories/mini escavadeira.png";
+import imgPecasDesgaste from "../img/categories/Peças de desgaste (Spare and Wear parts).png";
 
 const getEquipmentSubcategory = (name: string): string => {
   const normalizedName = name
@@ -31,16 +31,22 @@ const getEquipmentSubcategory = (name: string): string => {
   const first = name.trim().split(/\s+/)[0];
 
   if (normalizedName === "britador vsi") return "Britador VSI";
-  if (normalizedName === "britador") return "Britador";
+  if (normalizedName === "britador de mandibula") {
+    return "Britador de mandibula";
+  }
 
-  if (normalizedName.includes("maxilas") || normalizedName.includes("mandibula")) {
+  if (
+    normalizedName.includes("maxilas") ||
+    normalizedName.includes("mandibula")
+  ) {
     return "Britador de mandibula";
   }
   if (normalizedName.includes("cone") || normalizedName.includes("conico")) {
     return "Britador cônico";
   }
-  if (normalizedName.includes("impacto")) return "Britador VSI";
-  if (normalizedName.includes("vsi")) return "Britador";
+  if (normalizedName.includes("impacto") || normalizedName.includes("vsi")) {
+    return "Britador VSI";
+  }
   if (normalizedName.includes("rolo")) return "Britador de rolo";
   if (normalizedName.startsWith("mini escavadora")) return "Mini escavadoras";
   if (first === "Escavadora") return "Escavadoras";
@@ -49,11 +55,11 @@ const getEquipmentSubcategory = (name: string): string => {
 };
 
 const catalogCategories = [
+  { name: "Britador de mandibulas", img: imgBritadorMandibula },
+  { name: "Britador conico", img: imgBritadorConico },
   { name: "Britador VSI", img: imgBritadorImpacto },
-  { name: "Britador cônico", img: imgBritadorConico },
-  { name: "Britador", img: imgBritadorVsi },
-  { name: "Britador de rolo", img: imgRollerCrusher },
-  { name: "Crivos (screens)", img: imgScreens },
+  { name: "Britador rolo", img: imgRollerCrusher },
+  { name: "Crivos", img: imgScreens },
   { name: "Alimentadores (feeders)", img: imgFeeders },
   { name: "Peças de desgaste (Spare and Wear parts)", img: imgPecasDesgaste },
   { name: "Acessórios", img: imgAttachments },
@@ -65,9 +71,9 @@ const catalogCategories = [
 
 // Extra category names from the icon strip in Sobre
 const extraCategories = [
+  "Britador de mandibula",
   "Britador VSI",
   "Britador cônico",
-  "Britador",
   "Britador de rolo",
   "Crivos (screens)",
   "Alimentadores (feeders)",
@@ -86,6 +92,7 @@ export const Equipamentos: React.FC = () => {
   const [nameFilter, setNameFilter] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("todos");
   const [subcategoryFilter, setSubcategoryFilter] = useState("todos");
+  const [equipmentFilter, setEquipmentFilter] = useState("todos");
 
   const scrollToEquipamentos = () => {
     const element = document.getElementById("filtered-equipment");
@@ -112,6 +119,13 @@ export const Equipamentos: React.FC = () => {
     [],
   );
 
+  const typeOptions = [
+    ...categories,
+    "Carregadoras",
+    "Peças e acessórios",
+    "Transporte",
+  ].sort((firstType, secondType) => firstType.localeCompare(secondType, "pt"));
+
   const subcategories = useMemo(() => {
     const fromEquipment = equipment.map((item) =>
       getEquipmentSubcategory(item.name),
@@ -119,6 +133,11 @@ export const Equipamentos: React.FC = () => {
     const merged = Array.from(new Set([...fromEquipment, ...extraCategories]));
     return merged.sort((a, b) => a.localeCompare(b, "pt"));
   }, []);
+
+  const equipmentOptions = useMemo(
+    () => [...equipment].sort((a, b) => a.name.localeCompare(b.name, "pt")),
+    [],
+  );
 
   const filteredEquipment = equipment.filter((item) => {
     const normalizedCategory = normalizeEquipmentCategory(item.category);
@@ -128,16 +147,32 @@ export const Equipamentos: React.FC = () => {
     const normalizedSubcategory = getEquipmentSubcategory(subcategoryFilter)
       .trim()
       .toLowerCase();
+    const equipmentSubcategory = getEquipmentSubcategory(item.name)
+      .trim()
+      .toLowerCase();
     const matchesName = item.name
       .toLowerCase()
       .includes(nameFilter.trim().toLowerCase());
     const matchesCategory =
-      categoryFilter === "todos" || normalizedCategory === categoryFilter;
+      categoryFilter === "todos" ||
+      normalizedCategory === categoryFilter ||
+      (categoryFilter === "Carregadoras" &&
+        ["pá carregadoras", "escavadoras", "mini escavadoras"].includes(
+          equipmentSubcategory,
+        )) ||
+      (categoryFilter === "Peças e acessórios" &&
+        ["peças de desgaste (spare and wear parts)", "acessórios"].includes(
+          equipmentSubcategory,
+        )) ||
+      (categoryFilter === "Transporte" && equipmentSubcategory === "camiões");
     const matchesSubcategory =
-      subcategoryFilter === "todos" ||
-      normalizedName === normalizedSubcategory;
+      subcategoryFilter === "todos" || normalizedName === normalizedSubcategory;
+    const matchesEquipment =
+      equipmentFilter === "todos" || item.id === equipmentFilter;
 
-    return matchesName && matchesCategory && matchesSubcategory;
+    return (
+      matchesName && matchesCategory && matchesSubcategory && matchesEquipment
+    );
   });
 
   return (
@@ -163,6 +198,7 @@ export const Equipamentos: React.FC = () => {
                 type="button"
                 onClick={() => {
                   setSubcategoryFilter(cat.name);
+                  setEquipmentFilter("todos");
                   setCategoryFilter("todos");
                   navigate(`/?categoria=${encodeURIComponent(cat.name)}`);
                   window.setTimeout(scrollToEquipamentos, 150);
@@ -175,13 +211,10 @@ export const Equipamentos: React.FC = () => {
                     alt={cat.name}
                     className="h-full w-full object-contain p-6 transition duration-200 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition duration-200 group-hover:opacity-100 group-active:opacity-100">
-                    <button
-                      type="button"
-                      className="rounded-full bg-[#FFB81C] px-6 py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e]"
-                    >
+                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition duration-200 group-hover:opacity-100 group-active:opacity-100">
+                    <span className="rounded-full bg-[#FFB81C] px-6 py-2 text-sm font-semibold text-[#1a1a1a]">
                       View products
-                    </button>
+                    </span>
                   </div>
                 </div>
                 <span className="mt-4 text-center text-xs font-bold uppercase tracking-wide leading-5 text-gray-900 sm:text-sm">
@@ -215,7 +248,7 @@ export const Equipamentos: React.FC = () => {
                 <option value="todos">
                   {t("equipamentos.filters.allTypes")}
                 </option>
-                {categories.map((category) => (
+                {typeOptions.map((category) => (
                   <option key={category} value={category}>
                     {category}
                   </option>
@@ -224,18 +257,21 @@ export const Equipamentos: React.FC = () => {
             </label>
 
             <label className="text-sm font-semibold text-[#1a1a1a]">
-              {t("equipamentos.filters.byCategory")}
+              {t("equipamentos.filters.byEquipment")}
               <select
-                value={subcategoryFilter}
-                onChange={(event) => setSubcategoryFilter(event.target.value)}
+                value={equipmentFilter}
+                onChange={(event) => {
+                  setEquipmentFilter(event.target.value);
+                  setSubcategoryFilter("todos");
+                }}
                 className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
               >
                 <option value="todos">
-                  {t("equipamentos.filters.allCategories")}
+                  {t("equipamentos.filters.allEquipment")}
                 </option>
-                {subcategories.map((subcategory) => (
-                  <option key={subcategory} value={subcategory}>
-                    {subcategory}
+                {equipmentOptions.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.name}
                   </option>
                 ))}
               </select>

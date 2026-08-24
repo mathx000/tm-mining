@@ -11,6 +11,31 @@ function isSupportedImage(fileName) {
   return SUPPORTED_EXTENSIONS.includes(path.extname(fileName).toLowerCase());
 }
 
+function compareImages(a, b) {
+  const aBase = path.basename(a, path.extname(a)).trim().toLowerCase();
+  const bBase = path.basename(b, path.extname(b)).trim().toLowerCase();
+
+  const aIsCover = aBase === '1';
+  const bIsCover = bBase === '1';
+
+  if (aIsCover !== bIsCover) {
+    return aIsCover ? -1 : 1;
+  }
+
+  const aIsNumeric = /^\d+$/.test(aBase);
+  const bIsNumeric = /^\d+$/.test(bBase);
+
+  if (aIsNumeric && bIsNumeric) {
+    return Number(aBase) - Number(bBase);
+  }
+
+  if (aIsNumeric !== bIsNumeric) {
+    return aIsNumeric ? -1 : 1;
+  }
+
+  return a.localeCompare(b, 'pt', { numeric: true, sensitivity: 'base' });
+}
+
 const folders = fs.readdirSync(imgDir)
   .filter(f => fs.statSync(path.join(imgDir, f)).isDirectory())
   .sort();
@@ -20,7 +45,7 @@ folders.forEach(folder => {
   const folderPath = path.join(imgDir, folder);
   const images = fs.readdirSync(folderPath)
     .filter(isSupportedImage)
-    .sort();
+    .sort(compareImages);
   
   const folderKey = folder
     .replace(/[^a-zA-Z0-9]/g, '_')

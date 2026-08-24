@@ -21,9 +21,11 @@
       "byName": "Filter by name",
       "byType": "Filter by type",
       "byCategory": "Filter by category",
+      "byEquipment": "Filter by equipment",
       "namePlaceholder": "Ex.: Excavator",
       "allTypes": "All types",
-      "allCategories": "All categories"
+      "allCategories": "All categories",
+      "allEquipment": "All equipment"
     },
     "categories": {
       "jawCrusher": "Jaw Crusher",
@@ -138,7 +140,9 @@
     "contact1Email": "nordareias@mail.telepac.pt",
     "contact2Name": "Tomás Moura Pinto",
     "contact2Phone": "+351 933 079 179",
-    "contact2Email": "blocifel@hotmail.com"
+    "contact2Email": "blocifel@hotmail.com",
+    "contact3Name": "Geral Escritório",
+    "contact3Phone": "+351 938 181 967"
   },
   "footer": {
     "title": "TM Mining Internacional",

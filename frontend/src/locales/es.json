@@ -21,9 +21,11 @@
       "byName": "Filtrar por nombre",
       "byType": "Filtrar por tipo",
       "byCategory": "Filtrar por categoría",
+      "byEquipment": "Filtrar por equipo",
       "namePlaceholder": "Ej.: Excavadora",
       "allTypes": "Todos los tipos",
-      "allCategories": "Todas las categorías"
+      "allCategories": "Todas las categorías",
+      "allEquipment": "Todos los equipos"
     },
     "categories": {
       "jawCrusher": "Trituradora de mandíbulas",
@@ -138,7 +140,9 @@
     "contact1Email": "nordareias@mail.telepac.pt",
     "contact2Name": "Tomás Moura Pinto",
     "contact2Phone": "+351 933 079 179",
-    "contact2Email": "blocifel@hotmail.com"
+    "contact2Email": "blocifel@hotmail.com",
+    "contact3Name": "Geral Escritório",
+    "contact3Phone": "+351 938 181 967"
   },
   "footer": {
     "title": "TM Mining Internacional",

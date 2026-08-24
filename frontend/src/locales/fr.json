@@ -21,9 +21,11 @@
       "byName": "Filtrer par nom",
       "byType": "Filtrer par type",
       "byCategory": "Filtrer par catégorie",
+      "byEquipment": "Filtrer par équipement",
       "namePlaceholder": "Ex.: Pelle",
       "allTypes": "Tous les types",
-      "allCategories": "Toutes les catégories"
+      "allCategories": "Toutes les catégories",
+      "allEquipment": "Tous les équipements"
     },
     "categories": {
       "jawCrusher": "Concasseur à mâchoires",
@@ -138,7 +140,9 @@
     "contact1Email": "nordareias@mail.telepac.pt",
     "contact2Name": "Tomás Moura Pinto",
     "contact2Phone": "+351 933 079 179",
-    "contact2Email": "blocifel@hotmail.com"
+    "contact2Email": "blocifel@hotmail.com",
+    "contact3Name": "Geral Escritório",
+    "contact3Phone": "+351 938 181 967"
   },
   "footer": {
     "title": "TM Mining Internacional",
