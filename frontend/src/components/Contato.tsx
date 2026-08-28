@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { PT } from "country-flag-icons/react/3x2";
 
 export const Contato: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ export const Contato: React.FC = () => {
                 {t("contato.contact1Name")}
               </p>
               <p className="mt-1 flex items-center gap-2">
-                <span aria-hidden="true">🇵🇹</span>
+                <PT aria-hidden="true" className="h-3.5 w-5 rounded-sm" />
                 <span>{t("contato.contact1Phone")}</span>
               </p>
               <a
@@ -41,7 +42,7 @@ export const Contato: React.FC = () => {
                 {t("contato.contact2Name")}
               </p>
               <p className="mt-1 flex items-center gap-2">
-                <span aria-hidden="true">🇵🇹</span>
+                <PT aria-hidden="true" className="h-3.5 w-5 rounded-sm" />
                 <span>{t("contato.contact2Phone")}</span>
               </p>
               <a
@@ -56,7 +57,7 @@ export const Contato: React.FC = () => {
                 {t("contato.contact3Name")}
               </p>
               <p className="mt-1 flex items-center gap-2">
-                <span aria-hidden="true">🇵🇹</span>
+                <PT aria-hidden="true" className="h-3.5 w-5 rounded-sm" />
                 <span>{t("contato.contact3Phone")}</span>
               </p>
             </div>
