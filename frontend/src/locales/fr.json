@@ -169,6 +169,11 @@
     "message": "Message",
     "messagePlaceholder": "Écrivez votre question",
     "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé avec succès !",
+    "successMessage": "Merci d'avoir envoyé vos informations. Notre équipe vous contactera bientôt.",
+    "errorMessage": "Erreur lors de l'envoi. Veuillez réessayer.",
+    "tryAgain": "Réessayer",
     "relatedListings": "Annonces similaires",
     "expandedImageView": "Vue agrandie de l'image",
     "closeImage": "Fermer l'image"
@@ -202,7 +207,12 @@
     "hideEquipment": "Masquer les équipements",
     "message": "Message",
     "messagePlaceholder": "Parlez-nous de votre profil et de vos objectifs de revente.",
-    "submit": "Envoyer la candidature"
+    "submit": "Envoyer la candidature",
+    "sending": "Envoi en cours...",
+    "successTitle": "Candidature envoyée avec succès !",
+    "successMessage": "Merci d'avoir envoyé vos informations. Notre équipe vous contactera bientôt.",
+    "errorMessage": "Erreur lors de l'envoi. Veuillez réessayer.",
+    "tryAgain": "Réessayer"
   },
   "equipmentContent": {
     "9": {

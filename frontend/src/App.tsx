@@ -1,47 +1,87 @@
-import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import React, { useEffect, lazy, Suspense } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import {
   Header,
   Home,
   Equipamentos,
   Servicos,
   Revendas,
-  RevendaDetalhe,
   Sobre,
   Contato,
   Footer,
-  ProdutoDetalhe,
+  ErrorBoundary,
 } from "./components";
 
+const RevendaDetalhe = lazy(() =>
+  import("./components/RevendaDetalhe").then((m) => ({
+    default: m.RevendaDetalhe,
+  })),
+);
+const ProdutoDetalhe = lazy(() =>
+  import("./components/ProdutoDetalhe").then((m) => ({
+    default: m.ProdutoDetalhe,
+  })),
+);
+
 const App: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== "/" || !location.hash) {
+      return;
+    }
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    const frame = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.pathname, location.hash]);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f5f5f5] text-[#1a1a1a]">
       <Header />
       <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-                <Sobre />
-                <div aria-hidden="true" className="px-6 lg:px-8">
-                  <div className="mx-auto max-w-7xl border-t border-[#D35400]/30" />
-                </div>
-                <Equipamentos />
-                <Servicos />
-                <div aria-hidden="true" className="px-6 lg:px-8">
-                  <div className="mx-auto max-w-7xl border-t border-[#D35400]/30" />
-                </div>
-                <Revendas />
-                <Contato />
-              </>
+        <ErrorBoundary>
+          <Suspense
+            fallback={
+              <div className="flex min-h-[60vh] items-center justify-center">
+                <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#D35400] border-t-transparent" />
+              </div>
             }
-          />
-          <Route path="/revendas" element={<RevendaDetalhe />} />
-          <Route path="/equipamentos/:id" element={<ProdutoDetalhe />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+          >
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Home />
+                    <Sobre />
+                    <div aria-hidden="true" className="px-6 lg:px-8">
+                      <div className="mx-auto max-w-7xl border-t border-[#D35400]/30" />
+                    </div>
+                    <Equipamentos />
+                    <Servicos />
+                    <div aria-hidden="true" className="px-6 lg:px-8">
+                      <div className="mx-auto max-w-7xl border-t border-[#D35400]/30" />
+                    </div>
+                    <Revendas />
+                    <Contato />
+                  </>
+                }
+              />
+              <Route path="/revendas" element={<RevendaDetalhe />} />
+              <Route path="/equipamentos/:id" element={<ProdutoDetalhe />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
       <a

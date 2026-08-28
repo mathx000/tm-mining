@@ -55,7 +55,7 @@ const SPEC_VALUE_TRANSLATION_MAP: Record<string, Record<string, string>> = {
   },
   "tipo": {
     "britador de cone": "coneCrusherType",
-    "britadeira de maxilas": "jawCrusherType",
+    "britador de mandíbula": "jawCrusherType",
     "escavadora de rastos": "trackExcavatorType",
     "mini-escavadora": "miniExcavatorType",
     "triturador de impacto de eixo vertical": "vsiCrusherType",

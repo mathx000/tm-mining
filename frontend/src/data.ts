@@ -100,7 +100,8 @@ import img_Mini_escavadora_Yanmar_Vio_55_2 from './img/Mini-escavadora Yanmar Vi
 import img_Mini_escavadora_Yanmar_Vio_55_3 from './img/Mini-escavadora Yanmar Vio 55/construction-equipment-mini-excavator-Yanmar-Vio-55---1751224893809579269_big--25062922114313833700.jpg';
 import img_Mini_escavadora_Yanmar_Vio_55_4 from './img/Mini-escavadora Yanmar Vio 55/construction-equipment-mini-excavator-Yanmar-Vio-55---1752847203332907415_big--25062922114313833700.jpg';
 import img_Mini_escavadora_Yanmar_Vio_55_5 from './img/Mini-escavadora Yanmar Vio 55/construction-equipment-mini-excavator-Yanmar-Vio-55---1752847204889165000_big--25062922114313833700.jpg';
-import img_Triturador_de_impacto_de_eixo_vertical_Metso_Barmac_B9100SE_VSI_fallback from './img/Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI.jpg';
+import img_Triturador_de_impacto_de_eixo_vertical_Metso_Barmac_B9100SE_VSI_0 from './img/Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI/1.jpg';
+import img_Triturador_de_impacto_de_eixo_vertical_Metso_Barmac_B9100SE_VSI_1 from './img/Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI/mining-equipment-vertical-shaft-impact-crusher-Metso-Barmac-B9100SE-VSI---1776528079772313476_big--26041818564022561200.jpg';
 import img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_0 from './img/Trituradora de rotor Metso BARMAC B6150SE VSI/1.jpg';
 import img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_1 from './img/Trituradora de rotor Metso BARMAC B6150SE VSI/mining-equipment-rotor-crusher-Metso-BARMAC-B6150SE-VSI---1753462037977919886_big--25072519453264259200.jpg';
 import img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_2 from './img/Trituradora de rotor Metso BARMAC B6150SE VSI/mining-equipment-rotor-crusher-Metso-BARMAC-B6150SE-VSI---1753462039714660532_big--25072519453264259200.jpg';
@@ -133,9 +134,10 @@ export const imageMap = {
   'Escavadora de rastos Komatsu PC600': [img_Escavadora_de_rastos_Komatsu_PC600_0, img_Escavadora_de_rastos_Komatsu_PC600_1, img_Escavadora_de_rastos_Komatsu_PC600_2, img_Escavadora_de_rastos_Komatsu_PC600_3, img_Escavadora_de_rastos_Komatsu_PC600_4, img_Escavadora_de_rastos_Komatsu_PC600_5, img_Escavadora_de_rastos_Komatsu_PC600_6, img_Escavadora_de_rastos_Komatsu_PC600_7, img_Escavadora_de_rastos_Komatsu_PC600_8],
   'Mini-escavadora Kubota KX057-4': [img_Mini_escavadora_Kubota_KX057_4_0, img_Mini_escavadora_Kubota_KX057_4_1, img_Mini_escavadora_Kubota_KX057_4_2, img_Mini_escavadora_Kubota_KX057_4_3, img_Mini_escavadora_Kubota_KX057_4_4, img_Mini_escavadora_Kubota_KX057_4_5, img_Mini_escavadora_Kubota_KX057_4_6, img_Mini_escavadora_Kubota_KX057_4_7, img_Mini_escavadora_Kubota_KX057_4_8, img_Mini_escavadora_Kubota_KX057_4_9, img_Mini_escavadora_Kubota_KX057_4_10, img_Mini_escavadora_Kubota_KX057_4_11, img_Mini_escavadora_Kubota_KX057_4_12, img_Mini_escavadora_Kubota_KX057_4_13, img_Mini_escavadora_Kubota_KX057_4_14],
   'Mini-escavadora Yanmar Vio 55': [img_Mini_escavadora_Yanmar_Vio_55_0, img_Mini_escavadora_Yanmar_Vio_55_1, img_Mini_escavadora_Yanmar_Vio_55_2, img_Mini_escavadora_Yanmar_Vio_55_3, img_Mini_escavadora_Yanmar_Vio_55_4, img_Mini_escavadora_Yanmar_Vio_55_5],
-  'Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI': [img_Triturador_de_impacto_de_eixo_vertical_Metso_Barmac_B9100SE_VSI_fallback],
-  'Trituradora de rotor Metso BARMAC B6150SE VSI': [img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_0, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_1, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_2, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_3, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_4, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_5, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_6],
+  'Metso Barmac B9100SE VSI': [img_Triturador_de_impacto_de_eixo_vertical_Metso_Barmac_B9100SE_VSI_0, img_Triturador_de_impacto_de_eixo_vertical_Metso_Barmac_B9100SE_VSI_1],
+  'Metso Barmac B6150SE VSI': [img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_0, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_1, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_2, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_3, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_4, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_5, img_Trituradora_de_rotor_Metso_BARMAC_B6150SE_VSI_6],
   'categories': [img_categories_0, img_categories_1, img_categories_2, img_categories_3, img_categories_4, img_categories_5, img_categories_6, img_categories_7, img_categories_8, img_categories_9, img_categories_10, img_categories_11],
+  'sce': [],
 };
 
 
@@ -168,18 +170,18 @@ export const equipment: Equipment[] = [
   },
   {
     id: '1',
-    name: 'Britadeira de maxilas Allis-Chalmers 1100 x 600',
+    name: 'Britador de mandíbula Allis-Chalmers 1100 x 600',
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
     images: imageMap['Britadeira de maxilas Allis-Chalmers 1100 x 600'],
     image: imageMap['Britadeira de maxilas Allis-Chalmers 1100 x 600'][0],
-    imageAlt: 'Britadeira de maxilas Allis-Chalmers 1100 x 600',
+    imageAlt: 'Britador de mandíbula Allis-Chalmers 1100 x 600',
     description: 'Equipamento disponível',
     specifications: [
       { key: 'Marca', value: 'Allis-Chalmers' },
       { key: 'Modelo', value: '1100 x 600' },
-      { key: 'Tipo', value: 'britadeira de maxilas' },
+      { key: 'Tipo', value: 'britador de mandíbula' },
       { key: 'Localização', value: 'Portugal - Mangide, 143 km to Portugal/Porto' },
       { key: 'Data', value: '16/07/2026' },
       { key: 'Machineryline ID', value: 'QK46728' },
@@ -192,18 +194,18 @@ export const equipment: Equipment[] = [
   },
   {
     id: '2',
-    name: 'Britadeira de maxilas Metso Nordberg C125',
+    name: 'Britador de mandíbula Metso Nordberg C125',
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
     images: imageMap['Britadeira de maxilas Metso Nordberg C125'],
     image: imageMap['Britadeira de maxilas Metso Nordberg C125'][0],
-    imageAlt: 'Britadeira de maxilas Metso Nordberg C125',
+    imageAlt: 'Britador de mandíbula Metso Nordberg C125',
     description: 'Equipamento disponível',
     specifications: [
       { key: 'Marca', value: 'Metso' },
       { key: 'Modelo', value: 'Nordberg C125' },
-      { key: 'Tipo', value: 'britadeira de maxilas' },
+      { key: 'Tipo', value: 'britador de mandíbula' },
       { key: 'Ano', value: '2018-04' },
       { key: 'Primeiro registo', value: '2018-04' },
       { key: 'Localização', value: 'Portugal - Mangide, 143 km to Portugal/Porto' },
@@ -219,18 +221,18 @@ export const equipment: Equipment[] = [
   },
   {
     id: '3',
-    name: 'Britadeira de maxilas Parker 36X24',
+    name: 'Britador de mandíbula Parker 36X24',
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
     images: imageMap['Britadeira de maxilas Parker 36X24'],
     image: imageMap['Britadeira de maxilas Parker 36X24'][0],
-    imageAlt: 'Britadeira de maxilas Parker 36X24',
+    imageAlt: 'Britador de mandíbula Parker 36X24',
     description: 'Equipamento disponível',
     specifications: [
       { key: 'Marca', value: 'Parker' },
       { key: 'Modelo', value: '36X24' },
-      { key: 'Tipo', value: 'britadeira de maxilas' },
+      { key: 'Tipo', value: 'britador de mandíbula' },
       { key: 'Ano', value: '1973' },
       { key: 'Localização', value: 'Portugal - Mangide, 143 km to Portugal/Porto' },
       { key: 'Data', value: '16/07/2026' },
@@ -244,18 +246,18 @@ export const equipment: Equipment[] = [
   },
   {
     id: '4',
-    name: 'Britadeira de maxilas Sany SANYO 1050 x 750',
+    name: 'Britador de mandíbula Sany SANYO 1050 x 750',
     category: 'Britagem',
     price: 0,
     currency: 'EUR',
     images: imageMap['Britadeira de maxilas Sany SANYO 1050 x 750'],
     image: imageMap['Britadeira de maxilas Sany SANYO 1050 x 750'][0],
-    imageAlt: 'Britadeira de maxilas Sany SANYO 1050 x 750',
+    imageAlt: 'Britador de mandíbula Sany SANYO 1050 x 750',
     description: 'Equipamento disponível',
     specifications: [
       { key: 'Marca', value: 'Sany' },
       { key: 'Modelo', value: 'SANYO 1050 x 750' },
-      { key: 'Tipo', value: 'britadeira de maxilas' },
+      { key: 'Tipo', value: 'britador de mandíbula' },
       { key: 'Localização', value: 'Portugal - Mangide, 143 km to Portugal/Porto' },
       { key: 'Data', value: '16/07/2026' },
       { key: 'Machineryline ID', value: 'KG46729' },
@@ -432,13 +434,13 @@ export const equipment: Equipment[] = [
   },
   {
     id: '12',
-    name: 'Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI',
+    name: 'Metso Barmac B9100SE VSI',
     category: 'Trituração',
     price: 0,
     currency: 'EUR',
-    images: imageMap['Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI'],
-    image: imageMap['Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI'][0],
-    imageAlt: 'Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI',
+    images: imageMap['Metso Barmac B9100SE VSI'],
+    image: imageMap['Metso Barmac B9100SE VSI'][0],
+    imageAlt: 'Metso Barmac B9100SE VSI',
     description: 'Equipamento disponível',
     specifications: [
       { key: 'Marca', value: 'Metso' },
@@ -458,13 +460,13 @@ export const equipment: Equipment[] = [
   },
   {
     id: '13',
-    name: 'Trituradora de rotor Metso BARMAC B6150SE VSI',
+    name: 'Metso Barmac B6150SE VSI',
     category: 'Trituração',
     price: 0,
     currency: 'EUR',
-    images: imageMap['Trituradora de rotor Metso BARMAC B6150SE VSI'],
-    image: imageMap['Trituradora de rotor Metso BARMAC B6150SE VSI'][0],
-    imageAlt: 'Trituradora de rotor Metso BARMAC B6150SE VSI',
+    images: imageMap['Metso Barmac B6150SE VSI'],
+    image: imageMap['Metso Barmac B6150SE VSI'][0],
+    imageAlt: 'Metso Barmac B6150SE VSI',
     description: 'Equipamento disponível',
     specifications: [
       { key: 'Marca', value: 'Metso' },

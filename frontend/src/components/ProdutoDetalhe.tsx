@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
+import { submitToFormspree } from "../utils/formspree";
+import { countryOptions } from "../utils/countries";
 import {
   buildWhatsAppLink,
   translateDeliveryTime,
@@ -10,13 +12,21 @@ import {
   translateSpecValue,
 } from "../utils/equipment";
 
+const PRODUTO_FORMSPREE_ENDPOINT = "https://formspree.io/f/xgawglvw";
+
+type SubmitStatus = "idle" | "submitting" | "success" | "error";
+
 export const ProdutoDetalhe: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const [formStatus, setFormStatus] = useState<SubmitStatus>("idle");
   const { id } = useParams();
   const product = equipment.find((item) => item.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState(countryOptions[0]);
+  const [isCountryMenuOpen, setIsCountryMenuOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -25,6 +35,41 @@ export const ProdutoDetalhe: React.FC = () => {
   if (!product) {
     return <Navigate to="/" replace />;
   }
+
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    setFormStatus("submitting");
+
+    const result = await submitToFormspree(PRODUTO_FORMSPREE_ENDPOINT, {
+      nome: String(formData.get("nome") || ""),
+      empresa: String(formData.get("empresa") || ""),
+      telefone:
+        `${String(formData.get("telefone_codigo") || "")} ${String(formData.get("telefone_numero") || "")}`.trim(),
+      email: String(formData.get("email") || ""),
+      mensagem: String(formData.get("mensagem") || ""),
+      _subject: "Novo interesse em equipamento - TM Mining Internacional",
+      idioma: i18n.language,
+      produto_id: product.id,
+      produto_nome: product.name,
+      produto_categoria: product.category,
+      rota_origem: location.pathname,
+    });
+
+    if (result.ok) {
+      setFormStatus("success");
+      form.reset();
+    } else {
+      setFormStatus("error");
+    }
+  };
 
   // Usar array de imagens se disponível, senão usar imagem única
   const galleryImages =
@@ -246,6 +291,8 @@ export const ProdutoDetalhe: React.FC = () => {
                           <img
                             src={image}
                             alt={`${t("produtoDetalhe.thumbnail")} ${index + 1}`}
+                            loading="lazy"
+                            decoding="async"
                             className="h-full w-full rounded-md object-cover"
                           />
                         </button>
@@ -324,53 +371,148 @@ export const ProdutoDetalhe: React.FC = () => {
                 </a>
               </aside>
 
-              <form className="rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6">
+              <form
+                className="rounded-3xl border border-gray-200 bg-white p-3 shadow-sm sm:p-4 lg:p-6"
+                onSubmit={handleFormSubmit}
+              >
                 <h3 className="text-xl font-bold text-[#2a2a2a] sm:text-2xl">
                   {t("produtoDetalhe.askSeller")}
                 </h3>
-                <div className="mt-6 space-y-4">
-                  <input
-                    type="text"
-                    name="nome"
-                    placeholder={t("produtoDetalhe.namePlaceholder")}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
-                  />
-                  <input
-                    type="text"
-                    name="empresa"
-                    placeholder={t("produtoDetalhe.companyPlaceholder")}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
-                  />
-                  <input
-                    type="tel"
-                    name="telefone"
-                    placeholder={t("produtoDetalhe.phonePlaceholder")}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder={t("produtoDetalhe.emailPlaceholder")}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
-                  />
-                  <fieldset className="rounded-lg border border-gray-300 px-3 pb-3 pt-1.5">
-                    <legend className="px-1 text-sm font-semibold text-gray-600">
-                      {t("produtoDetalhe.message")}
-                    </legend>
-                    <textarea
-                      name="mensagem"
-                      rows={5}
-                      placeholder={t("produtoDetalhe.messagePlaceholder")}
-                      className="w-full resize-none border-0 bg-transparent text-sm leading-6 text-gray-600 outline-none"
-                    />
-                  </fieldset>
-                  <button
-                    type="submit"
-                    className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-3 py-2 sm:px-4 sm:py-3 text-sm font-semibold text-white transition hover:bg-[#b74800]"
+                {formStatus === "success" ? (
+                  <div
+                    role="status"
+                    aria-live="polite"
+                    className="mt-6 rounded-2xl border border-green-200 bg-green-50 p-6 text-center"
                   >
-                    {t("produtoDetalhe.send")}
-                  </button>
-                </div>
+                    <p className="text-lg font-bold text-green-800">
+                      {t("produtoDetalhe.successTitle")}
+                    </p>
+                    <p className="mt-2 text-sm text-green-700">
+                      {t("produtoDetalhe.successMessage")}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="mt-6 space-y-4">
+                    <input
+                      type="text"
+                      name="nome"
+                      required
+                      aria-label={t("produtoDetalhe.namePlaceholder")}
+                      placeholder={t("produtoDetalhe.namePlaceholder")}
+                      className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                    />
+                    <input
+                      type="text"
+                      name="empresa"
+                      aria-label={t("produtoDetalhe.companyPlaceholder")}
+                      placeholder={t("produtoDetalhe.companyPlaceholder")}
+                      className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                    />
+                    <div className="flex min-w-0 w-full items-center rounded-lg border border-gray-300 bg-white px-3 py-2 sm:px-4 sm:py-3 transition focus-within:border-[#D35400] focus-within:ring-1 focus-within:ring-[#D35400]">
+                      <input
+                        type="hidden"
+                        name="telefone_codigo"
+                        value={selectedCountry.code}
+                        readOnly
+                      />
+                      <div className="relative shrink-0 border-r border-gray-200 pr-2">
+                        <button
+                          type="button"
+                          aria-expanded={isCountryMenuOpen}
+                          aria-haspopup="listbox"
+                          onClick={() =>
+                            setIsCountryMenuOpen((isOpen) => !isOpen)
+                          }
+                          className="flex items-center gap-2 bg-transparent text-sm text-gray-700 outline-none sm:text-base"
+                        >
+                          <span className="flex h-4 w-6 shrink-0 items-center overflow-hidden">
+                            <selectedCountry.Flag />
+                          </span>
+                          <span>{selectedCountry.code}</span>
+                          <span aria-hidden="true" className="ml-1 text-xs">
+                            &#9662;
+                          </span>
+                        </button>
+                        {isCountryMenuOpen ? (
+                          <div
+                            role="listbox"
+                            className="absolute left-0 top-full z-20 mt-2 grid min-w-44 gap-1 rounded-lg border border-gray-200 bg-white p-1 shadow-lg"
+                          >
+                            {countryOptions.map((country) => (
+                              <button
+                                key={country.code}
+                                type="button"
+                                role="option"
+                                aria-selected={
+                                  selectedCountry.code === country.code
+                                }
+                                onClick={() => {
+                                  setSelectedCountry(country);
+                                  setIsCountryMenuOpen(false);
+                                }}
+                                className="flex items-center gap-2 rounded-md px-2 py-2 text-left text-sm text-gray-700 hover:bg-[#fff7eb]"
+                              >
+                                <span className="flex h-4 w-6 items-center overflow-hidden">
+                                  <country.Flag />
+                                </span>
+                                <span>{country.name}</span>
+                                <span className="ml-auto">{country.code}</span>
+                              </button>
+                            ))}
+                          </div>
+                        ) : null}
+                      </div>
+                      <input
+                        type="tel"
+                        name="telefone_numero"
+                        required
+                        aria-label={t("produtoDetalhe.phonePlaceholder")}
+                        placeholder={t("produtoDetalhe.phonePlaceholder")}
+                        className="min-w-0 flex-1 bg-transparent pl-3 text-sm text-gray-700 outline-none sm:text-base"
+                      />
+                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      aria-label={t("produtoDetalhe.emailPlaceholder")}
+                      placeholder={t("produtoDetalhe.emailPlaceholder")}
+                      className="w-full rounded-lg border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-gray-700 outline-none transition focus:border-[#D35400]"
+                    />
+                    <fieldset className="rounded-lg border border-gray-300 px-3 pb-3 pt-1.5">
+                      <legend className="px-1 text-sm font-semibold text-gray-600">
+                        {t("produtoDetalhe.message")}
+                      </legend>
+                      <textarea
+                        name="mensagem"
+                        rows={5}
+                        required
+                        placeholder={t("produtoDetalhe.messagePlaceholder")}
+                        className="w-full resize-none border-0 bg-transparent text-sm leading-6 text-gray-600 outline-none"
+                      />
+                    </fieldset>
+                    {formStatus === "error" ? (
+                      <p
+                        role="alert"
+                        aria-live="assertive"
+                        className="text-sm font-semibold text-red-700"
+                      >
+                        {t("produtoDetalhe.errorMessage")}
+                      </p>
+                    ) : null}
+                    <button
+                      type="submit"
+                      disabled={formStatus === "submitting"}
+                      className="inline-flex w-full items-center justify-center rounded-full bg-[#D35400] px-3 py-2 sm:px-4 sm:py-3 text-sm font-semibold text-white transition hover:bg-[#b74800] disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {formStatus === "submitting"
+                        ? t("produtoDetalhe.sending")
+                        : formStatus === "error"
+                          ? t("produtoDetalhe.tryAgain")
+                          : t("produtoDetalhe.send")}
+                    </button>
+                  </div>
+                )}
               </form>
             </div>
           </div>
@@ -391,6 +533,8 @@ export const ProdutoDetalhe: React.FC = () => {
                       <img
                         src={item.image}
                         alt={item.imageAlt}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-contain"
                       />
                     </div>

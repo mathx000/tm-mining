@@ -169,6 +169,11 @@
     "message": "Mensaje",
     "messagePlaceholder": "Escriba su consulta",
     "send": "Enviar",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado con éxito!",
+    "successMessage": "Gracias por enviar su información. Nuestro equipo se pondrá en contacto en breve.",
+    "errorMessage": "Error al enviar. Inténtelo de nuevo.",
+    "tryAgain": "Intentar de nuevo",
     "relatedListings": "Anuncios relacionados",
     "expandedImageView": "Vista ampliada de la imagen",
     "closeImage": "Cerrar imagen"
@@ -202,7 +207,12 @@
     "hideEquipment": "Ocultar equipos",
     "message": "Mensaje",
     "messagePlaceholder": "Cuéntenos sobre su perfil y objetivos de reventa.",
-    "submit": "Enviar solicitud"
+    "submit": "Enviar solicitud",
+    "sending": "Enviando...",
+    "successTitle": "¡Solicitud enviada con éxito!",
+    "successMessage": "Gracias por enviar su información. Nuestro equipo se pondrá en contacto en breve.",
+    "errorMessage": "Error al enviar. Inténtelo de nuevo.",
+    "tryAgain": "Intentar de nuevo"
   },
   "equipmentContent": {
     "9": {

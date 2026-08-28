@@ -169,6 +169,11 @@
     "message": "Message",
     "messagePlaceholder": "Write your question",
     "send": "Send",
+    "sending": "Sending...",
+    "successTitle": "Message sent successfully!",
+    "successMessage": "Thank you for sending your information. Our team will get in touch shortly.",
+    "errorMessage": "Error sending. Please try again.",
+    "tryAgain": "Try again",
     "relatedListings": "Related listings",
     "expandedImageView": "Expanded image view",
     "closeImage": "Close image"
@@ -202,7 +207,12 @@
     "hideEquipment": "Hide equipment",
     "message": "Message",
     "messagePlaceholder": "Tell us about your profile and reseller goals.",
-    "submit": "Submit application"
+    "submit": "Submit application",
+    "sending": "Sending...",
+    "successTitle": "Application sent successfully!",
+    "successMessage": "Thank you for sending your information. Our team will get in touch shortly.",
+    "errorMessage": "Error sending. Please try again.",
+    "tryAgain": "Try again"
   },
   "equipmentContent": {
     "9": {

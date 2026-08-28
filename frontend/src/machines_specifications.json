@@ -1,11 +1,11 @@
 [
   {
-    "name": "Britadeira de maxilas Allis-Chalmers 1100 x 600",
+    "name": "Britador de mandíbula Allis-Chalmers 1100 x 600",
     "category": "Britagem",
     "specifications": {
       "marca": "Allis-Chalmers",
       "modelo": "1100 x 600",
-      "tipo": "britadeira de maxilas",
+      "tipo": "britador de mandíbula",
       "ano": "",
       "primeiroRegisto": "",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -24,12 +24,12 @@
     }
   },
   {
-    "name": "Britadeira de maxilas Metso Nordberg C125",
+    "name": "Britador de mandíbula Metso Nordberg C125",
     "category": "Britagem",
     "specifications": {
       "marca": "Metso",
       "modelo": "Nordberg C125",
-      "tipo": "britadeira de maxilas",
+      "tipo": "britador de mandíbula",
       "ano": "2018-04",
       "primeiroRegisto": "2018-04",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -48,12 +48,12 @@
     }
   },
   {
-    "name": "Britadeira de maxilas Parker 36X24",
+    "name": "Britador de mandíbula Parker 36X24",
     "category": "Britagem",
     "specifications": {
       "marca": "Parker",
       "modelo": "36X24",
-      "tipo": "britadeira de maxilas",
+      "tipo": "britador de mandíbula",
       "ano": "1973",
       "primeiroRegisto": "",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -72,12 +72,12 @@
     }
   },
   {
-    "name": "Britadeira de maxilas Sany SANYO 1050 x 750",
+    "name": "Britador de mandíbula Sany SANYO 1050 x 750",
     "category": "Britagem",
     "specifications": {
       "marca": "Sany",
       "modelo": "SANYO 1050 x 750",
-      "tipo": "britadeira de maxilas",
+      "tipo": "britador de mandíbula",
       "ano": "",
       "primeiroRegisto": "",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -240,7 +240,7 @@
     }
   },
   {
-    "name": "Triturador de impacto de eixo vertical Metso Barmac B9100SE VSI",
+    "name": "Metso Barmac B9100SE VSI",
     "category": "Trituração",
     "specifications": {
       "marca": "Metso",
@@ -264,7 +264,7 @@
     }
   },
   {
-    "name": "Trituradora de rotor Metso BARMAC B6150SE VSI",
+    "name": "Metso Barmac B6150SE VSI",
     "category": "Trituração",
     "specifications": {
       "marca": "Metso",

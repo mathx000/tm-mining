@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import img1 from "../img/1.jpeg";
-import img2 from "../img/2.jpeg";
-import img3 from "../img/3.jpeg";
-import img4 from "../img/4.jpeg";
+import img1 from "../img/sce/1.jpeg";
+import img2 from "../img/sce/2.jpeg";
+import img3 from "../img/sce/3.jpeg";
+import img4 from "../img/sce/4.jpeg";
 
 export const Servicos: React.FC = () => {
   const { t } = useTranslation();
@@ -60,6 +60,8 @@ export const Servicos: React.FC = () => {
                 <img
                   src={service.image}
                   alt={service.imageAlt}
+                  loading="lazy"
+                  decoding="async"
                   className="h-72 w-full object-cover lg:h-full"
                 />
               </div>

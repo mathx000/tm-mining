@@ -8,3 +8,4 @@ export { Sobre } from "./Sobre";
 export { Contato } from "./Contato";
 export { Footer } from "./Footer";
 export { ProdutoDetalhe } from "./ProdutoDetalhe";
+export { ErrorBoundary } from "./ErrorBoundary";

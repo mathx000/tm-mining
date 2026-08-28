@@ -1,13 +1,33 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import logo from "../logo/logo-removebg.png";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleSectionNavigation = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    event.preventDefault();
+    const target = event.currentTarget.getAttribute("href")?.split("#")[1];
+
+    if (!target) {
+      navigate("/");
+      return;
+    }
+
+    closeMenu();
+    navigate(`/#${target}`);
+    window.setTimeout(() => {
+      document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+    }, 0);
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur">
@@ -27,22 +47,46 @@ export const Header: React.FC = () => {
 
         {/* Desktop nav */}
         <nav className="hidden gap-6 text-sm font-semibold text-gray-700 md:flex">
-          <a href="/#home" className="hover:text-[#D35400]">
+          <a
+            href="/#home"
+            onClick={handleSectionNavigation}
+            className="hover:text-[#D35400]"
+          >
             {t("header.nav.home")}
           </a>
-          <a href="/#sobre" className="hover:text-[#D35400]">
+          <a
+            href="/#sobre"
+            onClick={handleSectionNavigation}
+            className="hover:text-[#D35400]"
+          >
             {t("header.nav.sobre")}
           </a>
-          <a href="/#equipamentos" className="hover:text-[#D35400]">
+          <a
+            href="/#equipamentos"
+            onClick={handleSectionNavigation}
+            className="hover:text-[#D35400]"
+          >
             {t("header.nav.equipamentos")}
           </a>
-          <a href="/#servicos" className="hover:text-[#D35400]">
+          <a
+            href="/#servicos"
+            onClick={handleSectionNavigation}
+            className="hover:text-[#D35400]"
+          >
             {t("header.nav.servicos")}
           </a>
-          <a href="/#revenda" className="hover:text-[#D35400]">
+          <a
+            href="/#revenda"
+            onClick={handleSectionNavigation}
+            className="hover:text-[#D35400]"
+          >
             {t("header.nav.revendas")}
           </a>
-          <a href="/#contacto" className="hover:text-[#D35400]">
+          <a
+            href="/#contacto"
+            onClick={handleSectionNavigation}
+            className="hover:text-[#D35400]"
+          >
             {t("header.nav.contato")}
           </a>
         </nav>
@@ -86,42 +130,42 @@ export const Header: React.FC = () => {
           <nav className="flex flex-col gap-1 text-sm font-semibold text-gray-700">
             <a
               href="/#home"
-              onClick={closeMenu}
+              onClick={handleSectionNavigation}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               {t("header.nav.home")}
             </a>
             <a
               href="/#sobre"
-              onClick={closeMenu}
+              onClick={handleSectionNavigation}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               {t("header.nav.sobre")}
             </a>
             <a
               href="/#equipamentos"
-              onClick={closeMenu}
+              onClick={handleSectionNavigation}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               {t("header.nav.equipamentos")}
             </a>
             <a
               href="/#servicos"
-              onClick={closeMenu}
+              onClick={handleSectionNavigation}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               {t("header.nav.servicos")}
             </a>
             <a
               href="/#revenda"
-              onClick={closeMenu}
+              onClick={handleSectionNavigation}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               {t("header.nav.revendas")}
             </a>
             <a
-              href="/#contato"
-              onClick={closeMenu}
+              href="/#contacto"
+              onClick={handleSectionNavigation}
               className="rounded-lg px-3 py-3 hover:bg-gray-50 hover:text-[#D35400]"
             >
               {t("header.nav.contato")}

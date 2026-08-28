@@ -12,7 +12,6 @@ import imgExcavators from "../img/categories/excavators.png";
 import imgFeeders from "../img/categories/feeders.png";
 import imgRollerCrusher from "../img/categories/roller-crusher.png";
 import imgScreens from "../img/categories/Screens.png";
-import imgSpareParts from "../img/spare-parts.png";
 import imgTrucks from "../img/categories/trucks.png";
 import imgWheelLoaders from "../img/categories/wheel-loaders.png";
 import imgBritadorImpacto from "../img/categories/britadorvsi.png";
@@ -55,7 +54,7 @@ const getEquipmentSubcategory = (name: string): string => {
 };
 
 const catalogCategories = [
-  { name: "Britador de mandibulas", img: imgBritadorMandibula },
+  { name: "Britador de mandibula", img: imgBritadorMandibula },
   { name: "Britador conico", img: imgBritadorConico },
   { name: "Britador VSI", img: imgBritadorImpacto },
   { name: "Britador rolo", img: imgRollerCrusher },
@@ -209,6 +208,8 @@ export const Equipamentos: React.FC = () => {
                   <img
                     src={cat.img}
                     alt={cat.name}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-contain p-6 transition duration-200 group-hover:scale-105"
                   />
                   <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition duration-200 group-hover:opacity-100 group-active:opacity-100">
@@ -291,6 +292,8 @@ export const Equipamentos: React.FC = () => {
                 <img
                   src={item.image}
                   alt={item.imageAlt}
+                  loading="lazy"
+                  decoding="async"
                   className="h-52 w-full bg-gray-50 object-contain sm:h-56"
                 />
                 <div className="p-3 sm:p-4 lg:p-6">

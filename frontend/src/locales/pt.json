@@ -6,7 +6,7 @@
       "servicos": "Serviços",
       "sobre": "Sobre",
       "revendas": "Revendas",
-      "contato": "Contato"
+      "contato": "Contacto"
     }
   },
   "home": {
@@ -77,7 +77,7 @@
       "used": "usados",
       "new": "novo",
       "coneCrusherType": "Britador de cone",
-      "jawCrusherType": "Britadeira de maxilas",
+      "jawCrusherType": "Britador de mandíbula",
       "trackExcavatorType": "Escavadora de rastos",
       "miniExcavatorType": "Mini-escavadora",
       "vsiCrusherType": "Triturador de impacto de eixo vertical",
@@ -167,6 +167,11 @@
     "message": "Mensagem",
     "messagePlaceholder": "Escreva a sua dúvida",
     "send": "Enviar",
+    "sending": "Enviando...",
+    "successTitle": "Mensagem enviada com sucesso!",
+    "successMessage": "Obrigado por enviar as suas informações. A nossa equipa entrará em contacto em breve.",
+    "errorMessage": "Erro ao enviar. Tente novamente.",
+    "tryAgain": "Tentar novamente",
     "relatedListings": "Anúncios relacionados",
     "expandedImageView": "Visualização expandida da imagem",
     "closeImage": "Fechar imagem"
@@ -200,6 +205,11 @@
     "hideEquipment": "Ocultar equipamentos",
     "message": "Mensagem",
     "messagePlaceholder": "Conte-nos sobre o seu perfil e objetivos de revenda.",
-    "submit": "Enviar candidatura"
+    "submit": "Enviar candidatura",
+    "sending": "Enviando...",
+    "successTitle": "Candidatura enviada com sucesso!",
+    "successMessage": "Obrigado por enviar as suas informações. A nossa equipa entrará em contacto em breve.",
+    "errorMessage": "Erro ao enviar. Tente novamente.",
+    "tryAgain": "Tentar novamente"
   }
 }

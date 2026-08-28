@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #D35400;
-  --secondary: #FFB81C;
-  --dark: #1a1a1a;
-  --light: #f5f5f5;
-  --accent: #1A1D1F;
-}
-
 body {
   font-family: 'Segoe UI', Roboto, sans-serif;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import img8 from "../img/8.jpeg";
+import img8 from "../img/sce/8.jpeg";
 
 export const Revendas: React.FC = () => {
   const { t } = useTranslation();
@@ -55,6 +55,8 @@ export const Revendas: React.FC = () => {
               <img
                 src={img8}
                 alt="Espaço de parceria e negócio"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
