@@ -53,7 +53,7 @@ export const RevendaDetalhe: React.FC = () => {
         `${String(formData.get("contacto_codigo") || "")} ${String(formData.get("contacto_numero") || "")}`.trim(),
       equipamentos: selectedNames,
       mensagem: String(formData.get("mensagem") || ""),
-      _subject: "Nova candidatura de revenda - TM Mining Internacional",
+      _subject: "Nova candidatura de revenda - TM Mining International",
       idioma: i18n.language,
     });
 

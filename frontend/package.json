@@ -2,7 +2,7 @@
   "name": "tm-mining-frontend",
   "version": "1.0.0",
   "type": "module",
-  "description": "TM Mining Internacional - Equipment Sales Website",
+  "description": "TM Mining International - Equipment Sales Website",
   "main": "dist/main.js",
   "scripts": {
     "dev": "vite",

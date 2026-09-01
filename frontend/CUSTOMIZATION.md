@@ -1,4 +1,4 @@
-# Guia de Personalização - TM Mining Internacional
+# Guia de Personalização - TM Mining International
 
 ## Como Adicionar Novos Equipamentos
 

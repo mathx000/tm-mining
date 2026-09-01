@@ -1,4 +1,4 @@
-# 🚀 Quick Start - TM Mining Internacional
+# 🚀 Quick Start - TM Mining International
 
 ## 5 Minutos para Começar
 

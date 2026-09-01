@@ -61,7 +61,7 @@ export const ProdutoDetalhe: React.FC = () => {
         `${String(formData.get("telefone_codigo") || "")} ${String(formData.get("telefone_numero") || "")}`.trim(),
       email: String(formData.get("email") || ""),
       mensagem: String(formData.get("mensagem") || ""),
-      _subject: "Novo interesse em equipamento - TM Mining Internacional",
+      _subject: "Novo interesse em equipamento - TM Mining International",
       idioma: i18n.language,
       produto_id: product.id,
       produto_nome: product.name,

@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
           />
           <div>
             <p className="text-base font-bold sm:text-lg">TM Mining</p>
-            <p className="text-sm text-gray-600">Internacional</p>
+            <p className="text-sm text-gray-600">International</p>
           </div>
         </a>
 

@@ -1,7 +1,7 @@
 # Estrutura Completa do Projeto
 
 ```
-TM Mining Internacional/
+TM Mining International/
 └── frontend/
     ├── 📄 index.html                    # Página principal do site
     ├── 📄 package.json                  # Configuração npm e dependências

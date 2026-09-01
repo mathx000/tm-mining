@@ -1,4 +1,4 @@
-# TM Mining Internacional - Frontend
+# TM Mining International - Frontend
 
 Site moderno de vendas de equipamentos para construção civil e mineração.
 
