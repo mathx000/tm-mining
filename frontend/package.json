@@ -1,13 +1,15 @@
 {
   "name": "tm-mining-frontend",
   "version": "1.0.0",
+  "type": "module",
   "description": "TM Mining Internacional - Equipment Sales Website",
   "main": "dist/main.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "keywords": [
     "mining",
@@ -21,8 +23,9 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "autoprefixer": "^10.5.4",
     "concurrently": "^8.0.0",
-    "live-server": "^1.2.2",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.0.0",
     "vite": "^8.1.5"

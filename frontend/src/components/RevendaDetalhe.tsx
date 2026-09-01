@@ -7,7 +7,8 @@ import img5 from "../img/sce/5.jpeg";
 import img6 from "../img/sce/6.jpeg";
 import img7 from "../img/sce/7.jpeg";
 
-const REVENDA_FORMSPREE_ENDPOINT = "https://formspree.io/f/xzepnabq";
+const REVENDA_FORMSPREE_ENDPOINT = import.meta.env
+  .VITE_REVENDA_FORMSPREE_ENDPOINT;
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
@@ -37,6 +38,11 @@ export const RevendaDetalhe: React.FC = () => {
     );
 
     setStatus("submitting");
+
+    if (!REVENDA_FORMSPREE_ENDPOINT) {
+      setStatus("error");
+      return;
+    }
 
     const result = await submitToFormspree(REVENDA_FORMSPREE_ENDPOINT, {
       nome: String(formData.get("nome") || ""),

@@ -12,7 +12,8 @@ import {
   translateSpecValue,
 } from "../utils/equipment";
 
-const PRODUTO_FORMSPREE_ENDPOINT = "https://formspree.io/f/xgawglvw";
+const PRODUTO_FORMSPREE_ENDPOINT = import.meta.env
+  .VITE_PRODUTO_FORMSPREE_ENDPOINT;
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
@@ -47,6 +48,11 @@ export const ProdutoDetalhe: React.FC = () => {
 
     const formData = new FormData(form);
     setFormStatus("submitting");
+
+    if (!PRODUTO_FORMSPREE_ENDPOINT) {
+      setFormStatus("error");
+      return;
+    }
 
     const result = await submitToFormspree(PRODUTO_FORMSPREE_ENDPOINT, {
       nome: String(formData.get("nome") || ""),
@@ -226,6 +232,7 @@ export const ProdutoDetalhe: React.FC = () => {
                     <img
                       src={galleryImages[currentImageIndex]}
                       alt={`${product.imageAlt} - foto ${currentImageIndex + 1}`}
+                      decoding="async"
                       className="h-[40vh] min-h-[12rem] w-full max-w-full rounded-2xl border border-gray-200 bg-gray-50 object-contain sm:h-72 lg:h-96"
                     />
                   </button>

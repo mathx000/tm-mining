@@ -31,6 +31,8 @@ npm run build
 
 Isso gera uma pasta `dist/` com os arquivos otimizados.
 
+Os endpoints públicos dos formulários ficam em `.env.production` e são incorporados no build. Para alterar os destinos do Formspree, atualize esse arquivo antes de executar o comando.
+
 **O que você vai ver:**
 
 - `dist/index.html` - Arquivo principal
@@ -61,7 +63,7 @@ Isso gera uma pasta `dist/` com os arquivos otimizados.
 4. **Upload dos arquivos**:
    - Localizar pasta `dist/` no seu PC (lado esquerdo)
    - Criar pasta `public_html/` se não existir no servidor
-   - Arrastar todos os arquivos de `dist/` para `public_html/`
+   - Arrastar todos os arquivos de `dist/` para `public_html/`, incluindo `.htaccess`
 
 ---
 
@@ -310,6 +312,6 @@ Seu site TM Mining está 100% traduzido e otimizado para Hostinger.
 
 ---
 
-**Data de Deploy**: ****\_\_\_****
-**Domínio**: ****\_\_\_****
-**Status**: ****\_\_\_****
+**Data de Deploy**: \***\*\_\_\_\*\***
+**Domínio**: \***\*\_\_\_\*\***
+**Status**: \***\*\_\_\_\*\***
