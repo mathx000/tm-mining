@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import logo from "../logo/logo-removebg.png";
+import logo from "../img/logo/logo.png";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header: React.FC = () => {
@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
           <img
             src={logo}
             alt="Logo TM Mining"
-            className="h-12 w-12 flex-shrink-0 object-contain sm:h-16 sm:w-16"
+            className="h-14 w-14 flex-shrink-0 object-contain sm:h-20 sm:w-20"
           />
           <div>
             <p className="text-base font-bold sm:text-lg">TM Mining</p>
