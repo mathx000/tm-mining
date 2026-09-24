@@ -12,7 +12,35 @@
   "home": {
     "subtitle": "Equipos pesados para construcción y minería",
     "title": "Tecnología y potencia en cada operación.",
-    "description": "Ofrecemos máquinas de alto rendimiento con disponibilidad inmediata y apoyo especializado para proyectos a gran escala."
+    "description": "Ofrecemos máquinas de alto rendimiento con disponibilidad inmediata y apoyo especializado para proyectos a gran escala.",
+    "ctaEquipment": "Ver equipos",
+    "ctaContact": "Hablar con un especialista",
+    "trustLine": "Trituración, excavación y transporte para operaciones exigentes."
+  },
+  "maquinas": {
+    "eyebrow": "Catálogo TM Mining",
+    "title": "Máquinas listas para el próximo desafío.",
+    "description": "Una selección de equipos pesados para trituración y excavación, con información técnica clara y apoyo especializado.",
+    "count": "máquinas disponibles",
+    "view": "Ver especificaciones",
+    "all": "Todas",
+    "availability": "Disponibilidad inmediata y bajo consulta",
+    "nameFilter": "Filtrar por nombre",
+    "namePlaceholder": "Ej.: Excavadora",
+    "typeFilter": "Filtrar por tipo",
+    "allTypes": "Todos los tipos",
+    "equipmentFilter": "Filtrar por equipo",
+    "allEquipment": "Todos los equipos",
+    "noResults": "No se encontraron máquinas con los filtros seleccionados.",
+    "collection": "Nuestra flota",
+    "selection": "Equipos seleccionados",
+    "types": {
+      "crushing": "Trituración",
+      "loaders": "Cargadoras",
+      "excavation": "Excavación",
+      "parts": "Piezas y accesorios",
+      "transport": "Transporte"
+    }
   },
   "equipamentos": {
     "label": "Nuestros Equipos",
@@ -42,7 +70,12 @@
       "excavators": "Excavadoras",
       "miniExcavators": "Mini excavadoras"
     },
-    "noResults": "No se encontraron equipos con los filtros seleccionados."
+    "viewProducts": "Ver productos",
+    "stockEyebrow": "Catálogo TM Mining",
+    "stockDescription": "Ven a consultar nuestro stock",
+    "viewAll": "Ver todos",
+    "noResults": "No se encontraron equipos con los filtros seleccionados.",
+    "results": "equipos encontrados"
   },
   "equipment": {
     "category": "Trituración",
@@ -119,7 +152,8 @@
     "service3Title": "Mantenimiento preventivo programado",
     "service3Desc": "Planes de mantenimiento ajustados al ciclo de trabajo para prolongar la vida útil de componentes críticos.",
     "service4Title": "Gestión integrada de flota",
-    "service4Desc": "Integramos información técnica y operacional para respaldar decisiones más rápidas y seguras en el campo."
+    "service4Desc": "Integramos información técnica y operacional para respaldar decisiones más rápidas y seguras en el campo.",
+    "cta": "Solicitar un servicio"
   },
   "revendas": {
     "label": "Asociaciones estratégicas",
@@ -142,11 +176,13 @@
     "contact2Phone": "+351 933 079 179",
     "contact2Email": "blocifel@hotmail.com",
     "contact3Name": "Geral Escritório",
-    "contact3Phone": "+351 938 181 967"
+    "contact3Phone": "+351 938 181 967",
+    "whatsapp": "Hablar por WhatsApp"
   },
   "footer": {
     "title": "TM Mining International",
-    "description": "Calidad, tecnología y confiabilidad en cada operación."
+    "description": "Calidad, tecnología y confiabilidad en cada operación.",
+    "copyright": "© 2026 TM Mining International. Todos los derechos reservados."
   },
   "produtoDetalhe": {
     "backToEquipment": "Volver a equipamientos",

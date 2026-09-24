@@ -4,6 +4,7 @@ import {
   Header,
   Home,
   Equipamentos,
+  Maquinas,
   Servicos,
   Revendas,
   Sobre,
@@ -77,6 +78,7 @@ const App: React.FC = () => {
                 }
               />
               <Route path="/revendas" element={<RevendaDetalhe />} />
+              <Route path="/maquinas" element={<Maquinas />} />
               <Route path="/equipamentos/:id" element={<ProdutoDetalhe />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

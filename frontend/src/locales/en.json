@@ -12,7 +12,35 @@
   "home": {
     "subtitle": "Heavy equipment for construction and mining",
     "title": "Technology and power in every operation.",
-    "description": "We offer high-performance machines with immediate availability and specialized support for large-scale projects."
+    "description": "We offer high-performance machines with immediate availability and specialized support for large-scale projects.",
+    "ctaEquipment": "View equipment",
+    "ctaContact": "Talk to a specialist",
+    "trustLine": "Crushing, excavation and transport for demanding operations."
+  },
+  "maquinas": {
+    "eyebrow": "TM Mining Catalogue",
+    "title": "Machines ready for the next challenge.",
+    "description": "A selection of heavy equipment for crushing and excavation, with clear technical information and specialist support.",
+    "count": "machines available",
+    "view": "View specifications",
+    "all": "All",
+    "availability": "Immediate availability and on request",
+    "nameFilter": "Filter by name",
+    "namePlaceholder": "E.g.: Excavator",
+    "typeFilter": "Filter by type",
+    "allTypes": "All types",
+    "equipmentFilter": "Filter by equipment",
+    "allEquipment": "All equipment",
+    "noResults": "No machines found with the selected filters.",
+    "collection": "Our fleet",
+    "selection": "Selected equipment",
+    "types": {
+      "crushing": "Crushing",
+      "loaders": "Loaders",
+      "excavation": "Excavation",
+      "parts": "Parts and accessories",
+      "transport": "Transport"
+    }
   },
   "equipamentos": {
     "label": "Our Equipment",
@@ -42,7 +70,12 @@
       "excavators": "Excavators",
       "miniExcavators": "Mini Excavators"
     },
-    "noResults": "No equipment found with the selected filters."
+    "viewProducts": "View products",
+    "stockEyebrow": "TM Mining Catalogue",
+    "stockDescription": "Come and explore our stock",
+    "viewAll": "View All",
+    "noResults": "No equipment found with the selected filters.",
+    "results": "equipment found"
   },
   "equipment": {
     "category": "Crushing",
@@ -119,7 +152,8 @@
     "service3Title": "Scheduled preventive maintenance",
     "service3Desc": "Maintenance plans tailored to the work cycle to extend the life of critical components.",
     "service4Title": "Integrated fleet management",
-    "service4Desc": "We integrate technical and operational information to support faster and safer decisions in the field."
+    "service4Desc": "We integrate technical and operational information to support faster and safer decisions in the field.",
+    "cta": "Request a service"
   },
   "revendas": {
     "label": "Strategic Partnerships",
@@ -142,11 +176,13 @@
     "contact2Phone": "+351 933 079 179",
     "contact2Email": "blocifel@hotmail.com",
     "contact3Name": "Geral Escritório",
-    "contact3Phone": "+351 938 181 967"
+    "contact3Phone": "+351 938 181 967",
+    "whatsapp": "Talk on WhatsApp"
   },
   "footer": {
     "title": "TM Mining International",
-    "description": "Quality, technology and reliability in every operation."
+    "description": "Quality, technology and reliability in every operation.",
+    "copyright": "© 2026 TM Mining International. All rights reserved."
   },
   "produtoDetalhe": {
     "backToEquipment": "Back to equipment",

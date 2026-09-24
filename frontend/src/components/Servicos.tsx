@@ -50,11 +50,11 @@ export const Servicos: React.FC = () => {
           </h2>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {services.map((service, index) => (
             <article
               key={service.title}
-              className="grid overflow-hidden rounded-3xl border border-gray-200 bg-[#f7f7f6] shadow-sm lg:grid-cols-2"
+              className="grid overflow-hidden rounded-xl border border-gray-200 bg-[#f7f7f6] shadow-sm transition hover:border-[#D35400]/30 hover:shadow-md lg:grid-cols-2"
             >
               <div className={`${index % 2 !== 0 ? "lg:order-2" : ""}`}>
                 <img
@@ -62,12 +62,15 @@ export const Servicos: React.FC = () => {
                   alt={service.imageAlt}
                   loading="lazy"
                   decoding="async"
-                  className="h-72 w-full object-cover lg:h-full"
+                  className="h-64 w-full object-cover lg:h-full"
                 />
               </div>
 
               <div className="flex items-center bg-white p-6 sm:p-8 lg:p-10">
                 <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D35400]">
+                    0{index + 1}
+                  </p>
                   <h3 className="mt-3 text-2xl font-bold text-[#1a1a1a] sm:text-3xl">
                     {service.title}
                   </h3>

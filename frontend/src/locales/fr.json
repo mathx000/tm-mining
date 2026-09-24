@@ -12,7 +12,35 @@
   "home": {
     "subtitle": "Équipements lourds pour la construction et l'exploitation minière",
     "title": "Technologie et puissance dans chaque opération.",
-    "description": "Nous proposons des machines haute performance avec disponibilité immédiate et support spécialisé pour les projets à grande échelle."
+    "description": "Nous proposons des machines haute performance avec disponibilité immédiate et support spécialisé pour les projets à grande échelle.",
+    "ctaEquipment": "Voir les équipements",
+    "ctaContact": "Parler à un spécialiste",
+    "trustLine": "Concassage, excavation et transport pour les opérations exigeantes."
+  },
+  "maquinas": {
+    "eyebrow": "Catalogue TM Mining",
+    "title": "Des machines prêtes pour le prochain défi.",
+    "description": "Une sélection d'équipements lourds pour le concassage et l'excavation, avec des informations techniques claires et un accompagnement spécialisé.",
+    "count": "machines disponibles",
+    "view": "Voir les spécifications",
+    "all": "Toutes",
+    "availability": "Disponibilité immédiate et sur demande",
+    "nameFilter": "Filtrer par nom",
+    "namePlaceholder": "Ex. : Excavatrice",
+    "typeFilter": "Filtrer par type",
+    "allTypes": "Tous les types",
+    "equipmentFilter": "Filtrer par équipement",
+    "allEquipment": "Tous les équipements",
+    "noResults": "Aucune machine trouvée avec les filtres sélectionnés.",
+    "collection": "Notre flotte",
+    "selection": "Équipements sélectionnés",
+    "types": {
+      "crushing": "Concassage",
+      "loaders": "Chargeuses",
+      "excavation": "Excavation",
+      "parts": "Pièces et accessoires",
+      "transport": "Transport"
+    }
   },
   "equipamentos": {
     "label": "Nos Équipements",
@@ -42,7 +70,12 @@
       "excavators": "Excavateurs",
       "miniExcavators": "Mini-pelles"
     },
-    "noResults": "Aucun équipement trouvé avec les filtres sélectionnés."
+    "viewProducts": "Voir les produits",
+    "stockEyebrow": "Catalogue TM Mining",
+    "stockDescription": "Découvrez notre stock",
+    "viewAll": "Voir tout",
+    "noResults": "Aucun équipement trouvé avec les filtres sélectionnés.",
+    "results": "équipements trouvés"
   },
   "equipment": {
     "category": "Concassage",
@@ -119,7 +152,8 @@
     "service3Title": "Maintenance préventive programmée",
     "service3Desc": "Plans de maintenance adaptés au cycle de travail pour prolonger la durée de vie des composants critiques.",
     "service4Title": "Gestion de flotte intégrée",
-    "service4Desc": "Nous intégrons les informations techniques et opérationnelles pour soutenir des décisions plus rapides et plus sécurisées sur le terrain."
+    "service4Desc": "Nous intégrons les informations techniques et opérationnelles pour soutenir des décisions plus rapides et plus sécurisées sur le terrain.",
+    "cta": "Demander un service"
   },
   "revendas": {
     "label": "Partenariats stratégiques",
@@ -142,11 +176,13 @@
     "contact2Phone": "+351 933 079 179",
     "contact2Email": "blocifel@hotmail.com",
     "contact3Name": "Geral Escritório",
-    "contact3Phone": "+351 938 181 967"
+    "contact3Phone": "+351 938 181 967",
+    "whatsapp": "Parler sur WhatsApp"
   },
   "footer": {
     "title": "TM Mining International",
-    "description": "Qualité, technologie et fiabilité dans chaque opération."
+    "description": "Qualité, technologie et fiabilité dans chaque opération.",
+    "copyright": "© 2026 TM Mining International. Tous droits réservés."
   },
   "produtoDetalhe": {
     "backToEquipment": "Retour aux équipements",

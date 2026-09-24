@@ -1,6 +1,7 @@
 export { Header } from "./Header";
 export { Home } from "./Home";
 export { Equipamentos } from "./Equipamentos";
+export { Maquinas } from "./Maquinas";
 export { Servicos } from "./Servicos";
 export { Revendas } from "./Revendas";
 export { RevendaDetalhe } from "./RevendaDetalhe";

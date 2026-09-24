@@ -1,12 +1,6 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { equipment, formatPrice, normalizeEquipmentCategory } from "../data";
-import {
-  translateDescription,
-  translateSpecKey,
-  translateSpecValue,
-} from "../utils/equipment";
 import imgAttachments from "../img/categories/attachments.png";
 import imgExcavators from "../img/categories/excavators.png";
 import imgFeeders from "../img/categories/feeders.png";
@@ -20,159 +14,32 @@ import imgBritadorMandibula from "../img/categories/britadordemandibula.png";
 import imgMiniEscavadora from "../img/categories/mini escavadeira.png";
 import imgPecasDesgaste from "../img/categories/Peças de desgaste (Spare and Wear parts).png";
 
-const getEquipmentSubcategory = (name: string): string => {
-  const normalizedName = name
-    .trim()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[-\s]+/g, " ");
-  const first = name.trim().split(/\s+/)[0];
-
-  if (normalizedName === "britador vsi") return "Britador VSI";
-  if (normalizedName === "britador de mandibula") {
-    return "Britador de mandibula";
-  }
-
-  if (
-    normalizedName.includes("maxilas") ||
-    normalizedName.includes("mandibula")
-  ) {
-    return "Britador de mandibula";
-  }
-  if (normalizedName.includes("cone") || normalizedName.includes("conico")) {
-    return "Britador cônico";
-  }
-  if (normalizedName.includes("impacto") || normalizedName.includes("vsi")) {
-    return "Britador VSI";
-  }
-  if (normalizedName.includes("rolo")) return "Britador de rolo";
-  if (normalizedName.startsWith("mini escavadora")) return "Mini escavadoras";
-  if (first === "Escavadora") return "Escavadoras";
-  if (first === "Trituradora") return "Triturador";
-  return first;
-};
-
 const catalogCategories = [
-  { name: "Britador de mandibula", img: imgBritadorMandibula },
-  { name: "Britador conico", img: imgBritadorConico },
-  { name: "Britador VSI", img: imgBritadorImpacto },
-  { name: "Britador rolo", img: imgRollerCrusher },
-  { name: "Crivos", img: imgScreens },
-  { name: "Alimentadores (feeders)", img: imgFeeders },
-  { name: "Peças de desgaste (Spare and Wear parts)", img: imgPecasDesgaste },
-  { name: "Acessórios", img: imgAttachments },
-  { name: "Camiões", img: imgTrucks },
-  { name: "Pá carregadoras", img: imgWheelLoaders },
-  { name: "Escavadoras", img: imgExcavators },
-  { name: "Mini escavadoras", img: imgMiniEscavadora },
-];
-
-// Extra category names from the icon strip in Sobre
-const extraCategories = [
-  "Britador de mandibula",
-  "Britador VSI",
-  "Britador cônico",
-  "Britador de rolo",
-  "Crivos (screens)",
-  "Alimentadores (feeders)",
-  "Peças de desgaste (Spare and Wear parts)",
-  "Acessórios",
-  "Camiões",
-  "Pá carregadoras",
-  "Escavadoras",
-  "Mini escavadoras",
+  {
+    key: "jawCrusher",
+    name: "Britador de mandibula",
+    img: imgBritadorMandibula,
+  },
+  { key: "coneCrusher", name: "Britador conico", img: imgBritadorConico },
+  { key: "vsiCrusher", name: "Britador VSI", img: imgBritadorImpacto },
+  { key: "rollerCrusher", name: "Britador rolo", img: imgRollerCrusher },
+  { key: "screens", name: "Crivos", img: imgScreens },
+  { key: "feeders", name: "Alimentadores (feeders)", img: imgFeeders },
+  {
+    key: "spareParts",
+    name: "Peças de desgaste (Spare and Wear parts)",
+    img: imgPecasDesgaste,
+  },
+  { key: "accessories", name: "Acessórios", img: imgAttachments },
+  { key: "trucks", name: "Camiões", img: imgTrucks },
+  { key: "wheelLoaders", name: "Pá carregadoras", img: imgWheelLoaders },
+  { key: "excavators", name: "Escavadoras", img: imgExcavators },
+  { key: "miniExcavators", name: "Mini escavadoras", img: imgMiniEscavadora },
 ];
 
 export const Equipamentos: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [nameFilter, setNameFilter] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("todos");
-  const [subcategoryFilter, setSubcategoryFilter] = useState("todos");
-  const [equipmentFilter, setEquipmentFilter] = useState("todos");
-
-  const scrollToEquipamentos = () => {
-    const element = document.getElementById("filtered-equipment");
-    if (!element) return;
-    const top = element.getBoundingClientRect().top + window.scrollY - 100;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    const cat = searchParams.get("categoria");
-    if (cat) {
-      setSubcategoryFilter(cat);
-      setSearchParams({}, { replace: true });
-    }
-  }, [searchParams, setSearchParams]);
-
-  const categories = useMemo(
-    () =>
-      Array.from(
-        new Set(
-          equipment.map((item) => normalizeEquipmentCategory(item.category)),
-        ),
-      ),
-    [],
-  );
-
-  const typeOptions = [
-    ...categories,
-    "Carregadoras",
-    "Peças e acessórios",
-    "Transporte",
-  ].sort((firstType, secondType) => firstType.localeCompare(secondType, "pt"));
-
-  const subcategories = useMemo(() => {
-    const fromEquipment = equipment.map((item) =>
-      getEquipmentSubcategory(item.name),
-    );
-    const merged = Array.from(new Set([...fromEquipment, ...extraCategories]));
-    return merged.sort((a, b) => a.localeCompare(b, "pt"));
-  }, []);
-
-  const equipmentOptions = useMemo(
-    () => [...equipment].sort((a, b) => a.name.localeCompare(b.name, "pt")),
-    [],
-  );
-
-  const filteredEquipment = equipment.filter((item) => {
-    const normalizedCategory = normalizeEquipmentCategory(item.category);
-    const normalizedName = getEquipmentSubcategory(item.name)
-      .trim()
-      .toLowerCase();
-    const normalizedSubcategory = getEquipmentSubcategory(subcategoryFilter)
-      .trim()
-      .toLowerCase();
-    const equipmentSubcategory = getEquipmentSubcategory(item.name)
-      .trim()
-      .toLowerCase();
-    const matchesName = item.name
-      .toLowerCase()
-      .includes(nameFilter.trim().toLowerCase());
-    const matchesCategory =
-      categoryFilter === "todos" ||
-      normalizedCategory === categoryFilter ||
-      (categoryFilter === "Carregadoras" &&
-        ["pá carregadoras", "escavadoras", "mini escavadoras"].includes(
-          equipmentSubcategory,
-        )) ||
-      (categoryFilter === "Peças e acessórios" &&
-        ["peças de desgaste (spare and wear parts)", "acessórios"].includes(
-          equipmentSubcategory,
-        )) ||
-      (categoryFilter === "Transporte" && equipmentSubcategory === "camiões");
-    const matchesSubcategory =
-      subcategoryFilter === "todos" || normalizedName === normalizedSubcategory;
-    const matchesEquipment =
-      equipmentFilter === "todos" || item.id === equipmentFilter;
-
-    return (
-      matchesName && matchesCategory && matchesSubcategory && matchesEquipment
-    );
-  });
 
   return (
     <>
@@ -195,13 +62,11 @@ export const Equipamentos: React.FC = () => {
               <button
                 key={cat.name}
                 type="button"
-                onClick={() => {
-                  setSubcategoryFilter(cat.name);
-                  setEquipmentFilter("todos");
-                  setCategoryFilter("todos");
-                  navigate(`/?categoria=${encodeURIComponent(cat.name)}`);
-                  window.setTimeout(scrollToEquipamentos, 150);
-                }}
+                onClick={() =>
+                  navigate(
+                    `/maquinas?categoria=${encodeURIComponent(cat.name)}`,
+                  )
+                }
                 className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border-0 bg-transparent p-0 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:h-48 lg:h-56">
@@ -214,150 +79,40 @@ export const Equipamentos: React.FC = () => {
                   />
                   <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition duration-200 group-hover:opacity-100 group-active:opacity-100">
                     <span className="rounded-full bg-[#FFB81C] px-6 py-2 text-sm font-semibold text-[#1a1a1a]">
-                      View products
+                      {t("equipamentos.viewProducts", {
+                        defaultValue: "Ver produtos",
+                      })}
                     </span>
                   </div>
                 </div>
                 <span className="mt-4 text-center text-xs font-bold uppercase tracking-wide leading-5 text-gray-900 sm:text-sm">
-                  {cat.name}
+                  {t(`equipamentos.categories.${cat.key}`, {
+                    defaultValue: cat.name,
+                  })}
                 </span>
               </button>
             ))}
           </div>
-
-          <div className="mb-6 grid gap-3 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm sm:gap-4 sm:p-4 md:mb-8 md:grid-cols-3">
-            <label className="text-sm font-semibold text-[#1a1a1a]">
-              {t("equipamentos.filters.byName")}
-              <input
-                type="text"
-                value={nameFilter}
-                onChange={(event) => setNameFilter(event.target.value)}
-                placeholder={t("equipamentos.filters.namePlaceholder")}
-                className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
-              />
-            </label>
-
-            <label className="text-sm font-semibold text-[#1a1a1a]">
-              {t("equipamentos.filters.byType")}
-              <select
-                value={categoryFilter}
-                onChange={(event) => {
-                  setCategoryFilter(event.target.value);
-                }}
-                className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
-              >
-                <option value="todos">
-                  {t("equipamentos.filters.allTypes")}
-                </option>
-                {typeOptions.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="text-sm font-semibold text-[#1a1a1a]">
-              {t("equipamentos.filters.byEquipment")}
-              <select
-                value={equipmentFilter}
-                onChange={(event) => {
-                  setEquipmentFilter(event.target.value);
-                  setSubcategoryFilter("todos");
-                }}
-                className="mt-2 w-full rounded-xl border border-gray-300 px-3 py-2 sm:px-4 sm:py-3 text-sm font-normal text-gray-700 outline-none transition focus:border-[#D35400]"
-              >
-                <option value="todos">
-                  {t("equipamentos.filters.allEquipment")}
-                </option>
-                {equipmentOptions.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-
-          <div
-            id="filtered-equipment"
-            className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
-          >
-            {filteredEquipment.map((item) => (
-              <article
-                key={item.id}
-                onClick={() => navigate(`/equipamentos/${item.id}`)}
-                className="cursor-pointer overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-              >
-                <img
-                  src={item.image}
-                  alt={item.imageAlt}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-52 w-full bg-gray-50 object-contain sm:h-56"
-                />
-                <div className="p-3 sm:p-4 lg:p-6">
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="rounded-full bg-[#FFF3E0] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D35400]">
-                      {normalizeEquipmentCategory(item.category)}
-                    </span>
-                    <span
-                      className={`text-sm font-semibold ${
-                        item.inStock ? "text-emerald-600" : "text-amber-600"
-                      }`}
-                    >
-                      {item.inStock
-                        ? t("equipment.inStock")
-                        : t("equipment.onOrder")}
-                    </span>
-                  </div>
-                  <h3 className="break-words text-base font-bold text-[#1a1a1a] sm:text-lg lg:text-xl">
-                    {item.name}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-gray-600">
-                    {translateDescription(item.description, item.id, t)}
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                    {item.specifications.slice(0, 3).map((spec) => (
-                      <li key={spec.key}>
-                        <span className="font-semibold">
-                          {translateSpecKey(spec.key, t)}:
-                        </span>{" "}
-                        {translateSpecValue(spec.key, spec.value, t, item.id)}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                    <div>
-                      <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
-                        {t("equipment.price")}
-                      </p>
-                      <p className="mt-2 inline-flex rounded-full border border-[#D35400]/25 bg-[#fff7eb] px-3 py-1 text-sm font-semibold text-[#9f3f00]">
-                        {t("equipment.inquire")}
-                      </p>
-                    </div>
-                    <div className="flex flex-col gap-2 sm:items-end">
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          navigate(`/equipamentos/${item.id}`);
-                        }}
-                        className="w-full rounded-full bg-[#FFB81C] px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#ffc42e] sm:w-auto"
-                      >
-                        {t("equipment.specifications")}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          {filteredEquipment.length === 0 && (
-            <p className="mt-6 rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-4 py-6 text-center text-sm text-gray-600">
-              {t("equipamentos.noResults")}
+          <div className="relative isolate mt-2 overflow-hidden rounded-2xl bg-[#20252a] px-6 py-8 text-center shadow-lg sm:px-10 sm:py-10">
+            <div className="absolute -right-16 -top-20 -z-10 h-48 w-48 rounded-full border-[28px] border-[#FFB81C]/20" />
+            <div className="absolute bottom-0 left-0 h-1 w-28 bg-[#FFB81C]" />
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#FFB81C]">
+              {t("equipamentos.stockEyebrow", {
+                defaultValue: "Catálogo TM Mining",
+              })}
             </p>
-          )}
+            <p className="mt-3 text-lg font-semibold text-white sm:text-xl">
+              {t("equipamentos.stockDescription", {
+                defaultValue: "Venha conferir o nosso estoque",
+              })}
+            </p>
+            <a
+              href="/maquinas"
+              className="mt-6 inline-flex items-center rounded-md bg-[#FFB81C] px-8 py-3 text-sm font-bold uppercase tracking-wide text-[#1a1a1a] shadow-md transition hover:-translate-y-0.5 hover:bg-[#ffc42e] hover:shadow-lg"
+            >
+              {t("equipamentos.viewAll", { defaultValue: "View All" })}
+            </a>
+          </div>
         </div>
       </section>
     </>
