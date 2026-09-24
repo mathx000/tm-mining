@@ -46,6 +46,7 @@ export const Maquinas: React.FC = () => {
             normalizedName.includes("rolo")) ||
           (categoryFilter.includes("escavadora") &&
             normalizedName.includes("escavadora") &&
+            !normalizedName.includes("mini") &&
             !categoryFilter.includes("mini")) ||
           (categoryFilter.includes("mini") && normalizedName.includes("mini"));
         const matchesName = normalizedName.includes(
