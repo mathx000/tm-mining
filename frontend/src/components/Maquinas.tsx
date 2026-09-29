@@ -36,7 +36,8 @@ export const Maquinas: React.FC = () => {
         const normalizedCategory = normalizeEquipmentCategory(item.category);
         const matchesCatalogCategory =
           !categoryFilter ||
-          (categoryFilter.includes("mandibula") &&
+          ((categoryFilter.includes("mandibula") ||
+            categoryFilter.includes("maxilas")) &&
             (normalizedName.includes("mandibula") ||
               normalizedName.includes("maxilas"))) ||
           (categoryFilter.includes("conico") &&
@@ -104,7 +105,7 @@ export const Maquinas: React.FC = () => {
     }),
     nameFilter: t("maquinas.nameFilter", { defaultValue: "Filtro por nome" }),
     namePlaceholder: t("maquinas.namePlaceholder", {
-      defaultValue: "Ex.: Escavadeira",
+      defaultValue: "Ex.: Escavadora",
     }),
     typeFilter: t("maquinas.typeFilter", { defaultValue: "Filtro por tipo" }),
     allTypes: t("maquinas.allTypes", { defaultValue: "Todos os tipos" }),

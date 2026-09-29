@@ -17,10 +17,10 @@ import imgPecasDesgaste from "../img/categories/Peças de desgaste (Spare and We
 const catalogCategories = [
   {
     key: "jawCrusher",
-    name: "Britador de mandibula",
+    name: "Britador de maxilas",
     img: imgBritadorMandibula,
   },
-  { key: "coneCrusher", name: "Britador conico", img: imgBritadorConico },
+  { key: "coneCrusher", name: "Britador cónico", img: imgBritadorConico },
   { key: "vsiCrusher", name: "Britador VSI", img: imgBritadorImpacto },
   { key: "rollerCrusher", name: "Britador rolo", img: imgRollerCrusher },
   { key: "screens", name: "Crivos", img: imgScreens },
@@ -32,9 +32,9 @@ const catalogCategories = [
   },
   { key: "accessories", name: "Acessórios", img: imgAttachments },
   { key: "trucks", name: "Camiões", img: imgTrucks },
-  { key: "wheelLoaders", name: "Pá carregadoras", img: imgWheelLoaders },
+  { key: "wheelLoaders", name: "Pás carregadoras", img: imgWheelLoaders },
   { key: "excavators", name: "Escavadoras", img: imgExcavators },
-  { key: "miniExcavators", name: "Mini escavadoras", img: imgMiniEscavadora },
+  { key: "miniExcavators", name: "Mini-escavadoras", img: imgMiniEscavadora },
 ];
 
 export const Equipamentos: React.FC = () => {
@@ -103,14 +103,14 @@ export const Equipamentos: React.FC = () => {
             </p>
             <p className="mt-3 text-lg font-semibold text-white sm:text-xl">
               {t("equipamentos.stockDescription", {
-                defaultValue: "Venha conferir o nosso estoque",
+                defaultValue: "Venha consultar o nosso stock",
               })}
             </p>
             <a
               href="/maquinas"
               className="mt-6 inline-flex items-center rounded-md bg-[#FFB81C] px-8 py-3 text-sm font-bold uppercase tracking-wide text-[#1a1a1a] shadow-md transition hover:-translate-y-0.5 hover:bg-[#ffc42e] hover:shadow-lg"
             >
-              {t("equipamentos.viewAll", { defaultValue: "View All" })}
+              {t("equipamentos.viewAll", { defaultValue: "Ver todos" })}
             </a>
           </div>
         </div>

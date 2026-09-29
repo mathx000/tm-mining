@@ -26,7 +26,7 @@
     "all": "Todas",
     "availability": "Disponibilidade imediata e sob consulta",
     "nameFilter": "Filtro por nome",
-    "namePlaceholder": "Ex.: Escavadeira",
+    "namePlaceholder": "Ex.: Escavadora",
     "typeFilter": "Filtro por tipo",
     "allTypes": "Todos os tipos",
     "equipmentFilter": "Filtro por equipamento",
@@ -50,15 +50,15 @@
       "byType": "Filtro por tipo",
       "byCategory": "Filtro por categoria",
       "byEquipment": "Filtro por equipamento",
-      "namePlaceholder": "Ex.: Escavadeira",
+      "namePlaceholder": "Ex.: Escavadora",
       "allTypes": "Todos os tipos",
       "allCategories": "Todas as categorias",
       "allEquipment": "Todos os equipamentos"
     },
     "categories": {
-      "jawCrusher": "Britador de mandibula",
+      "jawCrusher": "Britador de maxilas",
       "impactCrusher": "Britador de impacto",
-      "coneCrusher": "Britador cônico",
+      "coneCrusher": "Britador cónico",
       "vsiCrusher": "Britador de VSI",
       "rollerCrusher": "Britador de rolo",
       "screens": "Crivos (screens)",
@@ -66,14 +66,14 @@
       "spareParts": "Peças de desgaste (Spare and Wear parts)",
       "accessories": "Acessórios",
       "trucks": "Camiões",
-      "wheelLoaders": "Pá carregadoras",
+      "wheelLoaders": "Pás carregadoras",
       "excavators": "Escavadoras",
-      "miniExcavators": "Mini escavadoras"
+      "miniExcavators": "Mini-escavadoras"
     },
     "viewProducts": "Ver produtos",
     "stockEyebrow": "Catálogo TM Mining",
-    "stockDescription": "Venha conferir o nosso estoque",
-    "viewAll": "View All",
+    "stockDescription": "Venha consultar o nosso stock",
+    "viewAll": "Ver todos",
     "noResults": "Nenhum equipamento encontrado com os filtros selecionados.",
     "results": "equipamentos encontrados"
   },
@@ -110,7 +110,7 @@
       "used": "usados",
       "new": "novo",
       "coneCrusherType": "Britador de cone",
-      "jawCrusherType": "Britador de mandíbula",
+      "jawCrusherType": "Britador de maxilas",
       "trackExcavatorType": "Escavadora de rastos",
       "miniExcavatorType": "Mini-escavadora",
       "vsiCrusherType": "Triturador de impacto de eixo vertical",
@@ -134,8 +134,8 @@
     "values": {
       "innovation": "Inovação",
       "innovationDesc": "Procuramos constantemente as melhores soluções tecnológicas para os nossos clientes.",
-      "reliability": "Confiabilidade",
-      "reliabilityDesc": "Equipamentos robustos e confiáveis que garantem continuidade operacional.",
+      "reliability": "Fiabilidade",
+      "reliabilityDesc": "Equipamentos robustos e fiáveis que garantem continuidade operacional.",
       "sustainability": "Sustentabilidade",
       "sustainabilityDesc": "Práticas ambientais responsáveis e soluções mais eficientes."
     }
@@ -179,7 +179,7 @@
   },
   "footer": {
     "title": "TM Mining International",
-    "description": "Qualidade, tecnologia e confiabilidade em cada operação.",
+    "description": "Qualidade, tecnologia e fiabilidade em cada operação.",
     "copyright": "© 2026 TM Mining International. Todos os direitos reservados."
   },
   "produtoDetalhe": {
@@ -203,7 +203,7 @@
     "message": "Mensagem",
     "messagePlaceholder": "Escreva a sua dúvida",
     "send": "Enviar",
-    "sending": "Enviando...",
+    "sending": "A enviar...",
     "successTitle": "Mensagem enviada com sucesso!",
     "successMessage": "Obrigado por enviar as suas informações. A nossa equipa entrará em contacto em breve.",
     "errorMessage": "Erro ao enviar. Tente novamente.",
@@ -242,7 +242,7 @@
     "message": "Mensagem",
     "messagePlaceholder": "Conte-nos sobre o seu perfil e objetivos de revenda.",
     "submit": "Enviar candidatura",
-    "sending": "Enviando...",
+    "sending": "A enviar...",
     "successTitle": "Candidatura enviada com sucesso!",
     "successMessage": "Obrigado por enviar as suas informações. A nossa equipa entrará em contacto em breve.",
     "errorMessage": "Erro ao enviar. Tente novamente.",

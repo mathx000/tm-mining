@@ -1,11 +1,11 @@
 [
   {
-    "name": "Britador de mandíbula Allis-Chalmers 1100 x 600",
+    "name": "Britador de maxilas Allis-Chalmers 1100 x 600",
     "category": "Britagem",
     "specifications": {
       "marca": "Allis-Chalmers",
       "modelo": "1100 x 600",
-      "tipo": "britador de mandíbula",
+      "tipo": "britador de maxilas",
       "ano": "",
       "primeiroRegisto": "",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -24,12 +24,12 @@
     }
   },
   {
-    "name": "Britador de mandíbula Metso Nordberg C125",
+    "name": "Britador de maxilas Metso Nordberg C125",
     "category": "Britagem",
     "specifications": {
       "marca": "Metso",
       "modelo": "Nordberg C125",
-      "tipo": "britador de mandíbula",
+      "tipo": "britador de maxilas",
       "ano": "2018-04",
       "primeiroRegisto": "2018-04",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -48,12 +48,12 @@
     }
   },
   {
-    "name": "Britador de mandíbula Parker 36X24",
+    "name": "Britador de maxilas Parker 36X24",
     "category": "Britagem",
     "specifications": {
       "marca": "Parker",
       "modelo": "36X24",
-      "tipo": "britador de mandíbula",
+      "tipo": "britador de maxilas",
       "ano": "1973",
       "primeiroRegisto": "",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -72,12 +72,12 @@
     }
   },
   {
-    "name": "Britador de mandíbula Sany SANYO 1050 x 750",
+    "name": "Britador de maxilas Sany SANYO 1050 x 750",
     "category": "Britagem",
     "specifications": {
       "marca": "Sany",
       "modelo": "SANYO 1050 x 750",
-      "tipo": "britador de mandíbula",
+      "tipo": "britador de maxilas",
       "ano": "",
       "primeiroRegisto": "",
       "localizacao": "Portugal - Mangide, 143 km to Portugal/Porto",
@@ -140,7 +140,7 @@
       "cor": "vermelho",
       "horasUtilizacao": "",
       "servicosAdicionais": "Serviço de entrega de veículos",
-      "informacaoAdicional": "Britador cônico Sandvik CH 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassi"
+      "informacaoAdicional": "Britador cónico Sandvik CH 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassis"
     }
   },
   {
@@ -164,7 +164,7 @@
       "cor": "",
       "horasUtilizacao": "1 500 m/h",
       "servicosAdicionais": "Serviço de entrega de veículos",
-      "informacaoAdicional": "Britador cônico Sandvik Cs 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassi"
+      "informacaoAdicional": "Britador cónico Sandvik Cs 430 em estado imprescindível! Equipado com motor elétrico Siemens, quadro elétrico central de lubrificação e hidráulica, e também com o seu chassis"
     }
   },
   {
